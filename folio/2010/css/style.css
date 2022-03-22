@@ -1,0 +1,156 @@
+body {
+	margin:0px;
+	padding:0px;
+}
+p {
+	margin:0px;
+	padding:0px;
+}
+ul, ol, li {
+	list-style-image:none;
+	list-style-position: outside;
+	list-style-type:none;
+	display:inline;
+}
+a {
+	text-decoration: none;	
+}
+.page {
+	text-align:center;
+}
+.haut, .bas {
+	width:auto;
+	height:40px;
+	vertical-align:middle;
+}
+.haut {
+	background:url('../images/fond_haut.jpg') repeat-x;	
+}
+.bas {
+	background:url('../images/fond_bas.jpg') repeat-x;
+	clear:left;
+}
+
+.menus {
+	margin-left:auto;
+	margin-right:auto;
+	width:870px;
+}
+.menu_sec, .menu_title, .menu_sec_visited, .menu_sous {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	
+	color: #262538;
+	float:left;	
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:7px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+.menu_title {
+	margin-left:80px;
+	margin-right:5px;
+}
+.menu_sec, .menu_sec_visited, .menu_sous {
+	border: solid 1px #CCC;
+	cursor:pointer;
+	background:url('../images/fond_menu_1.jpg') repeat-x;
+
+}
+.menu_sous {
+	
+}
+.menu_sec:hover, .menu_sous:hover {
+	display: block;
+	color: #666;
+	text-decoration : none ;
+}
+.menu_sec_visited {
+	color: #00C;
+}
+.corps_title {
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+	height:30px;
+}
+.corps_sec {
+	color: #262538;
+	border: solid 1px #CCC;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	clear:left;
+	margin-right:auto;
+	margin-left:auto;
+ 	/*background: #CCC;*/
+ 	width:90%;
+	min-width:850px;
+	height:500px;
+	background: #dbe1e1;
+}
+.corps_sec ul{
+	margin:0px;
+	padding:0px;
+}
+.corps_box, .corps_box_cv {
+	max-height:40%;
+	float:left;
+	margin:5px;
+	padding:5px;
+	border: solid 1px #CCC;
+	background:  url('../images/fond_body.jpg') repeat-x;
+}
+.corps_box {
+	width:47%;
+	min-width:350px;
+	/*min-height:130px;*/
+}
+.corps_box_cv {
+	width:97%;
+	clear:left;
+	margin:3px;
+}
+
+#corps_cv_infos ul li div  {
+	margin-right:auto;
+	margin-left:auto;
+	padding:5px;
+	/*border: solid 1px #CCC;
+	background:url('../images/fond_body.jpg') repeat-x;*/
+}
+#corps_motiv ul li div {
+	margin-right:auto;
+	margin-left:auto;
+	padding:5px;
+	text-align:left;
+	min-width:850px;
+}
+#corps_cv_infos ul li div {
+	width:40%;
+}
+.corps_txt, .corps_txt_cv  {
+	text-align:left;
+}
+.img_proj, .img_cv {
+	border:none 0px;
+	float:left;
+	margin-right:5px;
+}
+.img_identite {
+	width:150px;
+	height:180px;
+}
+.img_proj {
+	width:145px;
+	height:95px;
+}
+.img_cv {
+	clear:left;
+	width:100px;
+	height:75px;
+}
+.cv_encadre {
+	
+}

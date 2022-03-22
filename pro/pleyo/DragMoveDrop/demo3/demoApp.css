@@ -1,0 +1,110 @@
+.gwt-DialogBox .Caption {
+  background-color: #FF66FF;
+  padding: 3px;
+  margin: 2px;
+  font-family: Tahoma; 
+  font-weight: bold;
+  cursor: default;
+  font-size: 10;
+}
+
+.gengwtlistboxitem {
+}
+
+.gengwtlistboxitem_has_value {
+  background-color: #FFCC66;
+  cursor: hand;
+  padding: 1px;
+  margin: 1px;
+  border-top: thin solid;
+  border-right: thin solid;
+  border-bottom: thin solid;
+  border-left: thin solid;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;	
+  font-family: Tahoma; 
+  font-size: 10;
+}
+
+.gengwtlistboxitem_selected {
+  background-color: #3366FF;
+  color: #FFFFFF;
+  border-style: solid;
+  border-color: #990000;
+  border-width: 1px 1px 1px 1px;
+  white-space: nowrap;
+}
+.gengwtlistbox{
+ background-color: #C3D9FF;
+ cursor: default;
+ border-style: solid;
+ border-color: #000099;
+ border-width: 1px 1px 1px 1px;
+}
+
+.panelmain{
+  background-color: #FFFFCC;
+  cursor: default;
+  border-style: outset;
+  width: 570;
+  height: 600;
+}
+
+.labeltotal{
+  font-family: Tahoma; 
+  font-weight: bold;
+  font-size: 11;
+}
+
+.labelaccount{
+  font-family: Tahoma; 
+  font-weight: bold;
+  font-size: 11;
+  text-decoration: underline;
+}
+
+.panelmodal{ 
+ background-color: #0000FF; 
+ width: 570px;
+ height: 600px;
+ z-index: 2;
+ filter: Alpha(Opacity=30, FinishOpacity=60, Style=2);
+ -moz-opacity: 0.5;
+ opacity: 0.5;
+}
+
+.popup{ 
+  border: 1px solid;
+  background-color: #66CCCC;
+  z-index: 3;
+}
+.buttonpopup{ 
+  font-family: Tahoma; 
+  font-size: 11;
+}
+.labelamountdisplay{ 
+  font-family: Tahoma; 
+  font-size: 11;
+
+}
+.labelamount{ 
+  font-family: Tahoma; 
+  font-size: 11;
+
+}
+.labelenteramount{ 
+  font-family: Tahoma; 
+  font-size: 11;
+  padding-top: 3px;
+
+}
+
+.textboxamount{ 
+  font-family: Tahoma; 
+  font-size: 11;
+}
+
+.selecteditemwidth{
+ width: 148px;
+ height: 14px;
+}

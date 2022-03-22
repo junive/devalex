@@ -1,0 +1,51 @@
+/**** Banner of the page *******/
+.banner {
+
+	background-image: url("../img/banner.gif");
+	width:730px;
+	height: 100px;	
+}
+/******** The top Menu  ******/
+.principalMenu {
+	border : 1px solid #990000;
+	height : 60px;
+	padding :6px;
+	font-family : Arial;
+	font-size : 16px;
+	color: #990000;
+}
+.menuText, .menuTextOver, .menuTextSelected {
+	margin: 10px;
+	cursor:pointer;
+}
+.menuText {
+	color: #ff9900
+}
+.menuTextOver {
+		color: #339900
+}
+.menuTextSelected {
+		color: #cc9900
+}
+
+/***** The Sub Menu ******/
+.subPanel {
+	width: 300px;
+}
+.subMenu {
+	height: 200px;
+	width: 200px;
+	text-align:left;
+}
+.subMenuText, .subMenuTextOver, .subMenuTextSelected {
+		cursor:pointer;
+}
+.subMenuText {
+		color: #ff9900
+}
+.subMenuTextOver {
+		color: #339900
+}
+.subMenuTextSelected {
+		color: #cc9900
+}

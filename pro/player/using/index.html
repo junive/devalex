@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Local Cast</title>
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+<style>
+a {
+    color: #0366d6;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+</style>
+	
+	<body>
+		<!--<header class="header">Player html5 local (Compatible Chrome)</header>-->
+		
+		<div style='border:1px solid grey; padding:5px;color: #586069;'>
+			<h3>Un framework plus rapide que Jquery : <a href="ju.js" target="blank">Code source</a></h3>
+			<section id="basic">
+				Un code objet/héritage, sans Jquery, à la façon Java, réutilisable pour n'importe quel projet
+				
+				<br/><br/>Exemple de la base:
+				<pre style="background:black; color:white"><code >
+var personne = ju.class(function() {
+  this.constructor = function(nom, age) { }
+} );
+
+var etudiant = ju.extends(personne, function() {
+ this.constructor = function(nom, age, numero) { }
+} ); 
+				</code></pre>
+				<br/> Cela m'a permis de comprendre le fondement des classes et leur utilité.
+				<br/> Tout le système repose sur les prototypes, avec le même système de constructeur que propose java. 
+				<br/> De mon point de vue et expériences, il faut savoir utiliser les framework avec précaution.
+
+				<br/><br/>
+				Exemple de l'utilisation:
+				<br/>
+				<div style="background:black; color:white"><code >
+				<br/>var player = ju.player({ 
+					<br/>&nbsp;&nbsp; parent : "#playerId",
+					<br/>&nbsp;&nbsp; attr : { "class" : "player", "volume" : "", "controls" :"controls"}  
+				<br/>}); 
+				
+				<br/><br/>var control = ju.control({
+					<br/>&nbsp;&nbsp; parent : "#controlId",
+					<br/>&nbsp;&nbsp; attr : { "class" : "control" }
+					<br/>&nbsp;&nbsp; random :   { 
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; attr : { "width" : "20%" },
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; on : { inner : "Random On" },
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; off : { inner : "Random Off", attr : { "color" : "red" }}
+					<br/>&nbsp;&nbsp; }
+				<br/>}); 	
+				<br/><br/>ju.attach(player, control);
+				
+				<br/><br/>
+				</code></div>
+		<footer>
+		</footer>
+	</body>
+
+</html>
+

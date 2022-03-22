@@ -1,0 +1,30 @@
+/* CSS Document */
+ul, ol, li {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+ul, li {
+	margin:0px;
+	padding:0px;
+}
+.insert_lang ul {
+	float:left;
+	height:220px;
+}
+.insert_menu ul, .insert_text_menu ul, .insert_general ul {
+	float:left;
+}
+.lang_add_form {
+	clear:right;
+}
+.lang_flag {
+	width:50px;
+}
+
+.menu_title {
+	
+}
+.menu_add_form {
+	clear:right;
+}

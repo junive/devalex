@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+
+ <meta name="ROBOTS" content="NOARCHIVE">
+
+ 
+ <title> dragmovedrop </title>
+
+</head>
+<body >
+ 
+<div> 
+ <a href="../index.html" >Project&nbsp;Home</a>
+
+ <a href="../downloads">Downloads</a>
+ 
+ <a href="../wiki">Wiki</a>
+ 
+ <a href="../source">Source</a>
+
+</div>
+
+
+ <div >
+ <h1>Introduction</a></h1>
+ <p>This Pages will show you to use drag and drop in your project.  </p>
+ <h2>I/Adds a drag or Drop Listener :</h2><p>
+ <strong>1/ Associate a unique Listener to the Widget :</strong> </p><pre>Label myLabel = new Label(« lab »);
+
+myLabel.addDragListener(new DragListener(){
+
+        public void onDragDropEnd(Widget sender, Widget target) { }
+
+        public void onDragEnd(Widget sender, int x, int y) { }
+
+        public void onDragEnter(Widget sender, Widget target) { }
+
+        public void onDragExit(Widget sender, Widget target) { }
+
+        public void onDragMouseMoved(Widget sender, int x, int y) { }
+
+        public void onDragOver(Widget sender, Widget target) { }
+
+        public void onDragStart(Widget sender, int x, int y) { } 
+      
+      });    </pre><p><strong>2/ Implements it on a class :</strong> </p><pre >public class MyClass implements DragListener {
+
+	public MyClass() {
+
+	  Label myLabel = new Label(« lab »);
+
+	  myLabel.addDragListener(this);
+
+	}
+
+	public void onDragDropEnd(Widget sender, Widget target) { }
+
+	public void onDragEnd(Widget sender, int x, int y) { }
+
+	public void onDragEnter(Widget sender, Widget target) { }
+
+	public void onDragExit(Widget sender, Widget target) { }
+
+	public void onDragMouseMoved(Widget sender, int x, int y) { }
+
+	public void onDragOver(Widget sender, Widget target) { }
+
+	public void onDragStart(Widget sender, int x, int y) { }  
+
+}</pre><p>The procedure is the same for the addDropListener(DropListener
+); </p><h2>
+II/ Adds a Drag Listener to a non drag Widget
+</h2><p>If you may want to add a dragListener to other widgets than the 3 defaults ones, you&#x27;ll have to extends 
+the desired widget class. For example, if you want to move a button, you need to add a new class extending 
+the button on your code : </p><pre>public class ButtonAdapter extends Button implements SourcesMouseEvents, SourcesDragEvents {
+  private MouseListenerCollection mouseListeners;
+  private DragListenerCollection dragListeners;
+
+  public ButtonAdapter() {
+    super();
+    sinkEvents(Event.MOUSEEVENTS);
+  }
+
+  public void addMouseListener(MouseListener listener) {
+    if (mouseListeners == null) {
+      mouseListeners = new MouseListenerCollection();
+    }
+    mouseListeners.add(listener);
+   }
+
+  public void addDragListener(DragListener listener) {
+    if (dragListeners == null) {
+      dragListeners = new DragListenerCollection();
+    }
+    dragListeners.add(listener, this);
+  }
+
+  public void onBrowserEvent(Event event) {
+    switch (DOM.eventGetType(event)) {
+      case Event.ONMOUSEDOWN:
+      case Event.ONMOUSEUP:
+      case Event.ONMOUSEMOVE:
+      case Event.ONMOUSEOVER:
+      case Event.ONMOUSEOUT:
+        if (mouseListeners != null) {
+          mouseListeners.fireMouseEvent(this, event);
+        }
+    }
+  }
+
+  public void removeMouseListener(MouseListener listener) {
+    if (mouseListeners != null) {
+      mouseListeners.remove(listener);
+    }
+  }
+
+  public void removeDragListener(DragListener listener) {
+    if (dragListeners != null) {
+      dragListeners.remove(listener);
+    }
+  }
+}</pre><p>And Then, just use this class as if it was a simple button, but with a dragListener. </p>
+<h2>III/ Adds a Drop Listener to a non drop Widget
+</h2><p>
+If you may want to add a dropListener to other widgets than the 3 defaults ones, you&#x27;ll have to extends the desired widget class. 
+This part do not need the MouseListener Events and can simply be add alone. For example,
+ if you want your button be detected by a dragging widget, you need to add a new class extending the button on your code : </p>
+ <pre >public class ButtonAdapter extends Button implements SourcesDropEvents {
+
+  private DropListenerCollection dropListeners;
+
+  public ButtonAdapter() {
+    super();
+  }
+
+  public void addDropListener(DropListener listener) {
+    if (dropListeners == null) {
+      dropListeners = new DropListenerCollection();
+    }
+    dropListeners.add(listener, this);
+  }
+
+  public void removeDropListener(DropListener listener) {
+    if (dropListeners != null) {
+      dropListeners.remove(listener);
+    }
+  }
+}</pre><h2>IV. Adds your own behavior</h2>
+<p>They are two ways adding behavior around the drag and drop system. 
+So, first, you can put yours, on the listener method and everything will react with yours widgets.
+ Then, you can use the MouseDragGestureRecognizer class, which include a lot of gets and set, so that you can control your drag. 
+ If you want for example to disable a move or add a widget to move, you can call the class. </p><pre >
+ Label myLabel = new Label(« lab »);
+	myLabel.addDragListener(this);
+
+	MouseDragGestureRecognizer  mouseGesture = MouseDragGestureRecognizer.getMouseGesture(widget);
+
+	mouseGesture.setDragMove(false); // Disable a move
+
+	mouseGesture.setDrag(myPanel); // Allow to move « myPanel » when you click on
+ « myLabel ».</pre>
+ </div>
+
+ </body>
+</html>

@@ -1,0 +1,25 @@
+body { 
+font-size:76%;
+	margin:0;
+	padding:0;
+}
+table { font-size:100%;} 
+a:active {color: #861316; text-decoration: underline;}
+a:link {color: #861316; text-decoration: underline;}
+a:visited {color: #861316; text-decoration: none;}
+a:hover {color: #861316; text-decoration: none;}
+.magin {
+	padding:5px;
+}
+.company{
+font-family: Arial,Helvetica,sans-serif;
+font-size: 13px;
+color: #ffffff;
+font-weight:bold;
+}
+.slogan {
+font-family: Arial,Helvetica,sans-serif;
+font-size: 10px;
+color: #ffffff;
+font-weight:bold;
+}

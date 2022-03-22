@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+
+ <meta name="ROBOTS" content="NOARCHIVE">
+
+ 
+ <title> dragmovedrop </title>
+
+</head>
+<body >
+ 
+<div> 
+ <a href="../index.html" >Project&nbsp;Home</a>
+
+ <a href="../downloads">Downloads</a>
+ 
+ <a href="../wiki" >Wiki</a>
+ 
+ <a href="../source" >Source</a>
+
+</div>
+
+
+ <div >
+ <h2>Introduction</h2>
+ <p>This Page will show you how to install Drag-Move-Drop patch into a GWT library build. The purpose of DmD is to be integrated on GWT ; 
+ it is for this reason that the philosophy&#x27;s project is to be (normally) only usable by a patch (as if I want many people discover
+ it by package too in order to test it). </p>
+ <p>x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x </p>
+ <h1>Linux Install Guide :</h1>
+ <p>The first thing to do is to download the patch. Then create a folder, for example, <strong>dmd</strong>. </p><ul>
+ <li>Please make sure that you have a subversion client : <a href="http://subversion.tigris.org/" rel="nofollow">http://subversion.tigris.org/</a> </li>
+ </ul><p>Then, you&#x27;ll have to checkout the source from gwt, follow this instructions :
+ </p><ul><li>Checkout or download the tools into the dmd folder : </li></ul>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools </tt></strong> </td></tr> </table></p>
+ <ul><li>Checkout or download the trunk into the dmd folder : </li></ul>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ trunk </tt></strong> </td></tr> </table></p>
+ <ul><li>go into trunk folder </li></ul><ul><li>copy the Drag Drop patch into it </li></ul><ul><li>Apply the patch : </li></ul>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> patch -p0 &lt; ./GWT-DragMoveDrop-V2.patch </tt></strong> </td></tr> </table></p>
+ <ul><li>Please make sure that you have a ant command : 
+ <a href="http://ant.apache.org/bindownload.cgi" rel="nofollow">http://ant.apache.org/bindownload.cgi</a> </li></ul>
+ <ul><li>build a GWT project tipping : </li></ul><p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;">
+ <strong><tt> ant </tt></strong> </td></tr> </table></p><p>When finish, go into 
+ <strong>trunk/build/dist</strong> directory and use the corresponding file to your operating system and use the source
+ as if it was the last version of GWT :) </p><p>If you have any trouble to use <strong>ant</strong> command, try to tip this command :
+ <table ><tr><td style="border: 1px solid #ccc; padding: 5px;">
+ <strong><tt> export GWT_TOOLS=~/dmd/tools </tt></strong> </td></tr> </table></p><p>else the complete procedure is explain on this page :
+ <a href="http://code.google.com/webtoolkit/makinggwtbetter.html#compiling" 
+ rel="nofollow">http://code.google.com/webtoolkit/makinggwtbetter.html#compiling</a> </p>
+ <p>x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x </p><h1>
+Windows Install Guide</h1>
+ <p>The first thing to do is to download the patch. Then create a folder, for example, <strong>dmd</strong>. </p>
+ <ul><li>Please make sure that you have a subversion client :
+ <a href="http://subversion.tigris.org/" rel="nofollow">http://subversion.tigris.org/</a> </li></ul>
+ <p>Then, you&#x27;ll have to checkout the source from gwt, follow this instructions : </p>
+ <ul><li>Checkout or download the tools into the dmd folder : </li></ul>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools </tt></strong> </td></tr> </table></p>
+ <ul><li>Checkout or download the trunk into the dmd folder : </li></ul>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ trunk </tt></strong> </td></tr> </table></p>
+ <ul><li>go into trunk folder </li></ul><ul><li>copy the Drag Drop patch into it </li></ul>
+ <ul><li>You&#x27;ll need to install a the <strong>TortoiseSVN sofware</strong>, so that you can patch the project :
+ <a href="http://tortoisesvn.tigris.org/" rel="nofollow">http://tortoisesvn.tigris.org/</a> </li></ul><ul><li>type :   </li></ul>
+ <p><table><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> mkdir user\src\com\google\gwt\user\client\dnd &amp; cd user\src\com\google\gwt\user\client\dnd 
+ &amp; type nul&gt;&quot;DragListenerCollection.java&quot; &amp; type nul&gt;&quot;DragDrop.gwt.xml&quot; 
+ &amp; type nul&gt;&quot;DragListener.java&quot; &amp; type nul&gt;&quot;DragListenerAdapter.java&quot; 
+ &amp; type nul&gt;&quot;DropListenerCollection.java&quot; &amp; type nul&gt;&quot;SourcesDragEvents.java&quot; 
+ &amp; type nul&gt;&quot;DropListener.java&quot; &amp; type nul&gt;&quot;DropListenerAdapter.java&quot; 
+ &amp; type nul&gt;&quot;MouseDragGestureRecognizer.java&quot; 
+ &amp; type nul&gt;&quot;SourcesDropEvents.java&quot; </tt></strong> </td></tr> </table></p>
+ <ul><li>open a work panel, go into your <strong>dmd</strong> folder </li></ul><ul><li>right click on the <strong>trunk</strong> 
+ folder, then click on <strong>TurtoiseSVN &gt; Apply Patch</strong> </li></ul><ul><li>select the 
+ <strong>GWT-DragMoveDrop-V2.patch</strong> </li></ul>
+ <ul><li>Right click on the File Patch List, then click on <strong>Patch all</strong> </li></ul>
+ <ul><li>Define your tools environnement variable :  </li></ul><p><table>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> <strong><tt> set GWT_TOOLS=C:\dmd\tools </tt></strong> </td></tr> </table></p>
+ <p><table><tr><td style="border: 1px solid #ccc; padding: 5px;"> <strong><tt> set JAVA_HOME=C:\Program Files\Java\jdkXXXXX</tt>
+ </strong> </td></tr> </table></p><ul><li>Return to your trunk folder (on the cmd console) so that you can build a GWT project </li></ul>
+ <ul><li>Please make sure that you have a ant command : 
+ <a href="http://ant.apache.org/bindownload.cgi" rel="nofollow">http://ant.apache.org/bindownload.cgi</a> </li></ul>
+ <ul><li>build a GWT project tipping :  </li></ul><p><table><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong><tt> ant </tt></strong> </td></tr> </table></p><p>When finish, go into <strong>trunk/build/dist</strong>
+ directory and use the corresponding file to your operating system and use the source as if it was the last version of GWT :) </p>
+ <p>The complete normal procedure is explain on this page : 
+ <a href="http://code.google.com/webtoolkit/makinggwtbetter.html#compiling" 
+ rel="nofollow">http://code.google.com/webtoolkit/makinggwtbetter.html#compiling</a> </p>
+ </div>
+
+ </body>
+</html>

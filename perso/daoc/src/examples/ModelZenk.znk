@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<PlayerSaveData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <playerName>REPLACE_ID</playerName>
+  <realm>REPLACE_REALM</realm>
+  <className>REPLACE_NAME</className>
+  <race>REPLACE_RACE</race>
+  <level>50</level>
+  <items>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Helmet</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Hands</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Torso</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Arms</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Feet</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Legs</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Right Hand</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Left Hand</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Two Handed</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+      <sourceType>Spellcraft</sourceType>
+      <allowedPosition>Ranged</allowedPosition>
+      <itemName />
+      <itemNotes />
+      <numFeathers>0</numFeathers>
+      <level>51</level>
+      <quality>99</quality>
+      <itemEnabled>true</itemEnabled>
+      <AT_itemIncluded>true</AT_itemIncluded>
+      <stats>
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>Neck </allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+		
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>Cloak</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+     
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>Jewelry</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>Waist</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>L. Ring</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>R. Ring</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>L. Wrist</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+	  
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>ROG</sourceType> <allowedPosition>R. Wrist</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+	  
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+  </items>
+  <lastSaveTime>01:32 PM</lastSaveTime>
+  <lastSaveDate>févr. 11, 2020</lastSaveDate>
+  <profileID>7uyljjojshREPLACE_ID</profileID>
+  <SF_TemplateID>103916746REPLACE_ID</SF_TemplateID>
+  <selectedWeaponType>REPLACE_WEAPON</selectedWeaponType>
+  <AutoTemplate_StatOrder />
+  <AutoTemplate_DisabledStats />
+</PlayerSaveData>

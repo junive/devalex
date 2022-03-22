@@ -1,0 +1,428 @@
+/**** The text style ****/
+
+.text_title_a, 
+.text_filter_a, 
+.p_menu1_select span, 
+.p_menu1_norm span, 
+.p_tab_crit ul, 
+.p_tab_col {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.text_title_a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #787878;
+	font-size: 12px;
+}
+.text_filter_a, 
+.p_tab_crit ul, 
+.p_tab_col {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #787878;
+	font-size: 12px;
+}
+
+.text_left {
+	text-align:left;
+}
+
+.p_menu1_select span, 
+.p_menu1_norm span {
+	font-size: 14px;
+	font-weight:bold;
+}
+
+/*couleur textes onglets select*/
+.p_menu1_select span {
+	color:#7E7E7E;
+}
+
+/*couleur textes onglets non select*/
+.p_menu1_norm span {
+	color:#C5C5C5;
+}
+
+/**** Background color styles ****/
+
+/*Couleur panel haut*/
+#s_header_center, 
+.c_head_type {
+	background-color:#c5c5c5;
+}
+
+/*Couleur ligne alternée liste tableau*/
+.p_tab_back_col {
+	background-color:#BFBFBF;
+}
+
+/*Couleur panel principal*/
+.c_content_type, 
+#p_content, 
+#p_content_center, 
+#s_content, 
+#s_content_center {
+	background-color:#c5c5c5;
+}
+
+.p_menu1_select, 
+.p_content_table, 
+#s_content_table{
+	background-color:#ffffff;
+}
+
+.p_menu1_norm {
+	background-color:#888888;
+}
+
+/*Couleur ligne titres tableau*/
+.p_tab_crit {
+	background-color:#ffffff;
+}
+
+.p_selected_line {
+	background-color:#0000ff;
+	color:#ffffff;
+}
+
+/**** Principal elements ****/
+
+body {
+	width:98%;
+	height:98%;
+}
+
+ul, li, ol {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0pt;
+	padding:0pt;
+}
+
+#principal_body {
+	margin:5px;
+	height:100%;
+}
+
+/**** Circles Styles ****/
+
+.c_top_left, 
+.c_top_right, 
+.c_bottom_left, 
+.c_bottom_right {
+	width: 6px;
+	background-repeat: no-repeat; 
+	height:6px;
+	position:relative;
+	overflow:hidden;
+}
+
+.c_center {
+	width:100%;
+	height:6px;
+	float:left;
+}
+
+.c_top_right {
+	background-position: -6px 0%;
+	float:right;
+}
+
+.c_bottom_left {
+	background-position: 0px -6px;
+}
+
+.c_bottom_right {
+	background-position: -6px -6px;
+	float:right;
+}
+
+.c_head_type div {
+	background-image: url('../images/grey_circle.gif');
+}
+
+.c_content_type div {
+	background-image: url('../images/grey_circle.gif');
+}
+
+/**** Recurent style ****/
+
+.c_top_left, 
+.c_bottom_left,
+#g_content, 
+#g_footer,
+#g_header, 
+#s_header, 
+#s_header_center,
+#s_search_text, 
+.s_search_col, 
+#s_search_confirm_image, 
+#s_tools_text, 
+#s_tools_row img,
+#p_content_center, 
+#p_menu1, 
+.p_menu1_select, 
+.p_menu1_norm , 
+.p_menu1_select span, 
+.p_menu1_norm span, 
+.p_menu1_left, 
+.p_menu1_right,
+.p_tab_crit ul, 
+.p_tab_crit span, 
+.p_tab_col,
+#s_content_center {
+	float:left;
+}
+
+#s_search_confirm_image, 
+#s_tools_row img, 
+.p_menu1_select, 
+.p_menu1_norm, 
+.p_tab_crit ul,
+#s_tab_col_up span, 
+#s_tab_col_down span {
+	cursor:pointer;
+}
+
+#principal_body,
+#g_header, 
+#s_header, 
+#s_header_center,
+#g_content, 
+#p_content, 
+#p_content_center, 
+.p_tab_crit,
+#s_content, 
+#s_content_center,
+#g_footer  {
+	width:100%;
+}
+
+#p_content_center, 
+.p_content_table, 
+#s_content_table,
+#s_content_center, 
+.s_content_table {
+	height:100%;
+
+}
+
+#s_search_block, 
+#s_tools_block, 
+#p_menu1, 
+.p_tab_crit ul, 
+.p_tab_col {
+	overflow:hidden;
+}
+
+
+/* The Header => search */
+
+#g_header { 
+
+}
+
+#s_header { 
+
+}
+
+#s_header_center {
+	height:74px;
+}
+
+#s_search_block { 
+	min-width:700px;
+	height:40px;
+}
+
+#s_search_text {
+	margin-left:10px;
+	margin-top:20px;
+}
+
+.s_search_col {
+	margin-left:10px;
+}
+
+#s_search_confirm_image {
+	background-image: url('../images/bout_valid.gif');
+	width:26px;
+	height:25px;
+	margin-top:15px;
+	margin-left:10px;
+}
+
+#s_tools_block {
+	clear:left;
+	height:34px;
+}
+
+#s_tools_text {
+	margin-left:10px;
+	margin-top:10px;
+}
+
+#s_tools_row { 
+
+}
+
+#s_tools_row img {
+	margin-left:10px;
+}
+
+/**** The Contents of the page ****/
+
+#g_content {
+	margin-top:10px;
+	margin-bottom:7px;
+	height:80%;	
+}
+
+#p_content {
+	vertical-align:middle;
+	text-align:center;
+	height:350px;
+	min-height:60px;
+	max-height:565px;	
+}
+
+#s_content {
+	vertical-align:middle;
+	clear:left;
+	height:300px;
+	min-height:60px;
+	max-height:555px;
+}
+
+/* Body of the content */
+
+#p_content_center, 
+#s_content_center { 
+
+}
+
+/* Tab of menus */
+
+#p_menu1 {
+	height:30px;
+	margin-left:12px;
+}
+
+.p_menu1_select, 
+.p_menu1_norm  {
+	margin-right:1px;
+	height:30px;
+}
+
+.p_menu1_select span, 
+.p_menu1_norm span {
+	margin:5px;
+	margin-top:7px;
+}
+
+.p_menu1_left, 
+.p_menu1_right {
+	width:7px;
+	height:inherit;
+	height:100%;
+}
+
+.p_menu1_select .p_menu1_left {
+	background-image: url('../images/p_menu1_select_left.gif');
+}
+
+.p_menu1_select .p_menu1_right {
+	background-image: url('../images/p_menu1_select_right.gif');
+}
+
+.p_menu1_norm .p_menu1_left {
+	background-image: url('../images/p_menu1_norm_left.gif');
+}
+.p_menu1_norm .p_menu1_right {
+	background-image: url('../images/p_menu1_norm_right.gif');
+}
+
+/* The search table */
+
+.p_content_table, 
+#s_content_table {
+	margin-top:0px;
+	clear:left;
+	width:98%;
+	overflow:auto;
+	overflow-y:hidden;
+	height:94%;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.p_tab_crit {
+	height:25px;
+	line-height:25px;
+	vertical-align:middle;
+	min-width:1000px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #BFBFBF;
+}
+
+.p_tab_crit ul  {
+	width:100px;
+	clear:none;
+	min-width:30px;
+	height:20px;
+}
+
+.p_tab_crit span {
+	width:5px;
+	clear:none;
+	cursor:w-resize;
+
+}
+
+.p_tab_crit_over ul { 
+
+}
+
+.p_resize_tab {
+	cursor:n-resize;
+}
+
+.p_content_datas {
+	height:90%;
+	min-width:1000px;
+	overflow:auto;
+}
+
+.p_tab_col {
+	width:105px;
+	clear:none;
+	min-width:30px;
+}
+
+.p_tab_col ul, 
+.p_tab_col ol {
+	height : 20px;
+	line-height : 20px;
+	clear:both;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+#s_tab_col_up span, 
+#s_tab_col_down span { 
+
+}
+.s_image_col_upDown {
+	margin-top:4px;
+}
+
+/* Footer of the page */
+
+#g_footer {
+	margin-top:50px;
+ }

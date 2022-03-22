@@ -1,0 +1,86 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	text-align:center;
+}
+.containerPanel {
+	text-align:left;
+}
+.globalColumn {
+	border:2px solid #6666FF;
+}
+.columnContainer{
+	margin-left:5px;
+	margin-right:5px;
+	text-align:center;
+}
+.modulePanel, .moduleCollection {
+	width: 310px;
+	vertical-align: top;
+}
+.modulePanel {
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:2px;
+	margin-bottom:2px;
+	border: 1px solid #99CCCC;
+	text-align:center;
+	background-color:#f2fcf4;
+}
+.dragModulePanel {
+	margin-top:2px;
+	margin-bottom:2px;
+	border: 1px solid #9900FF;
+	text-align:center;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	background-color:#f2fcf4;
+}
+.moduleBackground {
+	width:100%;
+	height:100%;
+}
+.blankModule {
+	margin-top:2px;
+	margin-bottom:2px;
+	border:1px dashed;
+}
+.titlePanel {
+	width:100%;
+	height:20px;
+	background-repeat: repeat-x;
+	background-image: url("../img/title.jpg"); 
+	border-bottom:1px solid #99CCCC;
+	vertical-align:top;
+	text-align:left;
+}
+.titleLabel {
+	width:100%;
+	float:left; 
+	position:absolute;
+	font-weight: bold; 
+	text-align:center;
+}
+.openCloseModuleButton {
+	width:15px;
+	height : 15px;
+	float:right;
+	position: relative; 
+	background-repeat: no-repeat;
+	background-image: url("../img/resize.jpg"); 
+}
+.removeModuleButton {
+	width:15px;
+	height : 15px;
+	float:right;
+	position: relative;
+	background-repeat: no-repeat;
+	background-image: url("../img/close.gif");
+}
+.moduleCollection {
+}
+.lastBlankColumn {
+	height:150px;
+}

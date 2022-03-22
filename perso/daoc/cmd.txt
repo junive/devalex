@@ -1,0 +1,9 @@
+javac -d bin  *.java
+cd bin
+java MainDaoc
+cd ..
+
+
+
+Note :
+remove loadUser(0) by loadBlankUser() in control if bug.

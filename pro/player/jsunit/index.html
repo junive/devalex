@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Speed Test Js</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script type="text/javascript" src="speed.js"></script>
+</head>
+<style>
+span {
+	color : red;
+	font-weight: italic;
+}
+</style>
+
+<body>
+	<div class="control" id='options'>
+		<header class="header">
+			<h3 id ="buttonRefresh" >Speed test for javascript</h3>
+		</header>
+		<section id="buttonCont"></section>
+		<section id="menuCont"></section>
+		<section id="naclBox"></section>
+	</div>
+	<div junive="sub-delay">
+		<div junive="less"></div>
+		<div junive="plus"></div>
+	</div>
+	<div junive="sub-delay-plus"></div>
+	<div junive="subDelay-plus"></div>
+
+<pre style="background:black; color:white"><code>
+<span style="color:green">// Basic Test for all functions </span>
+
+for (var i = 0; i<1000000; i++) {
+	<span style="color:green">// var loop = our function here</span>
+}
+
+</code></pre>	
+
+	
+	
+<pre style="background:black; color:white"><code >
+	
+<span style="color:green">// Testing the arguments of functions :</span>
+	
+function Foo(toto) { 
+	this.args = toto;
+}
+
+var loop = new Foo()
+<span id="foo"></span>
+
+function Foo0() { 
+	var args = arguments;
+}
+
+var loop = new Foo0();
+<span id="foo0"></span>
+	
+function Foo1() {
+	this.args = arguments;
+}
+
+var loop = new Foo1("a1", "a2", "a3", "a4", "a5", "a6", "a7");
+<span id="foo1"></span>
+
+var dumb = false;
+function Foo2() {
+	if (dumb) this.args = arguments;
+}
+
+var loop = new Foo2();
+<span id="foo2"></span>
+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+function Foo3() {
+	if (!isFirefox) this.args = arguments;
+}
+
+var loop = new Foo3();
+<span id="foo3"></span>
+
+function Foo4() {
+	this.args = [];
+	for (var i = 0; i < arguments.length; i++) {
+		this.args[i] = arguments[i];
+	}
+}
+
+var loop = new Foo4("a1", "a2", "a3", "a4", "a5");
+<span id="foo45"></span>
+
+var loop = new Foo4("a1", "a2", "a3", "a4", "a5", "a6");
+<span id="foo46"></span>
+
+var loop = new Foo4("a1", "a2", "a3", "a4", "a5", "a6", "a7");
+<span id="foo47"></span> <span style="color:green">// Firefox never solved this problem : between 1 and 6 arguments, it does not change the speed, but after 7 arguments, it is twice slower </span>
+
+function Foo6(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
+	this.args = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
+}
+
+var loop = new Foo6("a1", "a2", "a3", "a4", "a5", "a6", "a7")
+<span id="foo6"></span>
+
+
+</code></pre>
+
+	
+	
+
+<pre style="background:black; color:white"><code >
+<span style="color:green">Basics functions :</span>
+
+function Simple(one, two) {
+	return one + two;
+}
+
+function FuncVar(one) {
+	this.basic = function(two) {
+		return one + two;
+	}
+	var first = function() {}
+	var second = function() {}
+	var third = function() {}
+	
+	return this;
+}
+
+function FuncThis(one) {
+	this.basic = function(two) {
+		return one + two;
+	}
+	this.first = function() {}
+	this.second = function() {}
+	this.third = function() {}
+
+	return this;
+}
+
+function FuncProto(one) {
+	this.one = one;
+	return this;
+}
+
+FuncProto.prototype = new function() {
+	this.basic = function(two) {
+		return this.one + two;
+	}
+	this.first = function() {}
+	this.second = function() {}
+	this.third = function() {}
+	
+}
+
+var Obj = {
+	one : "",
+	basic : function(two) {
+		return one + two;
+	},
+	first : function() {},
+	second : function() {},
+	third : function() {},
+}
+
+
+</code></pre>
+
+<pre style="background:black; color:white"><code >
+
+<span style="color:green">// A simple function : </span>
+
+var loop = Simple("one", "two");
+<span id="a"></span>
+
+
+
+<span style="color:green">// We are going to call (chain) two function in a single line : </span>
+
+var loop = FuncVar("one").basic("two");
+<span id="b"></span>
+
+var loop = FuncThis("one").basic("two");
+<span id="c"></span>
+
+var loop = FuncProto("one").basic("two");
+<span id="d"></span>
+
+
+
+
+<span style="color:green">// Here, we separate the call of functions   : </span>
+
+var createVar = function() {
+	var obj = new FuncVar("one");
+	obj.basic("two");
+}
+var loop = createVar();
+<span id="l"></span>
+
+var createThis = function() {
+	var obj = new FuncThis("one");
+	obj.basic("two");
+}
+var loop = createThis();
+<span id="m"></span>
+
+var createProto = function() {
+	var obj = new FuncProto("one");
+	obj.basic("two");
+}
+
+var loop = createProto();
+<span id="n"></span>
+
+var createObj = function() {
+	var obj = Object.create(Obj);
+	obj.one = "one";
+	obj.basic("two");
+}
+
+var loop = createObj();
+<span id="o"></span>
+
+
+
+<span style="color:green">// Using the bind function : </span>
+
+var bindSimple = function() { 
+	Simple("one", "two").bind(this);
+}
+
+var loop = bindSimple();
+<span id="f"></span>
+
+var bindFunc = function()  {
+	var func = function() { }.bind(this);
+}
+
+var loop = bindFunc();
+<span id="g"></span>
+
+
+
+<span style="color:green">// We call a function from object  : </span>
+
+var obj = new FuncVar("one");
+var loop = obj.basic("two");
+<span id="h"></span>
+
+var obj = new FuncThis("one");
+var loop = obj.basic("two");
+<span id="i"></span>
+
+var obj = new FuncProto("one");
+var loop = obj.basic("two");
+<span id="j"></span>
+
+var obj = Object.create(Obj);
+obj.one = "one";
+var loop = obj.basic("two");
+<span id="k"></span>
+
+</code></pre>
+<br/><br/>
+<pre style="background:black; color:white"><code >
+
+<span style="color:green">// Test the creation of obj and its __proto__ </span>
+
+var obj = {};
+
+for (var i = 0; i<10000; i++) {
+	obj["M"+i] = function() { };
+}
+<span id="p"></span>
+
+for (var i = 0; i<10000; i++) {
+	window["W"+i] = function() { } 
+}
+<span id="q"></span>
+
+<span style="color:green">// We are going to access the 1000th occurances of the object</span>
+
+var direct = obj.M1000(),
+    pointer = obj, 
+    func = function() {};
+
+func.prototype = obj;
+var proto = new func();
+
+var loop = obj.M1000();
+<span id="r"></span>
+
+var loop = direct;
+<span id="s"></span>
+
+var loop = W1000();
+<span id="t"></span>
+
+var loop = pointer.M1000();
+<span id="u"></span>
+
+var loop = proto.M1000(); 
+<span id="v"></span>
+
+var loop = proto.__proto__.M1000();
+<span id="w"></span><span style="color:green"> // Not good in firefox</span>
+</code></pre>
+
+<br/>Conclusion : Ces tests sont un simple résumé de tous ceux effectués,
+<br/> Ils m'ont permis de créer un player 5 à 10 fois plus rapide que ceux disponibles.
+<br/> De plus, il m'aura permis de cerner le langage javascript, ainsi que l'utilisation des objets.
+<br/> Enfin, javascript peut être un langage propre et rapide s'il est bien utilisé.
+
+
+
+
+
+
+	<div id="videoCont" class="media">	</div>
+	<footer></footer>
+</body>
+
+</html>

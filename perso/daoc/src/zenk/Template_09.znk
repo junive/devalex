@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<PlayerSaveData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <playerName>Template_09</playerName>
+  <realm>Albion</realm>
+  <className>Cleric</className>
+  <race>Briton</race>
+  <level>50</level>
+  <items>
+    <Item>
+
+<sourceType>Spellcraft</sourceType>
+<allowedPosition>Helmet</allowedPosition>
+<itemName></itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Power</bonusType>
+<bonusAttribute>Power</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Quickness</bonusAttribute>
+<bonusAmount>19</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Dexterity</bonusAttribute>
+<bonusAmount>19</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Thrust</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Spellcraft</sourceType>
+<allowedPosition>Hands</allowedPosition>
+<itemName></itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Energy</bonusAttribute>
+<bonusAmount>11</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>H.P.</bonusType>
+<bonusAttribute>Hit Points</bonusAttribute>
+<bonusAmount>60</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Quickness</bonusAttribute>
+<bonusAmount>16</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Heat</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>ROG</sourceType>
+<allowedPosition>Torso</allowedPosition>
+<itemName>Celest2</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Strength</bonusAttribute>
+<bonusAmount>22</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Acuity</bonusAttribute>
+<bonusAmount>22</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Dexterity</bonusAttribute>
+<bonusAmount>15</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>3</bonusAmount>
+</StatEntry>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Spellcraft</sourceType>
+<allowedPosition>Arms</allowedPosition>
+<itemName></itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Constitution</bonusAttribute>
+<bonusAmount>25</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Power</bonusType>
+<bonusAttribute>Power</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Piety</bonusAttribute>
+<bonusAmount>19</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>3</bonusAmount>
+</StatEntry>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Spellcraft</sourceType>
+<allowedPosition>Feet</allowedPosition>
+<itemName></itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Energy</bonusAttribute>
+<bonusAmount>11</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Constitution</bonusAttribute>
+<bonusAmount>25</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Body</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Spellcraft</sourceType>
+<allowedPosition>Legs</allowedPosition>
+<itemName></itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>H.P.</bonusType>
+<bonusAttribute>Hit Points</bonusAttribute>
+<bonusAmount>68</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Power</bonusType>
+<bonusAttribute>Power</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Piety</bonusAttribute>
+<bonusAmount>19</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Strength</bonusAttribute>
+<bonusAmount>4</bonusAmount>
+</StatEntry>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Right Hand</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Left Hand</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+<sourceType>Spellcraft</sourceType> <allowedPosition>Two Handed</allowedPosition> <itemName /> <itemNotes /> <numFeathers>0</numFeathers><level>51</level> <quality>99</quality> <itemEnabled>true</itemEnabled><AT_itemIncluded>true</AT_itemIncluded> <stats>
+
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+      <sourceType>Spellcraft</sourceType>
+      <allowedPosition>Ranged</allowedPosition>
+      <itemName />
+      <itemNotes />
+      <numFeathers>0</numFeathers>
+      <level>51</level>
+      <quality>99</quality>
+      <itemEnabled>true</itemEnabled>
+      <AT_itemIncluded>true</AT_itemIncluded>
+      <stats>
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>Neck</allowedPosition>
+<itemName> Spiritbender Supreme Necklace</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Dexterity</bonusAttribute>
+<bonusAmount>16</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Body</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Crush</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Spirit</bonusAttribute>
+<bonusAmount>7</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Acuity</bonusAttribute>
+<bonusAmount>17</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>2</bonusAmount>
+</StatEntry>
+		
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>Cloak</allowedPosition>
+<itemName> Thrustbender Supreme Cloak</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Cold</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Heat</bonusAttribute>
+<bonusAmount>7</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Matter</bonusAttribute>
+<bonusAmount>8</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Thrust</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>2</bonusAmount>
+</StatEntry>
+     
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>Jewelry</allowedPosition>
+<itemName> Spiritbender Supreme Gem</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Dexterity</bonusAttribute>
+<bonusAmount>16</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Constitution</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Body</bonusAttribute>
+<bonusAmount>7</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Cold</bonusAttribute>
+<bonusAmount>6</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Heat</bonusAttribute>
+<bonusAmount>7</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Spirit</bonusAttribute>
+<bonusAmount>8</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>Envenom</bonusAttribute>
+<bonusAmount>3</bonusAmount>
+</StatEntry>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>Waist</allowedPosition>
+<itemName> Speedy Supreme Belt</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Dexterity</bonusAttribute>
+<bonusAmount>10</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Quickness</bonusAttribute>
+<bonusAmount>40</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Cold</bonusAttribute>
+<bonusAmount>4</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Crush</bonusAttribute>
+<bonusAmount>6</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Matter</bonusAttribute>
+<bonusAmount>8</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Melee Skills</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>L. Ring</allowedPosition>
+<itemName> Matterbender Supreme Ring</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>H.P.</bonusType>
+<bonusAttribute>Hit Points</bonusAttribute>
+<bonusAmount>40</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Cold</bonusAttribute>
+<bonusAmount>6</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Matter</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>6</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Spirit</bonusAttribute>
+<bonusAmount>4</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>Parry</bonusAttribute>
+<bonusAmount>3</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>R. Ring</allowedPosition>
+<itemName> Edgebender Supreme Ring</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Constitution</bonusAttribute>
+<bonusAmount>22</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Body</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Cold</bonusAttribute>
+<bonusAmount>6</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Energy</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Skill</bonusType>
+<bonusAttribute>All Magic Skills</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+      
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>L. Wrist</allowedPosition>
+<itemName> Heatbender Supreme Bracer</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>H.P.</bonusType>
+<bonusAttribute>Hit Points</bonusAttribute>
+<bonusAmount>32</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Crush</bonusAttribute>
+<bonusAmount>10</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Heat</bonusAttribute>
+<bonusAmount>11</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Spirit</bonusAttribute>
+<bonusAmount>4</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Thrust</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+	  
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+    <Item>
+
+<sourceType>Merchant</sourceType>
+<allowedPosition>R. Wrist</allowedPosition>
+<itemName> Crushbender Supreme Bracer</itemName>
+<itemNotes />
+<numFeathers>0</numFeathers>
+<level>51</level>
+<quality>99</quality>
+<itemEnabled>true</itemEnabled>
+<AT_itemIncluded>true</AT_itemIncluded>
+<stats>
+<StatEntry>
+<bonusType>Stat</bonusType>
+<bonusAttribute>Constitution</bonusAttribute>
+<bonusAmount>2</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>H.P.</bonusType>
+<bonusAttribute>Hit Points</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Body</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Crush</bonusAttribute>
+<bonusAmount>9</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Matter</bonusAttribute>
+<bonusAmount>8</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Slash</bonusAttribute>
+<bonusAmount>1</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Spirit</bonusAttribute>
+<bonusAmount>5</bonusAmount>
+</StatEntry>
+<StatEntry>
+<bonusType>Resist</bonusType>
+<bonusAttribute>Thrust</bonusAttribute>
+<bonusAmount>7</bonusAmount>
+</StatEntry>
+	  
+        <StatEntry>
+          <bonusType>Unused</bonusType>
+          <bonusAmount>0</bonusAmount>
+        </StatEntry>
+      </stats>
+    </Item>
+  </items>
+  <lastSaveTime>01:32 PM</lastSaveTime>
+  <lastSaveDate>févr. 11, 2020</lastSaveDate>
+  <profileID>7uyljjojshTemplate_09</profileID>
+  <SF_TemplateID>103916746Template_09</SF_TemplateID>
+  <selectedWeaponType>Right Hand</selectedWeaponType>
+  <AutoTemplate_StatOrder />
+  <AutoTemplate_DisabledStats />
+</PlayerSaveData>

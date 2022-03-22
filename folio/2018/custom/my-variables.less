@@ -1,0 +1,77 @@
+//== Default Color :
+
+@my-light-color-bg : #8db3e2;
+@my-dark-color-bg : #000000;
+@my-light-color-text : #fff;
+@my-dark-color-text : #3b407e;
+
+
+
+//== Body
+
+@my-body-padding-top : 20px;
+
+//== Navbar (Do not put a defaut background ! Bug on dropdown)
+
+// Basics of a navbar
+@navbar-height: 30px; 
+@navbar-font-weight: bold;
+@my-navbar-bg:   darken(@my-light-color-bg, 7%) url("../img/navbar-font-default.png") repeat-x left top;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg : darken(#ddd, 6.5%);
+@my-navbar-toggle-padding-vertical : 4px 5px;
+@my-navbar-toggle-vertical-align : 24px;
+@my-navbar-toogle-bg : #ddd;
+
+// Navbar links
+@navbar-default-link-color:@my-light-color-text;
+@navbar-default-link-hover-color: @my-dark-color-text;
+@navbar-default-link-active-color: @my-dark-color-text;
+@my-navbar-link-padding-vertical : 5px;
+@my-navbar-link-active-bg: darken(@my-light-color-bg, 7%)  url("../img/navbar-font-active.png") repeat-x left top;
+
+// Navbar brand label
+@navbar-default-brand-color:    grey;
+
+//== Main 
+
+// Title
+.my-main-title-bg() { 
+	#gradient > .vertical(@my-light-color-bg, #7189c8); 
+}
+.my-main-title-mobile() {
+	@media (max-width: @grid-float-breakpoint-max) {
+		text-align: center;
+	}
+}
+@my-main-title-color : lighten(@my-light-color-text, 5%);
+@my-main-title-padding : 0px 10px;
+@my-main-title-line-height: 25px;
+
+
+
+// Image 
+@my-main-image-min-width: 250px; // Correct all bug concerning resizing with col-sm2
+
+ // Text
+@my-main-text-color: #23527c;
+@my-main-text-color-hover: #337ab7;
+@my-main-opacity-hover: 0.85;
+
+
+// My Projects
+ .my-project-close-img() { 
+	margin-top: -5px;
+	margin-bottom: -3px;
+	margin-right: 10px;
+}
+
+@my-project-iframe-padding-top: 56px;
+/*
+.my-project-iframe-mobile() {
+	@media (max-width: @grid-float-breakpoint-max) {
+		max-width:@grid-float-breakpoint-max;
+	}
+}
+*/

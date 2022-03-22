@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Local Cast</title>
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+<style>
+a {
+    color: #0366d6;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+img {
+	padding-right:1rem;
+	float:left;
+}
+img:hover {
+	opacity:0.8;
+}
+section {
+	clear:left;
+	display:flow-root;
+}
+</style>
+	
+	<body>
+		<!--<header class="header">Player html5 local (Compatible Chrome)</header>-->
+		
+		<div style='border:1px solid grey; padding:5px;color: #586069;'>
+			<h3>Framework Player encodeur/décodeur : <a href="./using/ju.js" target="blank">Code source</a></h3>
+			<section id="basic">
+				1/ La base : un code objet/héritage, sans Jquery, à la façon Java, réutilisable pour n'importe quel projet
+				<br/> 2/ Le principe : un lecteur vidéo multi, facilement modifiable, controlable et rapide
+				<br/> 3/ Le but : lire n'importe quels formats (avi, mpeg, etc...) sur un navigateur Web
+				<br/><br/>
+				Exemple de la base:
+				<br/>
+				<div style="background:black; color:white"><code >
+				<br/>var control = ju.class(function() { 
+					<br/>&nbsp;&nbsp; this.constructor = function(toggle) { } 
+				<br/>} );
+				<br/>
+
+				<br/>var random = ju.extends(control, function() {
+					<br/>&nbsp;&nbsp; this.constructor = function(toggle, step) { }
+				<br/>} );
+				<br/><br/>
+				</code></div>
+				<br/> Cela m'a permis de comprendre le fondement des classes et leur utilité.
+				<br/> Tout le système repose sur les prototypes, avec le même système de constructeur que propose java. 
+				
+				<br/><br/>
+				Exemple de l'utilisation:
+				<br/>
+				<div style="background:black; color:white"><code >
+				<br/>var player = ju.player({ 
+					<br/>&nbsp;&nbsp; parent : "#playerId",
+					<br/>&nbsp;&nbsp; attr : { "class" : "player", "volume" : "", "controls" :"controls"}  
+				<br/>}); 
+				
+				<br/><br/>var control = ju.control({
+					<br/>&nbsp;&nbsp; parent : "#controlId",
+					<br/>&nbsp;&nbsp; attr : { "class" : "control" }
+					<br/>&nbsp;&nbsp; random :   { 
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; attr : { "width" : "20%" },
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; on : { inner : "Random On" },
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp; off : { inner : "Random Off", attr : { "color" : "red" }}
+					<br/>&nbsp;&nbsp; }
+				<br/>}); 	
+				<br/><br/>ju.attach(player, control);
+				
+				<br/><br/>
+				</code></div>
+				<!--<br/> Pourquoi ne pas utiliser le système de class inclus dans les dernières version de navigateurs ? Pour deux raisons :
+				<br/> &nbsp;&nbsp; 1/ Le  sytème est plus rapide que la version "Class" intégré des navigateurs de 2016, en raison de leur double interprétation du code.
+				<br/> &nbsp;&nbsp; 2/ Tous les navigateurs n'avaient (n'ont?) pas encore le système de "Class", mon code est universel, et rétro-actif. -->
+			</section>
+
+			<h3>Les différentes utilisations </h3>
+			
+			<section id="basic">
+				<a href="v19_76_basic/index.html" target="_blank">
+					<img src="./img/player_basic.jpg" />
+					Player basique 
+				</a>
+				: Fonctionne avec les formats Web uniquement (mp4/mp3).
+				Gestion des sous-titres (taille, hauteur, délai, reconnaissance automatique), playlist, drag drop, gestion du clavier, etc...
+				Aucun framework n'a été utilisé, vous pouvez modifier facilement le player à votre guise (comme mettre des logos au lieu du texte, ajouter autant de player que vous voulez, etc...)
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="basic">
+				<a href="v19_76_multi/index.html" target="_blank">
+					<img src="./img/player_multi.jpg" />
+					Player Multi 
+				</a>
+				: Inspiré du player basique qui démontre l'utilité du "attach".
+				Gestion multiple sur une page (depuis un seul controleur ou plusieurs).
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="x264">
+				<a href="v15_x264/" target="_blank">
+					<img src="./img/player_x264.jpg" />
+					Décodeur x264 Javascript
+				</a> 
+				: Le basique de la convertion en mp4, convertit les .y4m depuis le Web
+				<i><br/>&nbsp;&nbsp;- Attendez l'alerte de chargement de x264. Charger une vidéo de type y4m (un exemple en jaune à loader via "file"). et Attendez... </i>	
+			</section>
+			
+			<br/><hr/><br/>
+			
+			<section id="ffmpeg">
+				<a href="v15_ffmeg/index.html" target="_blank">
+					<img src="./img/player_ffmpeg.jpg"/>
+					Décodeur universel Javascript
+				</a> : 
+				Convertit toute les vidéos / musiques depuis le Web.
+				Le code C de ffmpeg a été convertit en Js grâce l'outil Emscripten.
+				Le projet a aussi été adapté sur node.js, qui s'est étonnamment avéré 3 plus lents que le navigateur.
+				<i><br/>&nbsp;&nbsp;- Attendez l'alerte de chargement de ffmpeg (Attention, c'est très long !). 
+				<br/>&nbsp;&nbsp;- Charger une vidéo de n'importe quel type (un exemple en jaune à loader via "file"). et Attendez... .
+				<br/>&nbsp;&nbsp;- ouvrir la console avec la touche F12 pour pour voir ce qui se passe.</i>
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="nacl">
+				<a href="v19_76_nacl/NaclPlayer_1_9_76.rar" target="_blank">
+					<img src="./img/player_nacl.jpg" />
+					Décodeur universel Nacl
+				</a> :
+				Convertit toute les vidéos / musiques localement dans un navigateur.
+				Le principe ici est de garder le code natif en C et de le lire sur un navigateur.
+				C'est le premier convertisseur rapide pour navigateur au monde.
+				Malheureusement, Chrome a supprimé la possibilité d'utiliser ses applications dans un onglet en juillet 2016 et donc l'accès direct via un lien type "chrome-extension://app/index.html".
+				Ce qui interrompu l'intérêt de pouvoir caster n'importe quelles vidéos directement sur une chromecast.
+				De plus en 2018, Google supprime les apps de son store au profit des Progressive Web Apps (appli java sans installation) et du WebAssembly (code natif accessible depuis les serveurs).
+				Pour l'installation, je vous invite à suivre ce lien : <a href="https://chrome.google.com/webstore/detail/nacl-development-environm/aljpgkjeipgnmdpikaajmnepbcfkglfa" target="_blank"> Installation de Nacl </a>
+				<!--
+				<i><br/>&nbsp;&nbsp;- Télécharger et dézipper l'archive : NaclPlayerJunive_1_9_76.rar
+				<br/>&nbsp;&nbsp;-  Ouvrir Chrome et cliquer sur paramètres -> Plus d'outils -> Extensions
+				<br/>&nbsp;&nbsp;- Cocher la case "Mode développeur"
+				<br/>&nbsp;&nbsp;- Cliquer sur "Charger l'extension non empaqueté"
+				<br/>&nbsp;&nbsp;- Séléctionnez le répertoire de l'archive dézippé, valider
+				<br/>&nbsp;&nbsp;- L'app devrait apparaitre dans la liste, cliquer sur lancer.
+				<br/>&nbsp;&nbsp;- Mettre l'app en plein écran, cliquer sur open file, et lancer : <a href="samples/cbw3.avi">Sample Avi</a></i>
+				-->
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="basic">
+				<a href="jsunit/index.html" target="_blank">
+					<img src="./img/player_junit.jpg" />
+					JsUnit 
+				</a>
+				: Un petit programme qui pousse les limites du javascript.
+				Cela m'a aussi donné l'opportunité de pousser javascript à fond, 
+				et d'en connaitre ses bas fonds, me poussant à toujours utiliser les fonctions les plus propres et rapides du langage.
+			
+			</section>
+			<br/><hr/><br/>
+			<section id="basic">
+				<a href="./img/zilla.pdf" target="_blank">
+				<!-- https://bugzilla.mozilla.org/show_bug.cgi?id=1271473 -->
+					<img src="./img/player_zilla.jpg" />
+					BugZilla 
+				</a>
+				: En cherchant les moindres recoins de JS, j'ai fini par trouver un bug sur Firefox, corrigé par l'éditeur.
+				Le problème était lié à une lenteur dans la déclaration des arguments.
+				
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="basic">
+				<a href="img/chrome.pdf" target="_blank">
+				<!-- https://bugs.chromium.org/p/chromium/issues/detail?id=598217#c10 -->
+					<img src="./img/player_chrome.jpg" />
+					Chromium 
+				</a>
+				: En cherchant les moindres recoins de JS, j'ai fini par trouver un bug sur Chrome, corrigé par l'éditeur.
+				Le problème était lié à l'utilisation du mot "event" comme variable qui ralentissait le moteur.
+			</section>
+			<br/><hr/><br/>
+			
+			<section id="basic">
+				<a href="./compile/compile.rar" target="_blank">
+				<!-- https://bugs.chromium.org/p/chromium/issues/detail?id=598217#c10 -->
+					<img src="./img/player_shell.jpg" />
+					Compilateur .bat / .shell 
+				</a>
+				: Pour la réalisation du framework. Un petit script principalement destiné à cleaner le code js des commentaires, 
+				"minifiy" le code, réunir plusieurs fichiers en seul, faire des backup et réunir le tout dans une variable globale
+			</section>
+			
+			
+			<!--
+			<section id="basic">
+				Un Framework qui remplace le très lourd Jquery, avec les fonctions utiles pour n'importe quels projets. 
+				Il permet notamment de faire du javascript un langage à la Java, propre, et rapide. 
+			</section>-->
+		</div>
+		
+		
+		
+		<footer>
+		</footer>
+	</body>
+
+</html>
+

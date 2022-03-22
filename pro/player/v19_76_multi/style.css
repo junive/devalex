@@ -1,0 +1,99 @@
+/** Demo **/
+
+body,html {
+	font-size: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	
+}
+
+.control, .media {
+	float:left;
+	position:relative;
+}
+
+.buttonShow {
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:999999999999;
+}
+
+#videoCont {
+	width:700px;
+	height:auto;
+}
+.player {
+	width:300px;
+	height:auto;
+	float:left;
+	top:0;
+}
+.bufferwait {
+	position:relative;
+	display: block;
+	margin:auto;
+    margin-top: 50vh;
+	z-index : 100000;
+	/*visibility:hidden;*/
+}
+.pop {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 30px;
+	margin-right:40px;
+	color:#fff;
+	z-index:999999999999;
+	font-size:25px;
+	font-family: "Trebuchet MS",Helvetica,sans-serif;
+}
+
+.menu, .box, .header {
+	padding:0;
+	margin:0;
+	background-image: -webkit-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:    -moz-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:     -ms-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:      -o-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:         linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+}
+
+.menu {
+	overflow: auto;
+	height: 200px;
+}
+
+.menu .file, .box .button, .header h3 {
+	color: #ffffff;
+	padding: 5px;
+	/*font-size: 46px;*/
+	border-bottom: 1px solid #A5A7D9;
+}
+
+.menu .file, .box .button, .header h3, .buttonShow {
+	cursor:pointer;
+	text-decoration: none;
+	list-style-type: none;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header h3 {
+	padding:0;
+	margin:0;
+	padding-left:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.menu .file:hover, .box .button:hover{
+	/*color:#000000;*/
+	font-weight:bold;
+	background: #258ecd;
+}

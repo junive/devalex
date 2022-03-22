@@ -1,0 +1,126 @@
+html, body, #tomove3, #tomove4,#barreMenuGrand, #barreMenuPetit, #menuStart, #menuFichier, #cadreClicDroit, #ic
+{
+	margin: 0px;
+	padding: 0px;	
+}
+
+HTML 
+{
+
+overflow-x:hidden ; 
+overflow:hidden ;
+}
+
+body
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	line-height:0;
+}
+
+#tomove3,#tomove4
+{
+	width: 50px;
+	height: 50px;
+	background:#F5F5FE none;
+	border: 1px solid #990000;
+	font-size: 0.9em;
+	cursor: move;
+	position: absolute;
+	left: 108px;
+	top: 74px;	
+}
+
+.fenetreGrand
+{
+
+
+	margin: 0px;
+	padding: 0px;
+	background: #F5F5FE none;
+	border: 1px solid #990000;
+	font-size: 0.9em;
+	vertical-align:top;
+	/* cursor: move; */
+	position: absolute;
+	overflow:hidden;
+	display:block;
+	text-align:left;
+	width:200px;
+	height:200px;
+
+
+}
+
+.ic
+{
+	height: 40px;
+	width:40px;
+	background: #F5F5FE none;
+	border: 1px solid #990000;
+	font-size: 0.9em;
+	/* cursor: default; */
+	position: absolute;
+	display:block;
+	cursor:pointer;
+}
+
+#barreMenuGrand, #barreMenuPetit, #menuStart, #menuFichier, #cadreClicDroit 
+{	
+	vertical-align:middle;
+	background:  #3399FF none;
+	border: 1px solid #ddd; 
+	line-height:0;
+	font-size:0;
+	position: absolute;
+}
+
+#menuStart
+{
+background:url(image/menuStart.gif) repeat-y;
+}
+
+#barreMenuPetit,#barreMenuGrand
+{
+	background:url(image/barreMenu.gif) repeat-y;
+}
+
+
+#starto
+{
+word-wrap:break-word;
+line-height:normal;
+	cursor:pointer;
+	margin:0px;
+	padding:9px; 
+	font-size:14px;
+	font-weight:bold;
+	background:url(image/barreMenu.gif) repeat-y;
+ 	color:#990000;
+	width:10px; 
+	height:95px;
+	/* background-color:#0d18ae; */
+ 	border: 1px #000000 solid ; 
+ 	font-family:Comic Sans MS;
+  /*
+   	-moz-border-radius: 10px; 
+  	border-radius:10px; */
+   	text-align:center;
+	
+}
+/*
+#ctl, #cbl, #ctr, #cbr {position:absolute; width:20px; height:20px; color:#08c; background:#fff;overflow:hidden;}
+#ctl {top:0px; left:0px;}
+#cbl {top:100px; left:0px;}
+#ctr {top:0px; left:100px;}
+#cbr {top:100px; left:100px;}
+#quadtl, #quadtr, #quadbl, #quadbr {position:absolute; font-size:150px; font-family:arial; color:#08c;line-height:40px;}
+#quadtl {left:-8px;}
+#quadtr {left:-25px;}
+#quadbl {left:-8px; top:-17px;}
+#quadbr {left:-25px; top:-17px;}
+
+#ex3 {border-top-left-radius: 1em;}
+#ex4 {border-top-right-radius: 1em;}
+#ex5 {border-bottom-right-radius: 1em;}
+#ex6 {border-bottom-left-radius: 1em;}
+*/

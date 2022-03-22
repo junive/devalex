@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+
+ <meta name="ROBOTS" content="NOARCHIVE">
+
+ <title> dragmovedrop </title>
+
+</head>
+<body >
+ 
+<div> 
+ <a href="../index.html" >Project&nbsp;Home</a>
+
+ <a href="../downloads">Downloads</a>
+ 
+ <a href="../wiki" >Wiki</a>
+ 
+ <a href="../source" >Source</a>
+
+</div>
+
+ <div>
+ <i>(In construction : all the differents examples and uses around the project.The Russian Dolls system, 
+ Tree Widget List, positioning refresh, block child parent, etc ...)</i>
+ 
+ 
+ <br/>
+ </div>
+ 
+ 
+ <div>
+ <h2>Introduction</h2>
+ <p>Implement your &quot;own&quot; behavior and become a conductor. The principal advantage 
+ of this projet is that everything is possible :  </p><ul><li><strong>Russian Dolls :</strong> 
+ Improve drag and drop fluidity with a fitment system </li><li><strong>Your tree structure :
+ </strong> Drag your item list, and drop it with any kind of Widget you want, Forget the String 
+ Tree and create your own Widgets trees (Images, Label, numbers, etc...). </li><li><strong>Move any parent 
+ widget :</strong> Move a window </li><li><strong>Copy or replace your widget :</strong> drag an Image and 
+ drop a button </li><li><strong>Block your widget into a parent</strong> </li><li><strong>Go Back system :</strong> return
+ back your Widget to the original poisition </li><li><strong>Overflow :</strong> how to forget the overflow of an element
+ </li><li><strong>Padding :</strong> How to manage the detection coordinate (center, mouse, left, right, etc...) </li>
+ <li><strong>Flash :</strong> create a flash Drag Drop interraction </li><li><strong>Adapt Click and Drag</strong> </li>
+ <li>... (coming soon) </li></ul>
+ <p>x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x </p>
+ <h1>Russian Dolls :</h1><p>Demo : <a href="../RussianDolls/DragMove.html">RussianDolls/DragMove.html</a> </p>
+ <p>This system will allow you to divide the number of detected drop (containing in a Vector list). 
+ Thus, the fluidity will be improve on a small computer and if you have undreds Widgets to manage. </p>
+ <p><strong>The fitment class system : </strong> </p><pre>public class RussianDolls {
+
+  public static Widget currentOver;
+  public static MouseDragGestureRecognizer mouse;
+  private DropListenerCollection dropCollection;
+  private Vector childList;
+  private Widget dropWidget;
+
+
+  public RussianDolls(Widget dropWidget, Vector dropChildList) {
+    this.dropWidget = dropWidget;
+    this.childList = dropChildList; 
+    dropCollection = new DropListenerCollection();
+    dropCollection.add(childListener, dropWidget);
+    MouseDragGestureRecognizer.getDropMap().remove(dropCollection);
+  }
+  
+  public void addDropListener(DropWidget drop) {
+    if (drop == dropWidget) {
+      this.dropCollection.add(drop.getDropListener());
+    }
+  }
+  
+  public DropListenerCollection getDropCollection() {
+    return this.dropCollection;
+  }
+  
+  private DropListener childListener = new DropListenerAdapter() {
+    public void onDrop(Widget arg0, Widget arg1) { }
+  
+    public void onDropEnter(Widget arg0, Widget arg1) {
+      mouse.updatePosition(childList);
+    }
+  
+    public void onDropOver(Widget arg0, Widget arg1) {
+      detectChildren(childList);   
+    }
+  };
+
+  private void detectChildren(Vector childList) {
+    for (Iterator it =  childList.iterator(); it.hasNext();) {
+      DropListenerCollection drop = (DropListenerCollection) it.next();
+      Widget widget = drop.getWidget();
+      if (MouseDragGestureRecognizer.detectDrop(mouse.getPaddingLeft(),
+          mouse.getPaddingRight(), mouse.getPaddingTop(),
+          mouse.getPaddingBottom(), widget) &amp;&amp; widget != dropWidget) {
+        mouse.setDrop(widget);
+        mouse.setDropCollection(drop);
+        drop.fireOnDropEnter(widget, mouse.getDrag());
+        break;   
+      }
+    }
+  }
+}</pre><p><strong>The drop class widget :</strong> </p><pre>public class DropWidget extends AbsolutePanel{
+  
+  public static Label currentNode = new Label(&quot;I listen&quot;); 
+  private DropListenerCollection dropCollection;
+  private String node = &quot;&quot;;
+
+  public DropWidget(String familyNode) {
+    this.node = familyNode;
+    DOM.setStyleAttribute(getElement(),
+        &quot;border&quot;, &quot;1px solid #330000&quot;);
+    dropCollection = new DropListenerCollection();
+    dropCollection.add(dropListener, this);
+    MouseDragGestureRecognizer.getDropMap().remove(dropCollection);
+  }
+
+  public DropListenerCollection getDropCollection() {
+    return this.dropCollection;
+  }
+  
+  public DropListener getDropListener() {
+    return this.dropListener;
+  }
+  
+  public DropListener dropListener = new DropListener() {    
+
+    public void onDrop(Widget arg0, Widget arg1) {
+      currentNode.setText(&quot;You have drop &quot;+ node);
+    }
+
+    public void onDropEnter(Widget arg0, Widget arg1) {
+      currentNode.setText(&quot;You are over &quot; + node);
+    }
+
+    public void onDropExit(Widget arg0, Widget arg1) {
+      currentNode.setText(&quot;Not over node&quot;);
+    }
+
+    public void onDropOver(Widget arg0, Widget arg1) { }    
+  };
+}</pre><p><strong>The drag class Widget :</strong> </p><pre >public class DragWidget extends Label {
+
+  private Vector dropList;
+
+  public DragWidget(String text) {
+    super(text);
+    DOM.setStyleAttribute(getElement(),
+        &quot;border&quot;, &quot;1px solid #330000&quot;);
+    DOM.setStyleAttribute(getElement(),
+        &quot;cursor&quot;, &quot;pointer&quot;);
+    addDragListener(dragListener);
+  }
+
+  public void setDropMap(Vector dropToDetect) {
+    this.dropList = dropToDetect;
+  }
+  
+  private DragListener dragListener = new DragListenerAdapter() {     
+    public void onDragStart(Widget arg0, int arg1, int arg2) {
+      RussianDolls.mouse = 
+          MouseDragGestureRecognizer.getGestureMouse(arg0);
+      MouseDragGestureRecognizer.setDropMap(dropList);
+    }
+  };
+}</pre><p><strong>The Main class :</strong> </p><pre >public class DragMove implements EntryPoint {
+  
+  public void onModuleLoad() {
+    
+    DragWidget myDrag = new DragWidget(&quot;DragMe&quot;);
+    DropWidget grandFather = new DropWidget(&quot;grandfather&quot;);
+    DropWidget child1 = new DropWidget(&quot;child one&quot;);
+    DropWidget child2 = new DropWidget(&quot;child two&quot;);
+    DropWidget grandChild1 = new DropWidget(&quot;grandchild one (child one)&quot;);
+    DropWidget grandChild2 = new DropWidget(&quot;grandchild two (child one)&quot;);
+    DropWidget grandChild3 = new DropWidget(&quot;grandchild three (parent two)&quot;);
+    DropWidget grandChild4 = new DropWidget(&quot;grandchild four (parent two)&quot;);
+    
+    Vector grandFatherList = new Vector();
+    Vector childList = new Vector();
+    Vector grandChildList1 = new Vector();
+    Vector grandChildList2 = new Vector();
+    
+    RussianDolls grandFatherFitment = 
+      new RussianDolls(grandFather, childList);
+    RussianDolls child1Fitement = 
+      new RussianDolls(child1, grandChildList1);
+    RussianDolls child2Fitement = 
+      new RussianDolls(child2, grandChildList2);
+   
+    grandFatherFitment.addDropListener(grandFather);
+    child1Fitement.addDropListener(child1);
+    child2Fitement.addDropListener(child2);
+    
+    grandFatherList.add(grandFatherFitment.getDropCollection());
+    childList.add(child1Fitement.getDropCollection());
+    childList.add(child2Fitement.getDropCollection());
+    grandChildList1.add(grandChild1.getDropCollection());
+    grandChildList1.add(grandChild2.getDropCollection());
+    grandChildList2.add(grandChild3.getDropCollection());
+    grandChildList2.add(grandChild4.getDropCollection());
+    
+    myDrag.setDropMap(grandFatherList);
+    
+    grandFather.setPixelSize(550, 280);
+    child1.setPixelSize(220, 200);
+    child2.setPixelSize(220, 200);
+    grandChild1.setPixelSize(95, 90);
+    grandChild2.setPixelSize(95, 90);
+    grandChild3.setPixelSize(95, 90);
+    grandChild4.setPixelSize(95, 90);
+    
+    grandFather.add(new Label(&quot;GrandFather&quot;), 0, 0);
+    grandFather.add(child1, 10, 50);
+    grandFather.add(child2, 310, 50);
+    child1.add(new Label(&quot;child 1&quot;), 0, 0);
+    child1.add(grandChild1, 10, 50);
+    child1.add(grandChild2, 110, 50);
+    child2.add(new Label(&quot;child 2&quot;), 0, 0);
+    child2.add(grandChild3, 10, 50);
+    child2.add(grandChild4, 110, 50);
+    
+    grandChild1.add(new Label(&quot;grandChild 1&quot;), 0, 0);
+    grandChild2.add(new Label(&quot;grandChild 2&quot;), 0, 0);
+    grandChild3.add(new Label(&quot;grandChild 3&quot;), 0, 0);
+    grandChild4.add(new Label(&quot;grandChild 4&quot;), 0, 0);
+    
+    RootPanel.get().add(grandFather, 10, 70);
+    RootPanel.get().add(myDrag, 10, 10);
+    RootPanel.get().add(DropWidget.currentNode, 110, 10);
+  }
+}</pre><p>x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x </p>
+<h1>Tree structure :</h1>
+<p>x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x - x </p>
+ </div>
+
+ </body>
+</html>

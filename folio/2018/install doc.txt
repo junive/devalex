@@ -1,0 +1,21 @@
+Indispensable (pour Windows):
+	installer git (executable)
+	installer node.js (executable)
+
+Indispensable : 
+  dans git bash : 
+	npm install -g less (compiler les less)
+	npm install -g less-plugin-clean-css (permet de minifier le code less)
+  aller dans le dossier ou se trouve my-style.less et :
+	lessc my-style.less >  my-style.css
+  ou (pour la version mini ) :
+	lessc --clean-css my-style.less > my-style-min.css
+
+Facultatif : Modifier le code source de boootstrap :
+
+  dans git bash : aller dans la lib bootstrap et :
+	npm install bootstrap (telecharge bootstrap)
+	npm install -g grunt-cli (telecharge grunt)
+	cd bootstrap
+	npm install (install grunt)
+	grunt dist nsta (compiler les fichiers boostrap)

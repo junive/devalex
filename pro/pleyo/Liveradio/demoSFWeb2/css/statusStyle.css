@@ -1,0 +1,20 @@
+.statusButton, .okStatus, .finishStatus, .waiStatus {
+	width:15px;
+	height:10px;
+	float:right;
+	position: relative;
+	background-repeat: no-repeat;
+	background-color:#9900CC;
+}
+
+
+.okStatus {
+	background-color:#eee;
+
+}
+.finishStatus {
+		background-color:#aaa;
+}
+.waitStatus {
+		background-color:#ccc;
+}

@@ -1,0 +1,1256 @@
+body {
+	background-color:#595959;
+	margin-top: 5px;
+}
+#legalMention {
+	margin-top:20px;
+	font-size:10px;
+}
+.centralBackground {
+	background-color:#EDEDED;
+}
+.bottomBackground {
+
+}
+.frameBackground {
+	background-color:#EDEDED;
+}
+
+
+a.downFoot:link
+{color: #333333; text-decoration : underline ;}
+a.downFoot:hover
+{color: #E52814; text-decoration : underline ;}
+a.downFoot:active
+{color: #E52814; text-decoration :underline ;}
+
+a.mailFoot:link { color: #333333; }
+a.mailFoot:hover { color: #E52814;}
+a.mailFoot:active { color: #E52814;}
+.mailFoot {
+	font-size:10px;
+	text-decoration : underline ;
+	font-size:10px;
+	cursor:pointer;
+}
+.optionListBoxColumns1 {
+	background-image: url("../img/img_us/liste01.png");
+}
+.optionListBoxColumns2 {
+	background-image: url("../img/img_us/liste02.png");
+}
+.optionListBoxColumns3 {
+	background-image: url("../img/img_us/liste03.png");
+}
+.optionListLeftLabel {
+	width:10px;
+	height:21px;
+}
+.optionListOpenCloseButton {
+	width:24px;
+	height:21px;
+
+}
+.PluginPopOrangeButton {
+	margin-top:150px;
+}
+/******** The top Menu  ******/
+
+.principalFrameMenu,.menuText, .Legals, .midTitle, .TextStandard, .midTitleLink {
+	font-family : Arial , Reg;
+}
+
+.menuText, .menuTextOver, .menuTextSelected {
+	cursor:pointer;
+	font-size: 13px;
+}
+.menuText {
+	color: #595959;
+}
+.menuTextOver {
+	color: #339900
+}
+.menuTextSelected {
+	color: #FF3300
+}
+.flagBlock {
+	margin-right:8px;
+}
+.languageText {
+	font-size:10px;
+	color:#595959;
+	margin-left:1px;
+}
+/***** The Sub Menu ******/
+
+.subPanel {
+	width: 300px;
+}
+.subMenu {
+	height: 200px;
+	width: 200px;
+	text-align:left;
+}
+.TextStandardLog, .TextStandardLog2, .TextStandardLog3   {
+
+}
+.TextStandardLog1 {	
+
+}
+.subMenuText, .subMenuTextOver, .subMenuTextSelected {
+	cursor:pointer;
+}
+.subMenuText {
+	color: #990000
+}
+.subMenuTextOver {
+	color: #339900
+}
+.subMenuTextSelected {
+	color: #FF3300
+}
+
+.BigTitle, .midTitle, .TextStandard, .midTitleLink {
+	font-style: normal;
+	line-height: normal;
+}
+.BigTitle {	
+	margin-left:10px;
+	font-size: 45px;
+	color: #E52814;
+	text-decoration: none;
+}
+.BigSubTitle {
+	font-size: 25px;
+	color: #B5B5B5;
+	margin-left:50px;
+	text-decoration: none;
+}
+.midTitle {
+	font-size: 14px;
+	font-variant: normal;
+	text-transform: none;
+	color: #595959;
+	margin-left:130px;
+	margin-right:10px;
+	margin-top:5px;
+	
+}
+.shortcutBackground {
+	background-image: url("../img/img_us/fond_shortcut.png");
+ 	width:235px; 
+ 	height:163px;
+
+}
+.shortcutTable {
+	width:204px;
+}
+.midTitleShort {
+	color: #E52814;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+}
+.midTitleLinkBlock {
+	background-image: url("../img/img_us/bt_N1.png");
+	height:30px;
+		width:204px;
+}
+.midTitleLink {
+	font-size: 11px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #595959;
+	cursor: pointer;
+	filter: Invert;
+
+}
+.arrowBlackShortcuts , .arrowWhiteShortcuts{
+	margin-left:7px;
+	margin-right:4px;
+	position:relative;
+	float:left;
+}
+.arrowBlackShortcuts{
+	margin-left:11px;	
+}
+.arrowWhiteShortcuts{
+	margin-right:6px;	
+}
+/* The button principal menus */
+.principalFrameMenu {
+	font-size : 14px;
+	font-weight: bold;
+	position: relative;
+	float:left; 
+}
+
+
+.PrincipalFrameMenuTable {
+	height:30px;
+	margin-right:10px;
+	cursor:pointer;
+}
+.PrincipalFrameMenuLabel, .PrincipalFrameMenuLabelSelected {
+	font-weight:bold;
+	padding-left: 3px;
+	padding-right:3px;
+}
+.PrincipalFrameMenuLabel{
+	vertical-align:middle;
+	color: #B5B5B5;
+}
+.PrincipalFrameMenuLabelOver {
+	color:#595959;
+	text-decoration:underline;
+}
+.PrincipalFrameMenuLabelSelected {
+	color: #E52814;
+}
+
+.PrincipalFrameMenuLeft,  .PrincipalFrameMenuRight,
+.PrincipalFrameMenuLeftSelected,  .PrincipalFrameMenuRightSelected{
+	padding:0px;
+	margin:0px;
+	font-size: 2px; 
+	line-height: 2px;
+	width:8px;
+	height:36px;
+}
+.PrincipalFrameMenuCenter, .PrincipalFrameMenuCenterSelected {
+	width:100px;
+	text-align:center;
+}
+.PrincipalFrameMenuCenter {
+	background-image: url("../img/img_us/bt_coeur.png");
+	background-repeat: repeat-x;
+}
+.PrincipalFrameMenuLeft {
+	background-image: url("../img/img_us/bt_gauche.png");
+}
+.PrincipalFrameMenuRight {
+	background-image: url("../img/img_us/bt_droit.png");
+}
+.PrincipalFrameMenuCenterSelected {
+	background-image: url("../img/img_us/onglet_coeur.png");
+	background-repeat: repeat-x;
+}
+.PrincipalFrameMenuLeftSelected {
+	background-image: url("../img/img_us/onglet_gauche.png");
+}
+.PrincipalFrameMenuRightSelected {
+	background-image: url("../img/img_us/onglet_droit.png");
+}
+
+/** The GWT surcharge Elements **/
+
+.HomePageDiscoverTitleText,
+.LiveradioPlayerTitle, .AddRadioPodcastStar, .ObligatoryStar, .ConfigDescriptionTitle,
+.bibliothequeSearchTextBox, .CoupCoeurSearchTextBox,
+.bibliothequeSearchSelectedCriteria, .CoupCoeurSearchSelectedCriteria,
+.selectionListFileBarAfterDropShow, .ConfigLabelButton,
+.PrincipalTabMenuLabelSelected, .ConfigTabMenuLabelSelected, .BiblioTabMenuLabelSelected,
+.CategorieCatalogLineOnMouseOver, .CategorieCatalogNumberRadio, .optionListBoxText, .optionListTable, 
+.AddRadioPodcastErrorBox, .errorMessage, .CoupCoeurTitle {
+	color: #E52814;
+}
+.selectionListFileBarAfterDropShow {
+	background-color : #E52814;
+}
+.optionListTableLineOnMouseOver * * {
+	background:none;
+}
+.optionListTableLineOnMouseOver .optionListTableColumns1, 
+.optionListTableLineOnMouseOver .optionListTableColumns {
+	background-color : #E52814;
+}
+.selectionListFolderTableTitleOnDragOver {
+	background-image: url("../img/img_us/cat2_cell_select.png");
+}
+.selectionListFolderTableTitleOnDragOver * *, 
+.selectionListFolderTableTitleOnDragOver .selectionListFolderText,
+.selectionListFolderTableTitleOnDragOver .selectionListFolderTableTitleLine * * {
+	color:#FFFFFF;
+}
+.bodyRootPanel2, .ButtonMenuTable {
+	position:relative;
+	margin:0px;
+}
+.bodyRootPanel2 {
+	width:638px;
+	height:450px;
+}
+.CatalogPanel {
+	padding-top:0px;	
+}
+.ButtonMenuTable {
+	left:35px;
+}
+.bibliothequePodemusImage {
+	border:none;
+	width:300px;
+}
+.MyProductsRootPanel, .MyCoeurRootPanel, .MyLiveradioRootPanel {
+	top:12px;
+	left:1px;
+}
+.bibliothequeSwitchPanel, .CatalogPanelCoupCoeur {
+	border:none;	
+}
+.bibliothequeSwitchPanelPodcast {
+	height:310px;
+}
+.PrincipalTabMenuLabel, .PrincipalTabMenuLabelSelected {
+	padding:0px;
+	margin-bottom:5px;
+}
+.PrincipalTabMenuLabel {
+	color:#FFFFFF;
+}
+.PrincipalTabMenuLabelOver {
+	color: #E52814;
+	text-decoration:none;
+}
+.PrincipalTabMenuTable {
+	height:31px;
+}
+.PrincipalTabMenuLeft,  .PrincipalTabMenuRight,
+.PrincipalTabMenuLeftSelected,  .PrincipalTabMenuRightSelected{
+	height:31px;
+}
+.PrincipalTabMenuCenter {
+	font-size:12px;
+	font-family:arial;
+	background-image: url("../img/img_us/bt_coeur_n2.png");
+	background-repeat: repeat-x;
+}
+.PrincipalTabMenuLeft {
+	background-image: url("../img/img_us/bt_gche_n2.png");
+}
+.PrincipalTabMenuRight {
+	background-image: url("../img/img_us/bt_droit_n2.png");
+}
+.PrincipalTabMenuCenterSelected {
+	background-image: url("../img/img_us/onglet_coeur_n2.png");
+	background-repeat: repeat-x;
+}
+.PrincipalTabMenuLeftSelected {
+	background-image: url("../img/img_us/onglet_gche_n2.png");
+}
+.PrincipalTabMenuRightSelected {
+	background-image: url("../img/img_us/onglet_droit_n2.png");
+}
+
+.BiblioTabMenuTable {
+	height:27px;
+}
+.BiblioTabMenuTable * * {
+	font-weight:bold;
+	font-size:11px;
+}
+.BiblioTabMenuLeft, .BiblioTabMenuRight {
+	width:7px;
+	height:24px;
+}
+.BiblioTabMenuLeftSelected, .BiblioTabMenuRightSelected {
+	height:27px;
+	width:7px;
+}
+.BiblioTabMenuCenter {
+	background-image: url("../img/img_us/bt_coeur_n3.png");
+	background-repeat: repeat-x;
+	height:21px;
+	color:#595959;
+}
+.BiblioTabMenuLeft {
+	background-image: url("../img/img_us/bt_gche_n3.png");
+}
+.BiblioTabMenuRight {
+	background-image: url("../img/img_us/bt_droit_n3.png");
+}
+.BiblioTabMenuCenterSelected { 
+	background-image: url("../img/img_us/onglet_coeur_n3.png");
+	background-repeat: repeat-x;
+}
+.BiblioTabMenuLeftSelected {
+	background-image: url("../img/img_us/onglet_gche_n3.png");
+}
+.BiblioTabMenuRightSelected {
+	background-image: url("../img/img_us/onglet_droit_n3.png");
+}
+
+
+.ConfigTabMenuTable {
+	height:25px;
+}
+.ConfigTabMenuTable * * {
+	font-weight:bold;
+	font-size:11px;
+}
+.ConfigTabMenuLeft, .ConfigTabMenuRight ,
+.ConfigTabMenuLeftSelected, .ConfigTabMenuRightSelected {
+	width:8px;
+	height:25px;
+}
+.ConfigTabMenuCenter {
+	background-image: url("../img/img_us/popsh_bt_coeur.png");
+	background-repeat: repeat-x;
+	height:25px;
+}
+.ConfigTabMenuLabel{
+	vertical-align:middle;
+	color: #B5B5B5;
+	padding-bottom:3px;
+}
+.ConfigTabMenuLabelOver {
+	color:#595959;
+	text-decoration:underline;
+}
+.ConfigTabMenuLabelSelected {
+	color: #595959;
+}
+.ConfigTabMenuLeft {
+	background-image: url("../img/img_us/popsh_bt_gche.png");
+}
+.ConfigTabMenuRight {
+	background-image: url("../img/img_us/popsh_bt_droit.png");
+}
+.ConfigTabMenuCenterSelected { 
+	background-image: url("../img/img_us/popsh_ongl_coeur.png");
+	background-repeat: repeat-x;
+}
+.ConfigTabMenuLeftSelected {
+	background-image: url("../img/img_us/popsh_ongl_gche.png");
+}
+.ConfigTabMenuRightSelected {
+	background-image: url("../img/img_us/popsh_ongl_droit.png");
+}
+
+.bibliothequeMenuTable {
+	top:9px;
+}
+.mySelectionMyCatalogBottom {
+	height:14px;
+	background-image:url(../img/img_us/footer_catalogue2.png);
+
+}
+.OptionPopFixed {
+	position:fixed;
+}
+.CoupCoeurTitle {
+	font-size:18px;
+	font-weight:bold;
+}
+.ButtonConfirmOk {
+	margin-top:3px;
+}
+.RadioCatalogImageInfo, .selectionListFileInfoPopUpImage {
+	margin-top:3px;
+}
+.bibliothequeBottomCatalog {
+	border:none;
+	background-image:url(../img/img_us/footer_catalogue1.png);
+		width:300px;
+}
+.CatalogPanelbibliotheque {
+	width:300px;
+}
+.AddRadioPodcastTextBeforeBox {
+	width:120px;
+}
+.bibliothequeGoToTable, .mySelectionMyCatalog, 
+.bibliothequeGoToTableAddProduct, .CoupCoeurSearchTable {
+	background-image: url("../img/img_us/div_cata_allu.gif");
+	background-repeat: repeat-x;
+}
+.bibliothequeGoToTableAddProduct {
+	border-bottom:1px solid #DDDDDD;
+}
+.bibliothequeGotToTableTextAddRadio2 {
+	width:auto;
+}
+.bibliothequeAddRadio {
+	vertical-align:middle;
+	line-height:34px;
+}
+.bibliothequeSearchTable {
+	background-color:#d1d0d0;
+}
+.CatalogPanel, .RadioCatalogLine{
+	background-image:none;
+	background-color:#dddcdc;
+}
+.CategorieCatalogNumberRadio {
+	background-image:url(../img/img_us/puce_nb.png);
+	height:14px;
+	width:34px;
+}
+.CategorieCatalogLineOnMouseOver .CategorieCatalogNumberRadio {
+	color:#000000;
+	background-image:url(../img/img_us/puce_nb_select.png);
+}
+
+.CategorieCatalogLineOnMouseOver {
+	background-image: url("../img/img_us/cat1_radio_select.png");
+}
+.RadioCatalogLineOnMouseOver {
+	background-image: url("../img/img_us/cat1_podcst_select1.png");
+}
+.selectionListFolderTableTitleLineOnMouseOver, .selectionListFileTableLineOnMouseOver {
+	background-image: url("../img/img_us/cat2_cell_select.png");
+}
+.PreselectionLabelSmallNormal, .PreselectionLabelSmallOver {
+	width:15px;
+	height:16px;
+	background-image: url("../img/img_us/select_list.png");
+	text-align:center;
+	font-size:9px;
+	line-height:13px;
+	vertical-align:middle;
+		font-weight:bold;
+}
+.PreselectionLabelBigNormal, .PreselectionLabelBigOver {
+	width:26px;
+	height:28px;
+	text-align:center;
+	line-height:28px;
+	vertical-align:middle;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.PreselectionLabelBigOver {
+	background-image: url("../img/img_us/select_off.png");
+}
+.PreselectionLabelBigNormal {
+	background-image: url("../img/img_us/select_on.png");
+}
+
+.BlankImagePreselect {
+	width:14px;
+	height:16px;
+	line-height:16px;
+}
+.AuthentificationIdentifyButton {
+	margin-top:0px;
+}
+.AuthentificationText {
+	margin-left: 10px;
+	margin-right:10px;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+.AuthentificationTextSign {
+	border-top:1px solid #595959;
+	padding-top:5px;
+}
+.AddRadioPodcastDescriptionText2 {
+	border-bottom : none;
+	border-top:1px solid #DDDDDD;
+	padding-top:5px;
+}
+.AddRadioPodcastTestButton {
+	margin-top:20px;
+}
+.RadioCatalogTextTable {
+	width:160px;
+}
+.bibliothequeSwitchPanel, .CatalogPanelCoupCoeur {
+	width:300px;	
+}
+.CatalogPanelCoupCoeur {
+	height:339px;
+}
+.selectionListTable{
+	float:none;
+	padding:0px;
+	margin-left:5px;
+}
+.mySelectionAddFolderLabel {
+	width:auto;
+	margin:0px;
+}
+.selectionListFolderTableTitleLine * * {
+	color:#595959;
+}
+.mySelectionMyCatalog, .mySelectionMyPreselection, .mySelectionMyCatalogText {
+	text-align:left;
+	font-size:12px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.mySelectionPreselectPanel {
+	height:316px;
+}
+.selectionListPanel, .preselectionListPanel {
+	height:288px;	
+}
+.bibliothequeSwitchPanel {
+	
+}
+.mySelectionTableColumns {
+	vertical-align:top;
+}
+ .mySelectionMyPreselection {
+ 	height:18px;
+	border-top:1px solid #C0C0C0;
+	line-height:18px;
+	padding-left:8px;
+	vertical-align:middle;
+ }
+.mySelectionUpDownImage {
+	margin-left:60px
+}
+.mySelectionOptionTable {
+	height:34px;
+}
+.mySelectionMyCatalog {
+	line-height:33px;
+	vertical-align:middle;
+ 	height:33px;
+ }
+.mySelectionOptionTable, .myPreselectionsNumbersPanel, .mySelectionNumbersRootPanel {
+	background-color:#d1d0d0;
+}
+.selectionListPanel, .selectionListFolderTableTitleColumns5, .mySelectionMyPreselection, 
+.selectionListFileTableColumns6, .selectionListFolderTableTitleColumnsSec2, .preselectionListPanel{
+	background-color:#dddcdc;
+}
+.preselectionListImageRadio {
+	margin-left:4px;
+	margin-top:2px;
+}
+.preselectionListInfoPopup {
+	margin-top:5px;
+}
+.ImagePlusAddFile {
+	padding-top:1px;
+	line-height:11px;
+}
+
+.PopBlindShadowAddRadios {
+	background-image: url("../img/img_us/pop_blind_back.png");
+}
+.PopBlindShadowConfig {
+	background-image:url(../img/img_us/pop_blind_config_back.png);
+}
+.PopBlindAddRadiosTitleText, .PopBlindTableconfigTitleText {
+	margin-top:15px;
+	margin-bottom:30px;
+	font-weight:bold;
+	font-size:20px;
+	color:#FFFFFF;
+}
+.PopBlindTableChildColumns1 {
+	height:40px;	
+}
+.PopBlindTableconfigTitleText {
+	margin-bottom:2px;	
+}
+.PopBlindCloseText {
+	color:#FFFFFF;
+}
+.PopBlindRemoveButton, .PopBlindCloseText  {
+	margin-bottom:15px;
+}
+.PopBlindAddRadios {
+	background:none;	
+}
+.PopTextTableColumns1, .PopTextTableColumns3 {
+	height:33px;
+}
+.PopTextTableColumns1 {
+	width:22px;
+	background-image: url("../img/img_us/bi_small_gche.png");
+}
+.PopTextTableColumns3 {
+	width:12px;
+	background-image: url("../img/img_us/bi_small_droit.png");
+}
+.PopTextTableColumns2 {
+	height:33px;
+	background-image: url("../img/img_us/bi_small_coeur.png");
+}
+.PopupInfoTableOfTheColumn1, .PopupInfoTableOfTheColumn2 {
+	margin-bottom:5px;
+}
+.PopInInfoRightBack {
+	width : 227px;
+	height : 150px;
+}
+.PopupInfoImage {
+	margin-left:5px;
+	margin-top:2px;
+}
+.PopupInfoTableOfTheColumn2 {
+	margin-top:0px;
+}
+.PopupInfoTitle, .PopupInfoDescription, .PopupInfoCategorie, .PopupInfoSeparator {
+	color:#FFFFFF;	
+}
+.PopupInfoRate, .PopupInfoType {
+	color:#E52814;
+}
+.PopupInfoSeparation {
+	border-bottom:none;
+}
+.ConfigMenuPanel {
+	border: none;	
+}
+.ConfigMenuTable {
+	top:8px;
+	}
+.ConfigOptionList {
+	width:180px;
+	margin-top:0px;
+	margin-left:0px;
+}
+.ConfigTableButtonMy {
+	margin-top:10px;	
+}
+
+.ConfigPopDownloadText {
+	
+}
+.ConfigPopTextBox {
+	margin-left:5px;
+	width:250px;
+}
+.ConfigPopTextBoxBis {
+	margin-left:5px;
+	width:150px;
+}
+.ConfigPopContactButtonTable {
+	margin-left:55px;
+}
+.ConfigPopTextArea {
+	height:100px;
+}
+.OptionListConfigProfile {
+	width:180px;
+}
+.ConfigProfileError {
+	width:400px;
+}
+.ConfigProfileStyleAreaTerms {
+	width:450px;
+	height:70px;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	border:1px solid #595959;
+}
+.ConfigProfileStyleBox {
+	font-size:10px;
+	width:180px;
+}
+.ConfigProfileStyleOption {
+	cursor:pointer;
+}
+.PopBlindTableconfig {
+	background: none;	
+}
+.PopInRadioImageTable {
+	margin:0px;
+	margin-top:7px;
+}
+.ConfigDescriptionTable {
+	margin-left:0px;
+}
+.ConfigDescriptionTableMid1 * * {
+	cursor: default;
+}
+.ConfigDescriptionTableMid2 * * {
+	cursor:pointer;
+}
+.PopBlindTableChildColumns3 {
+	width:35px;
+} 
+.ConfigPopClose {
+	margin-bottom:0px;
+	margin-top:20px;
+}
+.ConfigDescriptionTableMiddle {
+}
+.ConfigDescriptionTableMiddleCol1, .ConfigDescriptionTableMiddleCol2,
+.ConfigDescriptionTableMiddleCol3, .ConfigDescriptionTableMiddleCol4 {
+	height:92px;
+	text-align:center;
+	vertical-align:middle;
+	background-image: url("../img/img_us/popsh_slot.png");
+}
+.ConfigDescriptionLabText {
+	font-family:Arial, Reg;
+	font-size:14px;
+	color:#595959;
+		text-align:justify;
+}
+.ConfigDescriptionLabelTextCase {
+	color:#595959;
+	font-size:13px;
+	margin : 1px;
+	width:148px;
+
+}
+.ConfigDescriptionTableRightColumns {
+	padding-right:0px;
+}
+.ConfigDescriptionBuybutton {
+	
+}
+.ConfigHelpTable {
+	height:300px;
+	width:611px;
+}
+.ConfigPopSubMenusNormal, .ConfigPopSubMenusSelected {
+	cursor:pointer;
+	font-weight:bold;
+	margin-right:5px;
+}
+.ConfigPopSubMenusSelected {
+	color:#E52814;
+}
+.ConfigPopSubMenusNormal {
+	color:#595959;
+}
+.ConfigInscriptionNoInscriptConfirmButton {
+	margin-left:10px;
+}
+.AddFolderText {
+	margin-bottom:2px;
+}
+
+/** The new Elements **/
+
+
+.AddTabTable, .CoeurTabTable{
+	position:relative;
+	height:15px;
+	margin-left:3px;
+	margin-right:2px;
+	cursor:pointer;
+}
+.CoeurTabTable {
+	height:17px;
+}
+.SubTabTable {
+	position:relative;
+	height:29px;
+	cursor:pointer;
+}
+
+.AddTabLabel, .CoeurTabLabel, .SubTabLabel {
+	font-size:10px;
+	font-weight:bold;
+}
+ .CoeurTabLabel, .SubTabLabel {
+	padding-left : 3px;
+	padding-right:3px;
+}
+.SubTabLabel {
+	padding-left : 15px;
+	padding-right:15px;
+	color:#FFFFFF;
+}
+
+.AddTabLeft, .AddTabRight, .AddTabLeftSelected, .AddTabRightSelected,
+.CoeurTabLeft, .CoeurTabRight, .CoeurTabLeftSelected, .CoeurTabRightSelected,
+.SubTabLeft, .SubTabRight, .SubTabLeftSelected, .SubTabRightSelected {
+	font-size: 2px; 
+	line-height: 2px;
+	width:4px;
+	height:15px;
+}
+.CoeurTabLeft, .CoeurTabRight, .CoeurTabLeftSelected, .CoeurTabRightSelected {
+	height:17px;
+}
+.SubTabLeft, .SubTabRight, .SubTabLeftSelected, .SubTabRightSelected {
+	width:14px;
+	height:29px;
+}
+.AddTabLeft, .AddTabLeftSelected {
+	background-image: url("../img/img_us/bt_ajodoss_gche.png");
+}
+.AddTabRight, .AddTabRightSelected {
+	background-image: url("../img/img_us/bt_ajodoss_dt.png");
+}
+.AddTabCenter, .AddTabCenterSelected {
+	height:15px;
+	background-image: url("../img/img_us/bt_ajodoss_coeur.png");
+	background-repeat: repeat-x;
+}
+.CoeurTabLeft, .CoeurTabLeftSelected {
+	background-image: url("../img/img_us/bt_pop_2_gche.png");
+}
+.CoeurTabRight, .CoeurTabRightSelected {
+	background-image: url("../img/img_us/bt_pop_2_droit.png");
+}
+.CoeurTabCenter, .CoeurTabCenterSelected {
+	height:17px;
+	background-image: url("../img/img_us/bt_pop_2_coeur.png");
+	background-repeat: repeat-x;
+}
+.SubTabLeft, .SubTabLeftSelected {
+	background-image: url("../img/img_us/bt_pop_1_gche.png");
+}
+.SubTabRight, .SubTabRightSelected {
+	background-image: url("../img/img_us/bt_pop_1_droit.png");
+}
+.SubTabCenter, .SubTabCenterSelected {
+	height:29px;
+	background-image: url("../img/img_us/bt_pop_1_coeur.png");
+	background-repeat: repeat-x;
+}
+
+
+
+.mySelectionConfigButtonCenter {
+ 	color:#FFFFFF;
+	padding-right:10px;
+	padding-left:10px;
+ }
+.playerPlay, .playerPrevious, .playerNext {
+	top:143px;
+}
+
+.playerPlay, .playerPrevious, .playerNext, .playerMute, 
+.playerBook, .playerInfo, .playerRate {
+	cursor:pointer;
+}
+.playerBack {
+	position:relative;
+	width:503px;
+	height:174px;
+	background-image: url("../img/img_us/fond_player.png");
+	z-index:5;
+}
+.playerUpper, .playerBasicFunction {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:503px;
+	height:174px;
+}
+.playerUpper {
+	z-index:6;
+}
+.playerBasicFunction {
+	z-index:7;
+}
+.playerAdvancedFunctionBack  {
+	position:absolute;
+	background-image: url("../img/img_us/fond_actions.png");
+	filter:alpha(opacity=80);
+	height:66px;
+	opacity:0.8;
+	right:20px;
+	top:57px;
+	width:135px;
+	z-index:8;
+}
+.playerAdvancedBlock {
+	position:absolute;
+	z-index:9;	
+	left:350px;
+	top:15px;
+}
+.playerBook, .playerInfo, .playerRate {
+	position:absolute;
+	top : 6px;
+	z-index:9;
+}
+.playerBook {
+	left:5px;
+	z-index:9;
+}
+.playerInfo {
+	left:50px;
+}
+.playerRate {
+	left:95px;
+}
+
+
+ .playerLogo, .playerCover, .playerTextBlock, .playerModeTitle,
+.playerPlay, .playerPrevious, .playerNext, .playerStarBlock, .playerVolumeBack, .playerInfoTextBlock {
+	position: absolute;
+}
+
+.playerLogo {
+	left:28px;
+	top:65px;
+	width:34px;
+	height:34px;
+}
+.playerCover {
+	left:100px;
+	top:25px;
+	width:60px;
+	height:60px;
+	
+}
+.playerTextBlock {
+	left:190px;
+	top:37px;
+	width:150px
+}
+.playerInfoTextBlock {
+	top:45px;
+	left:5px;
+	width:135px;
+}
+.playerButtonBig, .playerButtonBigSelect, .playerButtonSmall,
+.playerButtonSmallSelect , .playerTextBlock * *{
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color:#FFFFFF;
+}
+.playerInfoTextBlock * *, .playerModeTitle {
+	font-family: Arial;
+	font-size: 10px;
+	color:#595959;
+	font-weight: bold;
+}
+.playerModeTitle {
+	left:5px;
+	width:130px;
+	text-align:left;
+	top:47px;
+	font-size:11px;
+}
+.playerProgressBarPlay, .playerProgressBarLeft, .playerProgressBarNone, .playerProgressBuffer {
+	border:1px solid #FFFFFF;
+	height:3px;
+	left:15px;
+	line-height:2px;
+	position:absolute;
+	top:126px;
+	width:314px;
+}
+.playerProgressBarLeft{
+	width:1px;
+}
+.playerProgressBarLeft {
+	z-index:10;
+	background-color:#E52814;
+}
+.playerProgressBarPlay {
+	z-index:8;
+	background-color:#000000;
+}
+.playerProgressBarNone {
+	background-color:#525252;
+}
+.playerProgressBuffer {
+	background-color:#B3B4B4;
+}
+
+.playerPlay {
+	left:120px;
+}
+.playerPrevious {
+	left:70px;
+}
+.playerNext {
+	left:150px;
+}
+.playerVolumeBack {
+	top : 139px;
+	left:270px;
+	background-image: url("../img/img_us/fond_volume.png");
+	width:76px;
+	height:27px;
+}
+.playerVolumeBlock, .playerMute {
+	position:relative;
+	float:left;
+	margin-top:2px;
+	margin-left:6px;
+}
+
+.playerVolumeBlockTable * * {
+	vertical-align:bottom;	
+}
+.playerVolIE {
+		width:4px;
+}
+.playerVolNormal {
+	width:2px;
+}
+.playerVol0, .playerVol1, .playerVol2, .playerVol3, .playerVol4,
+.playerVol5, .playerVol6, .playerVol7, .playerVol8, .playerVol9 {
+	cursor:pointer;
+	border:1px solid #525252;
+	font-size:2px;
+}
+.playerVol0 {height:3px;line-height:3px;}
+.playerVol1 {height:5px;line-height:5px;}
+.playerVol2 {height:7px;line-height:7px;}
+.playerVol3 {height:9px;line-height:9px;}
+.playerVol4 {height:11px;line-height:11px;}
+.playerVol5 {height:13px;line-height:13px;}
+.playerVol6 {height:15px;line-height:15px;}
+.playerVol7 {height:17px;line-height:17px;}
+.playerVol8 {height:19px;line-height:19px;}
+.playerVol9 {height:21px;line-height:21px;}
+.playerVolColA {background-color:#E52814;}
+.playerVolColB {background-color:#000000;}
+
+.playerStarBlock {
+	top:60px;
+	left:25px;
+}
+.playerStarBlockTable {
+	
+}
+.playerImageStar {
+	cursor:pointer;
+	padding:1px;
+}
+
+.playerButtonBig, .playerButtonBigSelect, .playerButtonSmall, .playerButtonSmallSelect {
+	position:absolute;
+	top:80px;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:middle;
+
+}
+.playerButtonBig, .playerButtonBigSelect {
+	width:40px;
+	height:27px;
+	left:70px;
+	top:78px;
+	line-height:35px;
+}
+.playerButtonSmall, .playerButtonSmallSelect {
+	left:30px;
+	width:32px;
+	height:24px;
+	font-size:10px;
+	line-height:25px;
+}
+.playerButtonBig, .playerButtonSmall {
+	color:#A42531;
+}
+.playerButtonBigSelect, .playerButtonSmallSelect {
+	color:#FFFFFF;
+}
+.playerButtonBig {
+	background-image: url("../img/img_us/bt_AP_ok_off.png");
+}
+.playerButtonBigSelect {
+	background-image: url("../img/img_us/bt_AP_ok_on.png");
+}							
+.playerButtonSmall {
+	background-image: url("../img/img_us/bt_AP_no_off.png");
+}
+.playerButtonSmallSelect {
+	background-image: url("../img/img_us/bt_AP_no_on.png");
+}
+
+
+
+.ConfigProfileTable {
+	width:555px;
+}
+.AuthentificationForgetMessageText {
+	cursor:pointer;
+	font-weight:bold;
+	font-size:10px;
+}
+.AuthentificationRememberMessageText {
+	font-size:11px;
+	margin-right:15px;
+}
+.AuthentificationRememberMessageCheckBox {
+	cursor:pointer;
+}
+.AuthentificationRememberMessageTable {
+	margin-bottom:0px;
+	margin-left:5px;
+}
+.AuthentificationErrorMessage {
+	margin-left: 10px;
+	height:30px;
+}
+
+.RadioCatalogImageAddContent {
+	width:16px;
+	height:16px;
+	margin-right:10px;
+	cursor : pointer;
+}
+
+.AuthentificationCreateButton {
+	margin:0px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.AddTabLabelOver, .CoeurTabLabelOver, .SubTabLabelOver {
+	text-decoration:none;
+	color:#E52814;
+}
+
+.okMessage {
+	color:#009A00;
+}
+
+.titrelabel, .valeurstableau, .textes {
+	color: #666666;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.textes {
+	font-size: 15px;
+}
+.text_1 {
+	text-align:left;
+	color: #666666;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+.text_2 {
+ 	font-family:Arial;
+	font-size:17px;
+	color:#383838;
+}
+#logo_back, #g_header, #p_header_left, #p_header_right, #p_header_center,
+#p_info_client, #p_pendule, #p_user_text, #p_user_name {
+	float:left;
+}
+#logo_back {
+	background-image:url('images/logo.gif');
+	margin:10px;
+	width:117px;
+	height:118px;
+}
+#g_header {
+	margin-top:10px;
+}
+#p_header {
+	line-height:27px;
+	vertical-align:middle;
+	height:27px;
+}
+#p_header_left, #p_header_right {
+	width:9px;
+}
+#p_header_left {
+	background-image:url('images/zone_client_bord_gauch.gif');
+}
+#p_header_right {
+	background-image:url('images/zone_client_bord_droit.gif');
+}
+#p_header_center {
+	background-color:#c5c5c5;
+	width:800px;
+}
+#p_info_client {
+	width:300px;
+}
+#p_user_text { }
+#p_user_name { }
+#p_pendule { }

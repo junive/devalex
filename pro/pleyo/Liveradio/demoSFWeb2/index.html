@@ -1,0 +1,86 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Wrapper HTML for Liveradio</title>
+
+		<link rel="stylesheet" type="text/css" href="css/elements.css" />
+		<link rel="stylesheet" type="text/css" href="css/sfweb.css" />
+		<meta name='gwt:module' content='com.baracoda.www.Liveradio.Liveradio'>		
+		<meta name="gwt:property" content="locale=fr">		
+		<script type="text/javascript" src="player/libAudio/js/prototype/prototype.js"></script>
+		<script type="text/javascript" src="player/libAudio/js/audiolib/audiolib.js"></script>
+		<script type="text/javascript" src="player/libAudio/js/uilib/uilib.js"></script>
+		<script type="text/javascript" src="player/libAudio/js/phoenix/phoenix_prototype.js"></script>
+		<script type="text/javascript" src="player/javascript/AssetControler.js"></script>
+		<script type="text/javascript" src="player/javascript/PlayerControler.js"></script>
+	</head>
+	
+	<body onload="loadCalcul();">
+	
+
+	
+	<div id="debug"></div>
+	<script language="javascript" src="gwt.js"></script>
+	<iframe id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+	
+	<script type="text/javascript"> 
+		starto(); 
+  	</script>
+  
+  <div id="blindPanel">
+
+<div style='font-size:20px;margin-left:130px;color:green;border:1px solid;width:490px;text-align:center'>
+Cliquez 2 fois sur l'image "d&eacute;couvrez la liveradio" pour d&eacute;bloquer la d&eacute;mo
+<br/>Installer le plugin WMP et autoriser flash</div>
+<br/><br/>
+	<div id="bodyPanel">
+		<div id="playerPanel">
+			<div id="player" style="z-index:2;" >
+		      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="z-index:2;" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="596" height="111" id="my_flash" align="">	
+		        <param name="movie" value="player/flashPlayer/Player2.swf">
+		        <param name="wmode" value="opaque">
+		        <embed src="player/flashPlayer/Player2.swf" style="z-index:2;" quality="high" width="596" height="111" name="my_flash" align="" type="application/x-shockwave-flash" wmode="opaque" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
+		      </object>
+		    </div>
+		    <table class="ButtonMenuTable" 	cellspacing="0" cellpadding="0"><tbody><tr>
+				<td id="buttonRadios"></td>
+				<td id="buttonPodcasts"></td>
+				<td id="buttonMusicCast"></td>
+				<td id="buttonCoeur"></td>
+				<td id="buttonLiveradio"></td>
+			</tr></tbody></table>
+		</div>
+		<table id="HomePagePanel" cellspacing="0" cellpadding="0"><tbody>
+		<tr>
+			<td style="vertical-align:top"><table cellspacing="0" cellpadding="0"><tbody>
+				<tr><td id="homeRadiosBox"></td></tr>
+				<tr><td id="homePodcastsBox"></td></tr>
+				<tr><td id="homeMusicCastBox"></td></tr>
+				<tr><td id="homeConfigureBox"></td></tr>
+			</tbody></table></td>
+			<td style="vertical-align:top" id="homeDiscoverBox"></td>
+		</tr></tbody></table>
+		<table id="MyRadiosPanel" cellspacing="0" cellpadding="0"><tbody><tr>
+			<td style="vertical-align:top"><div id="myBibliothequePanel"></div></td>
+			<td style="vertical-align:top">
+				<table class="mySelectionGlobalHTMLTable" cellspacing="0" cellpadding="0"><tbody>
+					<tr><td id="mySelectionPanel"><td></tr>
+					<tr><td id="myPreselectionsNumbersPanel" align="center"></td></tr>
+				</tbody></table>
+			</td>
+		<table id="MyCoeurPanel" cellspacing="0" cellpadding="0"><tbody><tr>
+			<td id="CoeurPanel"></td>
+			<td id="DiscoPanel"></td>
+		</tr></tbody></table>
+		<table id="MyLiveradioPanel" cellspacing="0" cellpadding="0"><tbody><tr>
+			<td></td>
+		</tr></tbody></table>
+	</div>
+	
+	
+	</div>
+	
+	</body>
+</html>
+
+

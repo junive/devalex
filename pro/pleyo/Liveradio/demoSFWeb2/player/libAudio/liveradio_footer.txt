@@ -1,0 +1,7 @@
+    </script>
+    <script type="text/javascript">
+      _IG_RegisterOnloadHandler(liveradio_startup);
+    </script>
+  ]]>
+  </Content>
+</Module>

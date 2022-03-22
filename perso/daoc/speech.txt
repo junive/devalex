@@ -1,0 +1,6 @@
+I just started this software hearing a players names Loki, it developped a simple software (ajouter)
+
+the most difficult part was the speed
+take thousands, even millions of differents combinaisons possible, and make it fast ? jaja
+
+It was like guessing the exact number of

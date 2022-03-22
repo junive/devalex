@@ -1,0 +1,81 @@
+.DeviceName {
+	background-color : #f5f8f8;
+	color : #FF6600;
+	width:180px;
+	font-weight:bold;
+}
+
+.ConfigProfileAreaTerms {
+	height:45px;
+}
+
+
+#blindPanel {
+	width: 1024px;
+	height: 768px ;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.LinkBoxPanel {
+	position : absolute;
+	left:684px;
+	top:308px;
+}
+
+.JukeBoxTag {
+	position : absolute;
+	left:868px;
+	top:270px;
+}
+.FlashTag {
+	float: right;
+	top:2px;
+	left: auto;
+	position: relative;
+}
+.LinkTag, .LinkTagHome {
+	position : absolute;
+	left:142px;
+	top:660px;
+}
+.ConfigProfileCountryList {
+	width:130px;
+}
+.ConfigProfileBrod {
+	text-align:left;
+	width:120px;
+}
+.ConfigProfileMobile {
+	text-align:left;
+	width:90px;
+}
+.PopBlindSizeRegister {
+	width:331px;
+	height:440px;
+}
+.PopBlindShadowRegisterShad {
+	background-image:url(../img/img_ch/ombrep_pop-in_496.png);
+	text-align:center;
+}
+.ConfigProfileTable {
+	/*margin-left:10px;*/
+}
+.ConfigProfilePop {
+	margin-left:20px;
+}
+.ConfigProfileTable {
+	margin-left:12px;
+}
+.PopBlindAddRadiosTitleText { 
+	width:225px;
+}
+.ConfigProfileAreaTerms {
+	width:180px;
+}
+.ConfigProfileDescript {
+	margin-bottom:5px;
+}
+.ConfigProfileError {
+height:15px;
+}

@@ -1,0 +1,172 @@
+/* CSS Document */
+body * {
+	font-family: verdana ;
+}
+ul, ol, li {
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: outside; 
+}
+ul, li {
+	margin:0px;
+	padding:0px;
+}
+
+.boutons {
+	overflow:visible;
+	color: #ffffff;
+	background: #26254d;
+	border: 2px ridge #8888FF;
+	font-weight:bold;
+}
+input[type="text"], input[type="file"] { 
+	color: #000000;
+	background: #dbdaf1;
+	border: 2px ridge #8888FF;
+}
+input[type="hidden"] {
+	display:none;
+	visibility:hidden;
+}
+.lang_body ul, .menu_body ul, .menu_unic_body ul, .page_lang_body ul, .page_unic_body ul, user_body ul, hist_body ul {
+
+}
+.menu_body .ul_general, .menu_body .menu_unic_child {
+	border-left: 1px #26254d solid;
+}
+.menu_unic_parent, .menu_unic_child, .page_unic_parent, .page_unic_child {
+	margin-left:25px;
+	width:98%;
+}
+.lang_body li, .menu_body li,  .page_lang_body li, user_body li, hist_body li {
+	display:inline;
+}
+.lang_title, .menu_title, .menu_unic_title, .page_lang_title, .page_unic_title {
+
+}
+.lang_flag {
+	height:25px;
+	width:40px;
+	margin-bottom:-6px;
+}
+.menu_unic_body .ul_general, .page_unic_body .ul_general {
+	float:left;
+}
+.menu_unic_title_txt, .page_unic_title_txt{
+	display:block;
+}
+.menu_unic_body .update_li {
+	display:block;
+	clear:left;
+	text-align:center;
+
+}
+.menu_unic_body .boutons {
+	margin-left:auto;
+	margin-right:auto;
+		margin-top:10px;
+}
+
+.menu_unic_title_txt, .page_unic_title_txt{
+	display:block;
+}
+
+/** MENU OF USER **/
+.user_body, .hist_body {
+	text-align:center;
+}
+.user_body li {
+	margin-bottom:5px;
+	margin-top:5px;
+}
+.user_body .ul_general {
+	width:300px;
+	border: 1px #26254d solid;
+	text-align:center;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/** MENU OF HISTORY USER **/
+.hist_body .ul_general {
+	width:400px;
+	border: 1px #26254d solid;
+	border-bottom:none;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	height:22px;
+}
+.hist_body li {
+	margin-bottom: 5px;
+}
+.hist_body  {
+	margin-bottom:10px;
+}
+.hist_body .ul_general li {
+	float:left;
+	margin-right:5px;
+	margin-bottom: 0px;
+}
+
+/** PRINCIPAL MENUS **/
+
+.p_menus {
+	height:30px;
+}
+.menu {
+	text-align:center;
+    margin:0;
+    padding:0;
+}
+.menu ul {
+    position:absolute;
+    margin:0;
+    padding:0;
+	text-align:left;
+}
+.menu li ul {
+    visibility:hidden;
+	display:inline;
+	text-align:left;
+}
+.menu li li ul {
+    position:absolute;
+	display:inline;
+}
+.menu li {
+    display:inline;
+    margin:0;
+    padding:0;
+}
+.menu li li { /* FF BUG */
+    display:block;
+    float:none;
+
+}
+.menu input {
+    text-align:center;
+	background: #26254d;
+    /*background: url("../images/font_menu_1.gif") transparent repeat;*/
+    border:1px #666 solid;
+    color: #ffffff;
+	font-weight:bold;
+    padding:2px 0;
+    margin:1px;
+	overflow: visible;
+
+
+}
+
+.menu input:hover {
+/*    background: url("../images/font_menu_2.gif") transparent repeat;*/
+    border:1px #aaa solid;
+}
+.menu input:focus {
+	/* for a mozilla better display with key nav */
+  /*  background: url("../images/font_menu_1.gif") transparent repeat;*/
+}
+input.linkOver {
+   /* background: url("../images/font_menu_1.gif") transparent repeat; */
+}

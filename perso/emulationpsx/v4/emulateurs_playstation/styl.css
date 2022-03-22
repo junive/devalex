@@ -1,0 +1,73 @@
+/* Style du site */
+
+<!--
+
+.baniere{ background-image: url('../image/ban.jpg'); vertical-align:bottom; text-align:left;  height:140px;}
+
+.TextTitre{ vertical-align:middle; height:20px;  font-family: arial; font-size: 12pt; font-weight: bold; color: #000099; text-align:center; width:540px; background-image: url('../image/TitreText.jpg'); border-bottom:solid; border-width:1px; border-left:none ;  border-right:none ; border-top:none ;}
+.Texte  {  text-align:center; vertical-align:middle; background-image: url('../image/ftexte.jpg'); font-family: arial; color: #000066; border-style: none; border-width: 1px;}
+.Date {font-family: arial; font-size: 7pt; color: #000099; }
+
+.MenuPrincipal{ width:70px; height:10px; text-align:center; font-family: Comic sans Ms; font-weight: bold; font-size : 9pt; color:#000099;}
+.MenuFond {font-size: 9pt; font-family: Comic sans MS; font-weight: bold; color: #000099; vertical-align:middle; text-align: center;  background-image: url('../image/Fondbou.jpg'); border: 1pt solid rgb(0,0,164);)}
+.Playstation{height:22px; vertical-align:middle; text-align: center;  background-image: url('../image/Playstation.jpg'); font-family: Sydnie; font-size: 13pt;  font-weight: bold; color: #000099;}
+
+.borderTop{  border-top: 1pt solid rgb(178,178,224);}
+.borderBas{ border-bottom: 1pt solid rgb(178,178,224); border-top: 1pt solid rgb(178,178,224); }
+.borderText{  border: 1pt solid rgb(0,0,164);}
+
+.partenaire { text-decoration:underline; text-align:center; vertical-align:top; font-family: Comic sans Ms; color:#000099 ; font-size:9pt;  font-weight: bold;}
+.lienpartenaire {text-align:center; vertical-align:top; font-family: Comic sans Ms; font-size:8pt; font-weight: bold;}
+.connecte { width:170px; text-align:right; vertical-align:middle; font-weight: bold; font-family: Comic sans Ms; color: #000099;font-size:8pt;} 
+.compteur{ height:150px; vertical-align:top; text-align:center;width:836;font-family: Comic sans Ms; font-weight: bold; font-size : 9pt; color:#000099;}
+
+
+.pot { height:120px; vertical-align:top; text-align:center; } 
+.potMenu { vertical-align:top; text-align:center; background-image:url('../image/Pot.gif') }
+.potH {height:29px; background-image:url('../image/PotH.gif');}
+.potB {height:29px; background-image:url('../image/PotB.gif');}
+
+-->
+
+
+
+th
+{height:10; text-align:center; font-family: arial; font-weight: bold; font-size : 9pt; color:#000099;}
+
+a.dudu:link
+{width : 100%; display: block;    background-image : url("../image/boutons2.jpg") ;color : #000099 ; text-decoration : none ;}
+a.dudu:visited
+{width : 100%;  display: block;    background-image : url("../image/boutons2.jpg") ;color : #000099 ; text-decoration : none ;}
+a.dudu:hover
+{ width : 100%;  display: block;  background-image : url("../image/boutons.jpg") ; color:#0099FF ; text-decoration : none;}
+a.dudu:active
+{width : 100%;  color : #0000FF ; text-decoration : none ;}
+
+a.toto:link
+{display: block; text-decoration : none ; color:#6633FF;}
+a.toto:visited
+{display: block; text-decoration : none ;  color:#6633FF;}
+a.toto:hover
+{display: block; color:#000099; text-decoration : underline ;}
+a.toto:active
+{color : #0000FF ; text-decoration : none ;}
+
+
+a.top:link
+{width : 100%; font-size: 9pt; font-family: arial; font-weight: bold; display: block;    background-image : url("../image/boutons2.jpg") ;color : #3101ff; text-decoration : none ;}
+a.top:visited
+{width : 100%; font-size: 9pt; font-family: arial; font-weight: bold; display: block;    background-image : url("../image/boutons2.jpg") ;color :#3101ff; text-decoration : none ;}
+a.top:hover
+{width : 100%; font-size: 9pt; font-family: arial; font-weight: bold; display: block;  background-image : url("../image/boutons.jpg") ; color:#0099FF ; text-decoration : none;}
+a.top:active
+{width : 100%; font-size: 9pt; font-family: arial; font-weight: bold; color : #0000FF ; text-decoration : none ;}
+
+
+a.menut:link
+{width : 100%; display: block;    background-image : url("../image/boutons.jpg") ;color : #000099 ; text-decoration : none ;}
+a.menut:visited
+{width : 100%; display: block;    background-image : url("../image/boutons.jpg") ;color : #000099 ; text-decoration : none ;}
+a.menut:hover
+{width : 100%;  display: block;  background-image : url("../image/boutons2.jpg") ; color:#0099FF ; text-decoration : none;}
+a.menut:active
+{width : 100%; display: block;  background-image : url("../image/boutons2.jpg") ; color:#0099FF ; text-decoration : none;}

@@ -1,0 +1,121 @@
+/****** Create Product Type Module ******/
+.createProductTypeModule {
+
+}
+.createProductTypeModuleTitlePanel {
+	color: #ffee66;
+
+}
+.createProductTypeModuleTableBackground {
+	width:100%;
+
+}
+.createProductPlayModuleLineBoxBackground {
+	
+}
+.createProductTypeModuleTableColumns {
+
+}
+.createProductTypeModuleTableColumns1 {
+
+}
+.createProductTypeModuleTableColumns2 {
+
+}
+.createProductPlayModuleTitleNewItem {
+	
+}
+.createProductPlayModuleTextBoxNewItem {
+	
+}
+.createProductPlayModuleButtonConfirm {
+	
+}
+/***** View Play Mode Module *****/
+.createPlayModule {
+
+}
+.createPlayModuleTableBackground {
+	width:100%;
+	text-align:left; 
+}
+.createPlayModuleTableColumns {
+	
+}
+.createPlayModuleTableColumns1 {
+	
+}
+.createPlayModuleTableColumns2 {
+	
+}
+.createPlayModuleLineBoxBackground {
+	
+}
+.createPlayModuleTitleNewItem {
+
+}
+.createPlayModuleTextBoxNewItem {
+	text-align:left;
+}
+.createPlayModuleButtonConfirm {
+	
+}
+.createPlayModuleRemoveButton {
+
+}
+.viewePlayModuleList {
+	
+}
+/****** Create Stream Type Module ******/
+.createStreamTypeModule {
+	height:300px;
+}
+
+/******* Mandatory Rights To Acess Products Module ****/
+.mandatoryRightsModule {
+	
+}
+.mandatoryRightsModuleTableBackground {
+
+}
+.mandatoryRightsModuleTableColumns1 {
+
+}
+.mandatoryRightsModuleTableColumns2 {
+
+}
+/******** Catalogs Of Operation Tag Module ****/
+.catalogOfOperationTagsModule {
+
+}
+/********** Create User Rights Catalog Module *****/
+.createUserRightsCatalogModule {
+
+}
+/**** View Content Owner Module ****/
+.createContentOwnerModule {
+
+}
+/****** View Device Module *****/
+.viewDevicesModule {
+
+}
+/***** Create Set Preset Menu ****/
+.createSetPresetMenuModule {
+	
+}
+.createSetPresetMenuModuleTableBackground {
+	
+}
+.createSetPresetMenuModuleTableColumns {
+	color : #990000;
+	font-size : 12px;
+	margin:0px;
+	padding:0px;
+}
+.createSetPresetMenuModuleTableColumns1 {
+	
+}
+.createSetPresetMenuModuleTableColumns2 {
+	
+}

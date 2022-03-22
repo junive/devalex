@@ -1,0 +1,1247 @@
+BODY, TD, DIV, P, A { font:11px Arial, sans-serif; color:#333;}
+A { text-decoration:none; }
+A:hover { text-decoration:underline; }
+A IMG { border:0px none lime; }
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font:11px Arial, sans-serif;
+	color:#333;
+}
+td, div {
+	vertical-align:middle;
+}
+
+
+/************* ALL FIXED COLORS ************/
+
+/*RootPanel*/
+.PlayerRootPanel {
+	background-color : #e7e7e7;
+}
+/*button*/
+.mySelectionConfigButton, .LabelIdEditButtonConfirm {
+	color: #4B4B4B;
+}
+.OrangeLinkButton, .OrangeSpanButton{
+	background-color:#FF9933;
+	color : #ffffff;
+}
+/*titles*/
+.TitlePageLabel, .PopBlindTitleText , .HomePageBoxTitleText, 
+.HomePageDiscoverTitleText, .PopCopyTitle {
+	color:#FF5500;
+}
+/*bibliotheque && CoupCoeur*/
+.bibliothequeTitleOfRadios, .CoupCoeurTitle,
+.bibliothequeSearchTextBox, .CoupCoeurSearchTextBox,
+.bibliothequeSearchSelectedCriteria, .CoupCoeurSearchSelectedCriteria  {
+	color:#FF5500;
+}
+/*myselection*/
+.mySelectionMyCatalog, .mySelectionMyPreselection, 
+.mySelectionOptionTable, .mySelectionNumbersRootPanel {
+	background-color : #f5f8f8;
+	color : #4B4B4B;
+}
+.selectionListFolderTableTitleLine * *  {
+	color : #ff5500;
+}
+.selectionListFileBarAfterDropShow {
+	background-color : #f53300;
+}
+/*PopIn*/
+.PopupInfoRate, .PopupInfoType, .PopBuySong, .PopBuyWebBuy, .PopBuyJuk {
+	color: #FF5500;
+}
+/*AddRProductsPop*/
+.AddRadioPodcastStar {
+	color:#FF9933;
+}
+/*TextBox*/
+.LabelIdEditTextBox {
+	color:#330000;
+}
+/*ConfigDescriptionTitle*/
+.ConfigDescriptionColumns2Element1 {
+	color : #FF9933;
+}
+.ConfigInscriptionNoInscriptError {
+	color:#330000;
+}
+/*********** THE ROOTS .HTML PANELS *******************/
+
+/* principals panels */
+
+.PopBlindRootPanel {
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	position: relative;
+	top: 0;
+	display: block;
+	height:100%
+}
+.bodyRootPanel {
+	position:absolute;
+	margin:5px;
+	left:20px;
+}
+/* head panels */
+
+.PlayerRootPanel {
+	width:640px;
+	height:150px;
+	text-align:center;
+	vertical-align : bottom;
+	position : absolute;
+	left:1px;
+	top:2px;
+}
+
+/* general body child panels */
+
+.HomePageRootPanel, .MyProductsRootPanel, .MyCoeurRootPanel, .MyLiveradioRootPanel {
+	position : absolute;
+	left:2px;
+	top:160px;
+}
+
+/* home page */
+
+.HomeBoxDiscoverRoot {
+	padding-left:30px;
+}
+.HomeBoxRoot { }
+
+/* products (podcasts, radios, music cast) */
+
+.bibliothequeRootPanel , .CoupCoeurRootPanel {
+	overflow:hidden;
+	width:340px;
+}
+.mySelectionGlobalHTMLTable { }
+.mySelectionRootPanel { }
+.mySelectionNumbersRootPanel {
+ 	width : 100%;
+	height:40px;
+	vertical-align:middle;
+}
+
+/*Coup de coeur*/
+
+/**** GENERAL PROPERTIES ****/
+.ColumnsCenter {
+	text-align:center;
+}
+.MarginCenter {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/************** THE TITLES *****************/
+
+.TitlePageLabel, .CoupCoeurTitle, .PopBlindTitleText ,
+.HomePageBoxTitleText, .HomePageDiscoverTitleText {
+	font-size:18px;
+	width:100%;
+	padding:3px;
+}
+.TitlePageLabel, .CoupCoeurTitle {
+	font-size:20px;
+	padding-bottom:10px;
+}
+.CoupCoeurTitle {
+	padding-bottom:20px;
+}
+.PopBlindTitleText {} 
+.HomePageBoxTitleText {
+	cursor :pointer;
+}
+.PopCopyTitle {
+	width:100%;
+	font-size:15px;
+	text-align:left;
+}
+/*ConfigDescriptionTitle*/
+.ConfigDescriptionColumns2Element1 {
+	font-size:18px;
+}
+
+
+/*************** THE MENUS ****************/
+
+/* absolute div panel*/
+
+.ButtonMenuPanel {
+	text-align:center;
+}
+.bibliothequeMenuPanel { }
+.ConfigMenuPanel {
+	height:30px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+/* table panel */
+
+.ButtonMenuTable {
+	position:absolute;
+	bottom: 0px;
+	left:15px;
+}
+.bibliothequeMenuTable {
+	position:absolute;
+	top:4px;
+	left:5px;
+}
+.ConfigMenuTable {
+	position:absolute;
+	top:7px;
+	left:5px;
+}
+
+/* labels div */
+.PrincipalTabMenuLabelOver, .ConfigTabMenuLabelOver, .ArrowButtonOver, 
+.OrangeSpanButtonOver, .BiblioTabMenuLabelOver, .HomePageBoxTitleTextOver, .BilbioTabSearchOver {
+	text-decoration:underline;
+}
+.PrincipalTabMenuTable, .ConfigTabMenuTable, .BiblioTabMenuTable {
+	margin-left:5px;
+	margin-right:5px;
+	cursor:pointer;
+}
+.PrincipalTabMenuLabel,  .ConfigTabMenuLabel, .BiblioTabMenuLabel {
+	vertical-align:middle;
+}
+.ConfigTabMenuLabel {
+	font-size:10px;
+}
+.PrincipalTabMenuLabelSelected, .ConfigTabMenuLabelSelected, .BiblioTabMenuLabelSelected,
+.PrincipalTabMenuLabelOver, .ConfigTabMenuLabelOver, .BiblioTabMenuLabelOver {
+	color:#FF5500;
+}
+
+.PrincipalTabMenuCenter, .ConfigTabMenuCenter {
+	background-image: url("../img/img_fr/arrondi_onglet_gris_milieu.jpg");
+	background-repeat: repeat-x;
+} 
+.BiblioTabMenuCenter {
+	background-image: url("../img/img_fr/bt_milieu.gif");
+	background-repeat: repeat-x;
+}
+.PrincipalTabMenuCenterSelected, .ConfigTabMenuCenterSelected, .BiblioTabMenuCenterSelected {
+	background-image: url("../img/img_fr/arrondi_onglet_blanc_milieu.jpg");
+	background-repeat: repeat-x;
+}
+
+/*tochange*/
+/*
+.BiblioTabMenuLabel, .BiblioTabMenuLabelSelected {
+	margin-left:5px;
+	margin-right:5px;
+	vertical-align:middle;
+	cursor:pointer;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding:5px;
+}
+.BiblioTabMenuLabel {
+	border: 1px solid  #DDDDDD;
+	background-image: url("../img/img_fr/menusBack.jpg");
+	background-repeat: repeat-x;
+	margin-bottom:5px;
+	height:15px;
+}
+.BiblioTabMenuLabelSelected {
+	border: 1px solid  #DDDDDD;
+	border-bottom: 1px solid #ffffff;
+	color :#FF5500;
+	background:none;
+	background-color:#ffffff;
+	margin-bottom:0px;
+	height:20px;	
+}
+*/
+
+/************** THE BUTTONS ***************/
+
+/* blank button */
+/*
+.mySelectionConfigButton {
+	vertical-align:middle;
+	text-align:center;
+	cursor:pointer;
+	border:1px solid #DDDDDD;
+	background-image: url("../img/img_fr/menusBack.jpg");
+	background-repeat: repeat-x; 
+	width:70px;
+	padding:2px;
+	margin-left:5px;
+	margin-right:5px;
+} */
+.ButtonConfirmOk, .mySelectionConfigButton {
+	cursor:pointer;
+}
+.LabelIdEditButtonConfirm { }
+
+/* arrow table */
+
+.ArrowButtonColumns1 {
+	padding:3px;
+	vertical-align:top;
+	text-align:left;
+}
+.ArrowButtonImage, .ArrowButtonLabel{
+}
+.ArrowButtonBackground {
+	vertical-align:middle;
+	font-weight : bold;
+	text-decoration:none;
+	border:1px solid #DDDDDD;
+	background-image: url("../img/img_fr/menusBack.jpg");
+	background-repeat: repeat-x;
+}
+.ArrowButton { }
+.ArrowButtonLink { }
+.ArrowButtonOver {
+	cursor:pointer; 
+}
+
+/* arrow button */
+
+.ArrowButtonLabel {
+	cursor: pointer;
+	text-align:center;
+	margin:auto;
+	vertical-align:middle;
+	height:20px;
+}
+.ArrowButtonImage {
+
+	margin-right:5px;
+}
+.ArrowLinkButton, .ArrowSpanButton {
+
+}
+
+/* orange button */
+
+.OrangeLabelButton {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	cursor:pointer;
+	padding:3px;
+}
+.OrangeLinkButton, .OrangeSpanButton {
+	padding:3px;
+	font-weight : bold;
+	text-decoration:none;
+}
+
+
+/* close-delete buttons */
+
+.PopBlindRemoveButton {
+	cursor:pointer;
+	float: right;
+	padding-left: 5px;
+}
+.PopCopyRemoveButton {
+	cursor:pointer;
+}
+.selectionListDeleteButton {
+	width:100%;
+	text-align:right;
+}
+
+
+
+/************ THE DYNAMICS LISTENERS ***********/
+
+/* general css */
+.CategorieCatalogLine, .CategorieCatalogLineOnMouseOver, .CategorieCatalogLineOnClic,
+.RadioCatalogLine, .RadioCatalogLineOnMouseOver, .RadioCatalogLineOnClic,
+.mySelectionPreselectionNumberImage, .mySelectionPreselectionNumberImageOnDragOver,
+.selectionListFolderTableTitle, .selectionListFolderTableTitleOnDragOver,
+.selectionListFolderTableTitleLineOnClic, .selectionListFolderTableTitleLineOnMouseOver,
+.selectionListFileTableLine, .selectionListFileTableLineOnClic , .selectionListFileTableLineOnMouseOver {
+	cursor: pointer;
+	vertical-align: middle;
+}
+.CategorieCatalogLine, .CategorieCatalogLineOnMouseOver, .CategorieCatalogLineOnClic {
+	height: 28px;
+}
+.RadioCatalogLine, .RadioCatalogLineOnMouseOver, .RadioCatalogLineOnClic {
+	height: 50px;
+}
+.mySelectionPreselectionNumberImage, .mySelectionPreselectionNumberImageOnDragOver {
+	width:25px;
+	height:25px;
+}
+.selectionListFolderTableTitle, .selectionListFolderTableTitleOnDragOver,
+.selectionListFolderTableTitleLineOnClic, .selectionListFolderTableTitleLineOnMouseOver {
+	width:100%;
+}
+.selectionListFileTableLine, .selectionListFileTableLineOnClic , .selectionListFileTableLineOnMouseOver {
+	width:100%;
+}
+
+/* fixed css */
+
+.CategorieCatalogLine , .RadioCatalogLine .mySelectionPreselectionNumberImage,
+.selectionListFolderTableTitleLine, .selectionListFileTableLine { }
+
+.CategorieCatalogLine { }
+.RadioCatalogLine {
+	background-image: url("../img/img_fr/backGreyWhite100.jpg");
+	background-repeat: repeat-x;
+	vertical-align: middle;
+}
+.mySelectionPreselectionNumberImage { }
+.selectionListFileTableLine{ }
+
+/* on mouseover css */
+
+/*.CategorieCatalogLineOnMouseOver * *, .RadioCatalogLineOnMouseOver * *,*/
+.selectionListFolderTableTitleLineOnMouseOver,
+.selectionListFolderTableTitleLineOnMouseOver .selectionListFolderText,
+.selectionListFolderTableTitleLineOnMouseOver .selectionListCountLabel,
+.selectionListFolderTableTitleLineOnMouseOver .selectionListFolderTableTitleDeleteButton,
+.selectionListFileTableLineOnMouseOver * * {
+ 	color:#ffffff;
+}
+.CategorieCatalogLineOnMouseOver,
+.CategorieCatalogLineOnMouseOver .CategorieCatalogText,
+.CategorieCatalogLineOnMouseOver .CategorieCatalogNumberRadio,
+.CategorieCatalogLineOnMouseOver .CategorieCatalogImageGoToButton,
+.RadioCatalogLineOnMouseOver,
+.RadioCatalogLineOnMouseOver .RadioCatalogTitle,
+.RadioCatalogLineOnMouseOver .RadioCatalogImageRadio,
+.RadioCatalogLineOnMouseOver .RadioCatalogImageInfo, 
+.RadioCatalogLineOnMouseOver .RadioCatalogImagePlay,
+.RadioCatalogLineOnMouseOver .RadioCatalogDescription,
+.RadioCatalogLineOnMouseOver .RadioCatalogImageBuy,
+.RadioCatalogLineOnMouseOver .RadioCatalogImageDelete  {
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+.selectionListFolderTableTitleLineOnMouseOver {
+	background-color:#FF5500;
+}
+.selectionListFileTableLineOnMouseOver {
+	background-color:#FF9933;
+}
+.CategorieCatalogLineOnMouseOver {
+	background-image: url("../img/img_fr/fond_categorie.gif");
+	background-repeat: repeat-x; 
+}
+.RadioCatalogLineOnMouseOver {
+	background-image: url("../img/img_fr/fond_products.gif");
+	background-repeat: repeat-x; 
+}
+.CategorieCatalogLineOnMouseOver .CategorieCatalogNumberRadio {
+	color:#FF5500;
+	background-image: url("../img/img_fr/fond_prod_blanc.gif");
+}
+
+/* on click css */
+
+.CategorieCatalogLineOnClic .CategorieCatalogText,
+.CategorieCatalogLineOnClic .CategorieCatalogImageGoToButton,
+.selectionListFolderTableTitleLineOnClic .selectionListFolderText,
+.selectionListFolderTableTitleLineOnClic .selectionListCountLabel,
+.selectionListFolderTableTitleLineOnClic .selectionListFolderTableTitleDeleteButton, 
+.RadioCatalogLineOnClic * * , .selectionListFileTableLineOnClic  * * {
+	color:#ffffff;
+}
+.CategorieCatalogLineOnClic .CategorieCatalogNumberRadio {
+	color:#FF5500;
+	background-image: url("../img/img_fr/fond_prod_blanc.gif");
+} 
+.CategorieCatalogLineOnClic {
+	background-image: url("../img/img_fr/fond_orange_reflet.jpg");
+}
+.RadioCatalogLineOnClic {
+	background-image: url("../img/img_fr/fond_orange_reflet.jpg");
+}
+.selectionListFolderTableTitleLineOnClic {
+	background-color:#FF5500;
+}
+.selectionListFolderChildTableOnClic {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.selectionListFileTableLineOnClic {
+	background-color:#FF9933;
+}
+
+/* on dragover css */
+
+.mySelectionPreselectionNumberImageOnDragOver, .selectionListFolderTableTitleOnDragOver { }
+.mySelectionPreselectionNumberImageOnDragOver {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.selectionListFolderTableTitleOnDragOver {
+	background-color : #FF9933;
+	color : #ffffff;
+	font-size:14px;
+}
+
+/* between bar file css */
+
+.selectionListFileBarAfterDropShow, .selectionListFileBarAfterDropHide {
+	margin:0px;
+	padding:0px;
+	line-height:1px;
+	font-size: 2px;
+}
+.selectionListFileBarAfterDropHide{
+	background: none;
+}
+
+/* double click editable Label */
+
+.LabelIdEditTable {
+	height:18px;
+	float:left;
+	width:100%;
+}
+.LabelIdEditTextBox {
+	height:18px;
+	font-size:10px;
+	width:150px;
+	text-align:left;
+}
+
+
+
+/************** The Option List Box ***********/
+.optionListBox, .optionListTableCopierSelectPop, .optionListTableCopierDansPop, .optionListTableCopierVersPop {
+	border: 1px solid #FF9933;
+	cursor : pointer;
+	background-image: url("../img/img_fr/menusBack.jpg");
+	background-repeat: repeat-x; 
+	border:1px solid #DDDDDD;
+	padding-left : 5px;
+	color: #4B4B4B;
+	font-size: 12px;
+}
+.optionListBoxColumns1, .optionListBoxColumns2 {
+	
+}
+.optionListBoxText {
+	width:100%;
+}
+.optionListOpenCloseButton {
+	width:15px;
+	height:15px;
+	margin-left:5px;
+	font-size: 12px;
+	background-image: url("../img/img_fr/fleche.jpg");
+	text-align:center;
+	vertical-align:middle;
+	float: right;
+}
+.optionListPanel {
+	height:200px;
+}
+.optionListTable {
+	border-bottom: 1px solid #FF9933;
+	border-left: 1px solid #FF9933;
+	border-right: 1px solid #FF9933;
+	cursor : pointer;
+	background-color : #f5f8f8;
+	color: #4B4B4B;
+	width:100%;
+}
+.optionListTableColumns {
+	width:100%;
+}
+.optionListTableLine, .optionListTableLineOnMouseOver {
+	font-size: 12px;
+}
+.optionListTableLineOnMouseOver {
+	color : #ffffff;
+	background-color:#FF9933;
+}
+
+
+
+/***** THE BIBLIOTHEQUE && COUP DE COEUR TABLE PANEL **************/
+
+
+.bibliothequeTable, .CoupCoeurTable {
+	width:320px;
+}
+.bibliothequeMenuPanel, .bibliothequeGoToTable,   .bibliothequeSearchTable, .CoupCoeurSearchTable {
+	width:50%;
+	height:35px;
+	border-bottom: 1px solid #DDDDDD;
+}
+.CoupCoeurSearchTable, .CoupCoeurSearchTableColumns2, .bibliothequeGoToTableColumns3 {
+	width:100%;
+	text-align:left;
+}
+.bibliothequeAddRadio, .bibliothequeTitleOfRadios, .bibliothequeSearchTextBox, 
+.bibliothequeSearchCriteria, .bibliothequeSearchSelectedCriteria,
+.CoupCoeurTitle, .CoupCoeurSearchTextBox,
+.CoupCoeurSearchCriteria, .CoupCoeurSearchSelectedCriteria {
+	margin-left: 3px;
+	text-align:left;	
+	cursor:pointer;
+}
+.CoupCoeurSearchCriteria, .CoupCoeurSearchSelectedCriteria {
+	margin-right:3px;
+}
+.CoupCoeurSearchTextBox {
+	margin-right:5px;
+}
+.bibliothequeAddRadio {
+	width:100%;
+	text-align:right;
+}
+.bibliothequeSearchTextBox, .CoupCoeurSearchTextBox {
+	width:100px;
+	cursor:text;
+}
+.bibliothequeSearchCriteria, .bibliothequeSearchSelectedCriteria,
+.CoupCoeurSearchCriteria, .CoupCoeurSearchSelectedCriteria {
+	font-size : 10px;
+}
+.bibliothequeSwitchPanel {
+	height:100%;
+	width:600px;
+}
+.bibliothequeGotToTableText { }
+.bibliothequeNextPreviousButton {
+	cursor:pointer;
+}
+
+/*### CATALOG OF THE BIBLIOTHEQUE ###*/
+
+.CatalogPanel {
+	margin:5px;
+	padding-top:5px;
+	height:290px;
+	width:300px;
+	float:left;
+}
+.CatalogTable {
+	width:280px;
+}
+.CatalogColumns {
+	width: 100%;
+}
+
+/*### Communs to radio and categorie catalog ###*/
+
+.CategorieCatalogTable, .RadioCatalogTable {
+	width:100%;
+	border-bottom: 1px solid #C0C0C0;
+} 
+
+/*### Categorie  ###*/
+
+.CategorieCatalogColumns1, .CategorieCatalogText {
+	width:100%;
+	vertical-align: middle;
+}
+.CategorieCatalogText {
+	font-weight:bolder;
+	margin-bottom:auto;
+	margin-top:auto;
+}
+.CategorieCatalogColumns2 { }
+.CategorieCatalogColumns3 { }
+
+.CategorieCatalogNumberRadio {
+	width : 32px; 
+	background-image: url("../img/img_fr/fond_prod_gris.gif");
+	text-align:center;
+	font-weight: bold;
+	height : 14px;
+	vertical-align: middle;
+}
+.CategorieCatalogText, .CategorieCatalogNumberRadio, .CategorieCatalogImageGoToButton {
+	margin-right:5px;
+}
+.CategorieCatalogText {
+	margin-left:5px;
+}
+
+/*### Radios / products  ###*/
+
+.RadioCatalogTextTable {
+	width:200px;
+}
+.RadioCatalogTitle {
+	font-weight:bolder;	
+}
+.RadioCatalogImageInfo, .RadioCatalogImagePlay, 
+.RadioCatalogImageBuy, .RadioCatalogImageDelete {
+	margin-right:10px;
+}
+.RadioCatalogImageRadio { 
+	width:40px;
+}
+.RadioCatalogDescription { }
+
+
+
+/************** MY SELECTION CATALOG ********************/
+
+
+/** The preselection number Table **/
+.mySelectionPreselectionNumberTable {
+	width:260px;
+	padding:5px;
+}
+
+/** The My Selection table **/
+.mySelectionTable {
+	width:325px;
+	height: 275px;	
+}
+.mySelectionTableColumns, .mySelectionOptionTable, .mySelectionMyCatalog, 
+.mySelectionMyPreselection, .mySelectionMyCatalogBottom {
+	width:100%;
+}
+.mySelectionOptionTable {
+	padding:5px;
+	cursor:pointer;
+}
+.mySelectionAddFolderLabel {
+	padding-top:5px;
+	padding-bottom:5px;
+	cursor:pointer;
+}
+.mySelectionMyCatalog, .mySelectionMyPreselection {
+	vertical-align:middle;
+	text-align:center;
+	padding-bottom:3px;
+	padding-top:3px;
+	cursor:pointer;
+	border-bottom: 1px solid #C0C0C0;
+}
+.mySelectionMyCatalog {
+ 	border-top: 1px solid #C0C0C0;
+}
+.mySelectionMyPreselection {
+ 	border-top: 1px solid #ffffff;
+}
+.mySelectionMyCatalogBottom {
+	background-image: url("../img/img_fr/subCatalogBack.jpg");
+	height:3px;
+	background-repeat: repeat-x;
+	font-size: 2px; 
+	line-height: 2px;
+}
+
+.mySelectionUpDownImage {
+	margin-left:5px; 
+	margin-bottom:2px;
+}
+/************** List Of Selection *****************/
+
+
+/* The principal panel */
+.selectionListPanel, .preselectionListPanel {
+	height:275px;
+	width:300px;
+	text-align:left;
+	padding:0px;
+	margin-left:10px;
+	margin-right:10px;
+	background-image: url("../img/img_fr/backGreyWhite300.jpg");
+	background-repeat: repeat-x;
+	
+	scrollbar-face-color: #ffffff; /* Surface */
+	scrollbar-track-color: #808080;/* Fond */
+	scrollbar-highlight-color: #eeeeee; /* Ombre claire */
+	scrollbar-shadow-color: #f5f8f8; /* Ombre Foncee */
+	scrollbar-arrow-color: none; /* Fleches */
+	scrollbar-3dlight-color: #FFFFFF; /* Bordure3D claire */
+	scrollbar-darkshadow-color: #000000; /* Bordure3D foncee */ 
+	
+}
+.selectionListTable {
+	padding:5px;
+	width:100%;
+	float: left;
+}
+
+
+/**** Preselection List ****/
+
+.preselectionListTable {
+	width :100%;
+	padding:5px;
+}
+.preselectionListTableLine {
+	width:100%;
+	height:25px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+.preselectionListTableColumns1, .preselectionListEmptyColumns1 .preselectionListNumberImage  {
+	width:17px;
+	height:17px;
+} 
+.preselectionListTableColumns2, .preselectionListImageRadio {
+	width:20px;
+	height:20px;
+}
+.preselectionListTableColumns3, .preselectionListEmptyColumns2, .preselectionListText {
+	width:100%;
+	text-align:left;
+}
+.preselectionListEmptyColumns1, .preselectionListEmptyColumns2,
+.preselectionListTableColumns1, .preselectionListTableColumns2, .preselectionListTableColumns3,
+.preselectionListTableColumns4, .preselectionListTableColumns5, .preselectionListTableColumns6 {
+	margin:0px;
+	padding:0px;
+	border-bottom: 1px dotted #C0C0C0;
+}
+.preselectionListTableColumns4, .preselectionListTableColumns5, .preselectionListTableColumns6 {
+	width:10px;	
+}
+.preselectionListNumberImage, .preselectionListText, .preselectionListImageRadio,
+.preselectionListPlayButton, .preselectionListInfoPopup, .preselectionListCopyPopPup {
+	margin-right:5px;
+}
+
+
+
+/*** FILES AND FOLDERS ***/
+
+/* this is where you can put a space between folders */
+.selectionListFolderChildrenTableColumns1 {
+	width:25px;
+}
+
+/*### Communs To Folder And Files ###*/
+
+.selectionListFolderTable, .selectionListFolderTableTitle, 
+.selectionListFolderChildrenTable, .selectionListFileTable  {
+	width:100%;
+}
+/* The text information folder */
+.selectionListFolderTableTitleColumns2, .selectionListFolderText,
+.selectionListFileTableColumns2, .selectionListFileText {
+	width:100%;
+	text-align:left;
+}
+/* The deleteButton */
+.selectionListFolderTableTitleColumns4, .selectionListFileTableColumns5 {
+	width:10px;
+	height:15px;
+}
+/* the items */
+.selectionListCountLabel, .selectionListFolderOpenCloseButton, 
+.selectionListFolderTableTitleDeleteButton, .selectionListFileImage, 
+.selectionListFilePlayImage, .selectionListFileInfoPopUpImage, 
+.selectionListFileTableTitleDeleteButton {
+	margin-right:5px;
+}
+/* preselect number*/
+.selectionListFolderTableTitleColumns5, .selectionListFileTableColumns6 {
+	width:25px;
+	height:18px;
+	text-align : center;
+}
+.selectionListFolderPreselectionImage, .selectionListFilePreselectionImage {
+	width:18px;
+	height:18px;
+}
+
+/*### Folder Selection List ###*/
+
+/* The Open or Close Button */
+.selectionListFolderOpenCloseButton {
+	width: 12px;
+	height: 12px;
+}
+
+/*### File Selection list ###*/
+
+.selectionListFileTableColumns2, .selectionListFileTableColumns3, 
+.selectionListFileTableColumns4, .selectionListFileTableColumns5 {
+	border-bottom: 1px dotted #C0C0C0;
+}
+.selectionListFileTableColumns1, .selectionListFileTableColumns6 {
+	border-bottom: none;
+}
+.selectionListFileImage {
+	width:15px;
+	height:15px;
+}
+
+
+/********* The popup panel information *************/
+.PopImageBackground {
+	background-color: transparent;
+}
+.PopupInfoTableColums1, .PopupInfoTableColums2 {
+	vertical-align: top;
+	margin:5px;
+	text-align:center;
+}
+.PopupInfoTableOfTheColumn1, .PopupInfoTableOfTheColumn2 {
+	padding:5px;
+}
+.PopupInfoImage {
+	width:40px;
+}
+.PopupInfoWebSite {
+	border:1px solid #DDDDDD;
+	background-image: url("../img/img_fr/menusBack.jpg");
+	text-align: center;
+	cursor:pointer;
+}
+.PopupInfoTitle, .PopupInfoRateGeneralNumberOfRate  {
+	font-weight: bold;
+}
+.PopupInfoSeparation, .PopupInfoBetween {
+	border-bottom : 2px groove #ffffCC;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:3px;
+	padding-bottom:5px;
+	width :150px;
+}
+
+.PopupInfoRateGeneralText {
+	width: 110px;
+}
+.PopupInfoRatePersonnalText {
+	font-weight:bold;
+	width: 110px;
+}
+.PopupInfoRateBoxStarCalculMoy, .PopupInfoRateBoxStarCalculMyMoy {
+	height:100%;
+	vertical-align:bottom;
+}
+.PopupInfoRateBoxStarCalculMyMoy {
+	cursor:pointer;
+}
+.PopupInfoRateStarCalcul {
+	width:15px;
+}
+.PopupInfoCategorie { }
+.PopupInfoDescription { }
+
+
+
+/***********  POP UP DE COPY DE PRESELECTION *************/
+.PopCopyTableTitle {
+	margin:3px;
+	padding:3px;
+	width:100%;
+	border-bottom : 1px solid #C0C0C0;
+}
+.PopCopyTableTitleColumns1 {
+	width:100%;
+}
+.PopCopyTableLeft, .PopCopyTableRight {
+	margin:3px;
+	padding:3px;
+	border: 1px solid #C0C0C0;
+	width:200px;
+}
+
+.PopCopyImageRadio1, .PopCopyImageRadio2  {
+	width:15px;
+	height:15px;
+}
+.PopCopyItem1, .PopCopyTableLeftColumns3, .PopCopyTableRightBottomColumns,
+.PopCopyTableRightBottom, .PopCopyTableRightBottomColumns3, .PopCopyItem2 {
+	width:100%;
+	text-align:left;
+}
+.PopCopyErrorLabel {
+	text-align:center;
+	color:#990000;
+}
+.PopCopyArrows {
+	cursor:pointer;	
+}
+
+/************ POP OF FORUM  ***************/
+
+.ForumPopTable {
+	width:300px;
+}
+.ForumPopTableColumns {
+	vertical-align:top;
+}
+.ForumPopOrangeButton {
+	margin:8px;
+	margin-top:50px;
+}
+
+/************ Pop de plugin ***************/
+.PluginPopTable {
+	width:300px;
+}
+.PluginPopTableColumns {
+	vertical-align:top;
+	text-align:center;
+}
+.PluginPopOrangeButton {
+	margin:8px;
+	margin-top:50px;
+}
+
+/************ POP UP TO BUY ***************/
+
+.PopBuyImage {
+	width:40px;
+	height:40px;
+	margin-right:5px;
+}
+.PopBuyGroup {
+	font-weight:bold;
+}
+.PopBuyWebBuy, .PopBuyJuk {
+	margin-left:3px;
+}
+.PopBuyLabelWeb, .PopBuyLabelJuk {
+	margin-top:5px;
+}
+.CopyBuyBorderBetween {
+	border-bottom : 1px solid #C0C0C0;
+}
+
+
+/************ Pop WITH BLIND OPACITY FONT  *****************/
+
+.PopBlindPanel {
+	text-align : center;
+}
+.PopBlindTableChild {
+	background-image: url("../img/img_fr/backGreyWhite300.jpg");
+	background-color:#ffffff;
+}
+.PopBlindTableChildColumns {
+	vertical-align:top;
+}
+.PopBlindCloseText {
+	cursor:pointer;
+	float: right;
+}
+
+
+/******* Authentification pop blind panel  *****/
+.AuthentificationTable {
+	width:300px;
+	padding:3px;
+	background-repeat: repeat-x;
+}
+.AuthentificationTableColumns { }
+.AuthentificationArrowButton {
+	margin-top:20px;
+	margin-bottom:70px;
+}
+
+
+/******** The ADD RADIOS PODCAST TABLE ********/
+.AddRadioPodcastTable {
+	padding:5px;
+	background-image: url("../img/img_fr/backGreyWhite300.jpg");
+	background-repeat: repeat-x;
+	width:450px;
+	height:350px; 
+}
+.AddRadioPodcastTableColumns{
+	vertical-align:top;
+	text-align:center;
+}
+.AddRadioPodcastTable1, .AddRadioPodcastTable2 {
+	padding:5px;
+}
+.AddRadioPodcastDescriptionText {
+	padding-right:15px;
+	padding-left:8px;
+}
+.AddRadioPodcastTextBeforeBox {
+	font-weight:bold;
+}
+.AddRadioPodcastStar {
+	padding-left:4px;
+}
+.AddRadioPodcastTextBox, .AddRadioPodcastOptionListCountry {
+	width:150px;
+}
+.AddRadioPodcastErrorBox {
+	height:20px;
+}
+.AddRadioPodcastObligationText {
+	padding-top : 20px;
+}
+.AddRadioPodcastTestButton { } 
+.AddRadioPodcastSubmitButton { }
+
+
+
+/******** The CONFIGURATION POP TABLE ****/
+.ConfigTable {
+	width:650px;
+	padding:5px;
+	background-repeat: repeat-x;
+}
+.ConfigOptionList { }
+
+
+/** No INscript MESSAGE **/
+.ConfigNoInscriptMessageTable {
+	height:300px;
+	padding-top:15px;
+}
+
+/*communs to all windows*/
+.ConfigDescriptionTable { }
+.ConfigDescriptionColumns1, .ConfigDescriptionColumns2,
+.ConfigNoInscriptMessageTableColumns1,.ConfigNoInscriptMessageTableColumns2, .ConfigNoInscriptMessageTableColumns3,
+.ConfigInscriptionIsInscriptTableColumns1, .ConfigInscriptionIsInscriptTableColumns2,
+.ConfigMyCatalogTableColumns1, .ConfigMyCatalogTableColumns2,
+.ConfigMyPreselectionTableColumns1, .ConfigMyPreselectionTableColumns2,
+.ConfigTableAlarmTableColumns1, .ConfigTableAlarmTableColumns2, .ConfigHelpTable {
+	vertical-align:top;
+
+}
+
+.ConfigDescriptionTable, .ConfigNoInscriptMessageTable, .ConfigInscriptionIsInscriptTable,
+.ConfigMyPreselectionTable, .ConfigHelpTable  {
+	height:300px;
+}
+/****** The description Config pop *******/
+
+
+.ConfigDescriptionColumns1 {
+	width:250px;
+}
+.ConfigDescriptionColumns1Element1, .ConfigDescriptionColumns1Element2, .ConfigDescriptionColumns1Element3,
+.ConfigDescriptionColumns2Element1, .ConfigDescriptionColumns2Element2, .ConfigDescriptionColumns2Element3,
+.ConfigDescriptionColumns2Element4, .ConfigDescriptionColumns2Element5 {
+	margin: 10px;
+}
+.ConfigDescriptionColumns1Element2, .ConfigDescriptionColumns2Element3, .ConfigDescriptionColumns2Element4  {
+	margin-bottom: 0px;
+	padding-bottom:10px;
+	border-bottom: solid 1px #DDDDDD;
+}
+.ConfigDescriptionColumns2Element1 {
+	height:20px;
+}
+.ConfigDescriptionColumns2Element2 {
+	font-size:13px;
+}
+.ConfigDescriptionColumns2Element6 {
+	text-align:center;
+}
+
+
+/************** The inscription config TABLE ******************/
+
+.ConfigInscriptionTable { }
+.ConfigInscriptionTableColumns { }
+
+/**** Table of NoInscript  ***/
+.ConfigInscriptionNoInscriptTable { }
+
+.ConfigInscriptionNoInscriptTextDescriptTop, .ConfigInscriptionNoInscriptTextDescriptBottom {
+	width:100%;
+	text-align:left;
+}
+.ConfigInscriptionNoInscriptMACImage { }
+.ConfigInscriptionNoInscriptTableColumns {
+	text-align:left;
+}
+.ConfigInscriptionNoInscriptEnterMacTable { }
+.ConfigInscriptionNoInscriptMacTextBoxEnter { }
+.ConfigInscriptionNoInscriptConfirmButton { }
+
+/** Table of Is Inscript **/
+.ConfigInscriptionIsInscriptTable { }
+
+/** Table of my Catalogs **/
+.ConfigMyCatalogTable { }
+
+/** Table of the preselections **/
+.ConfigMyPreselectionTable { }
+
+/**  Table of alarm **/
+.ConfigTableAlarmTable { }
+
+/** Tables of a the Sub Alarm **/
+.ConfigAlarmSubTable { }
+.ConfigAlarmSubConfirmButton {
+	margin-right:100%;
+}
+.ConfigAlarmSubTableColumns2 {
+ 	width:100px;
+}
+.ConfigAlarmSubTableColumns3 {
+	text-align:left;
+}
+.ConfigAlarmSubecurrenceTable {
+	font-size:10px;
+}
+.ConfigAlarmSubecurrenceTableColumns { }
+
+.ConfigHelpTable { }
+
+
+/**************** BOX Description Elements HOME PAGE ***************/
+
+
+.HomePageBoxTable {
+	width:290px;
+}
+.HomePageBoxTableColumns1 {
+	width:7px;
+}
+.HomePageBoxFlecheImage { }
+.HomePageBoxDescriptImage { }
+.HomePageBoxDescriptionText {
+	width:100%;
+	text-align:left;
+	font-size:13px; 
+}
+.HomePageBoxFlecheLabel { }
+.HomePageBoxSeparator1, .HomePageBoxSeparator2  {
+	margin:0px;
+	padding:0px;
+	font-size: 2px;
+}
+.HomePageBoxSeparator1 {
+	background-color:#C0C0C0;
+	line-height:1px;
+}
+.HomePageBoxSeparator2 {
+	margin-top:10px;
+	margin-bottom:7px;
+	background-color:#FF5500;
+	line-height:2px;
+}
+
+
+/*****  DISCOVER TABLE PANEL ****/
+.HomePageDiscoverImage { }
+
+/********** Cursor Style ***************/
+
+.CursorDisable {
+	cursor: move;
+}
+.CursorNormal { }
+.CursorEnable {
+	cursor: crosshair;
+}
+.DragCopyImage {
+	width:25px;
+}
+
+

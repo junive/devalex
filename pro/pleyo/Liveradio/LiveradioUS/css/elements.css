@@ -1,0 +1,206 @@
+/******** Label Adapter  ********/
+.textLabel {
+	
+}
+.textLabelOnSelect {
+	
+}
+.textLabelOnMouseOver {
+	
+}
+/******* Line Box Style ********/
+.lineBox {
+
+}
+.lineBoxColumns1, .lineBoxColumns2, .lineBoxColumns3 {
+	
+} 
+.titleLineBox {
+	font-size:12px;
+	font-family: Arial;
+	border: 1px solid  #a8bef4;
+}
+.readTextLineBox {
+	
+}
+.editableTextLineBox {
+	width:100px;
+}
+.confirmButtonLineBox {
+	font-size:12px;
+	background-color: #a8bef4;
+	font-family: Arial;
+}
+.gwt-FileUpload {
+	
+}
+
+/******* Table Panel  ********/
+.tablePanel {
+	margin:0px;
+	padding:0px;
+}
+.tableColumns {
+
+}
+.tableColumns, .tableColumns1, .tableColumns2 , .tableColumns3, 
+.tableColumns4, .tableColumns5, .tableColumns6, .tableColumns7, .tableColumns8   {
+	font-size : 12px;
+	margin:0px;
+	padding:0px;
+}
+
+/******* Option List ********/
+.optionListBox {
+	/*width: 100%;
+	margin:0px;
+	padding:0px;*/
+}
+.textOptionListBox { 
+	/*width:100%;*/
+}
+.openCloseOptionListBox {
+	/*text-align:center;
+	width:14px;
+	height:14px;
+	font-size: 12px;
+	background-color: #43e8fb;
+	float: right;*/
+}
+.verticalOptionList {
+	/*background-color: #ffff00;
+	border: 1px solid #990000;
+	margin:0px;
+	padding:0px;*/
+}
+.itemOptionList, .itemOptionListOnSelect, .itemOptionListOnMouseOver {
+	/*cursor:pointer;
+	font-size: 12px;
+	border: 1px solid #990000;
+	width:100%;*/
+}
+.itemOptionList {
+	/*color: #ff9900*/
+}
+.itemOptionListOnSelect {
+	/*color: #cc9900*/
+}
+.itemOptionListOnMouseOver {
+	/*color: #339900*/
+}
+
+/***** Rating Box *****/
+.tableStar {
+	
+}
+.starColumns1 , .starColumns2, .starColumns3, .starColumns4, .starColumns5 {
+	
+}
+.starNo, .starYes {
+	width:15px;
+	height: 15px;
+}
+.starNo {
+	background-color:#990000;
+}
+.starYes {
+	background-color: #ffff66;
+}
+
+/***** Editorial Box ******/
+
+.editorialBox {
+	border: 1px solid #660000;
+}
+.editorialBoxColumns1, .editorialBoxColumns2, .editorialBoxColumns3 {
+	border: 1px solid #660000;
+}
+.editorialBoxPercentage{
+	width:30px;
+	font-size:12px;
+	color : #990000;
+}
+.editorialBoxArtistEdit{
+	color : #990000;
+}
+.editorialBoxAlbumEdit{
+	color : #990000;
+}
+.editorialBoxEditoDropEdit{
+	
+}
+.editorialBoxEditoTitle{
+	
+}
+.editorialBoxArtistTitle{
+	
+}
+.editorialBoxAlbumTitle{
+	
+}
+
+/**** List Check Box  ****/
+.listCheckBox {
+	height:100px;
+}
+.ListCheckBoxItem {
+	width:100%;
+}
+.ListCheckBoxItemTextOnMouseOver {
+	
+}
+.ListCheckBoxItemText {
+	
+}
+.ListCheckBoxItemTextOnSelect {
+	
+}
+
+/****** Description Podcast Catalog Line ********/
+.descriptionLine {
+		border: 1px solid #990000;
+}
+.descriptionLineColumns1, .descriptionLineColumns2, .descriptionLineColumns3, 
+.descriptionLineColumns4, .descriptionLineColumns5, .descriptionLineColumns6  {
+	font-size:12px;
+	color : #990000;
+border: 1px solid #990000;
+	
+}
+
+
+/******* Stream Box Asset Details  *********/
+.streamBox {
+	width : 400px;
+}
+.streamBoxColumns1, .streamBoxColumns2, .streamBoxColumns3 {
+	font-size:12px;
+	color : #990000;
+}
+.streamBoxStatus {
+	width: 15px;
+	height:15px;
+}
+.streamBoxOpen, .streamBoxClose {
+	width: 15px;
+	height:15px;
+}
+.streamBoxOpen {
+	background-image: url("../img/moins.jpg");
+}
+.streamBoxClose {
+	background-image: url("../img/plus.jpg");
+}
+.streamBoxTable {
+	border: 1px solid #990000;
+}
+.streamBoxDetailTableColumns1, .streamBoxDetailTableColumns2,
+.streamBoxDetailTableColumns3, .streamBoxDetailTableColumns4,
+.streamBoxDetailTableColumns5, .streamBoxDetailTableColumns6, 
+.streamBoxDetailTableColumns7, .streamBoxDetailTableColumns8 {
+	font-size:12px;
+	color : #990000;
+	border: 1px solid #990000;
+} 
+
+

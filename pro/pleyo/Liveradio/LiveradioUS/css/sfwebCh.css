@@ -1,0 +1,175 @@
+body {
+	margin-top: 5px;
+}
+
+.AuthentificationCreateButton {
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.AuthentificationIdentifyButton {
+	margin-top:0px;
+}
+.AuthentificationText {
+	margin-left: 10px;
+	margin-right:10px;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+.AuthentificationTextRegisterColumns1 {
+	text-align:left;
+}
+.AuthentificationTextRegisterColumns2 {
+	text-align : left;
+	margin-left:3px;
+}
+.ConfigProfileTable {
+	
+}
+.AuthentificationTextRegisterDescript {
+	margin-left:8px;
+	margin-right:0px;
+}
+.AuthentificationForgetMessageText {
+	cursor:pointer;
+	margin-top:7px;
+	text-align:center;
+	color:blue;
+}
+.AuthentificationTextBox {
+	width:150px;
+}
+.AuthentificationRememberMessageText {
+	font-size:9px;
+	margin-right:15px;
+}
+.AuthentificationRememberMessageCheckBox {
+	cursor:pointer;
+	margin:0px;
+}
+.AuthentificationRememberMessageTable {
+	margin-bottom:0px;
+}
+.AuthentificationErrorMessage {
+	margin-left: 10px;
+	height:15px;
+}
+
+
+/* Surcharge Element */
+.bodyRootPanel {
+	position:relative;
+	margin:0px;
+	left:0px;
+}
+.MyProductsRootPanel, .MyCoeurRootPanel, .MyLiveradioRootPanel {
+	top:200px;
+}
+.bibliothequeTitlePageLabel {
+	margin-bottom:6px;
+}
+.mySelectionTitleImage {
+	margin-bottom:12px;
+}
+.ConfigBottomImage {
+	margin-bottom:0px;
+}
+.LiveradioPlayerTitle {
+	position : absolute;
+	left:280px;
+	top:3px;
+}
+.LiveRadioLogo {
+	position : absolute;
+	left:5px;
+	top:3px;
+	cursor:pointer;
+	width:40px;
+	height:40px;
+}
+.ConfigProfileCountryList {
+	width:180px;
+}
+.ConfigProfileTable {
+	margin:3px;
+
+}
+.ConfigProfileError {
+	height:30px;
+	
+}
+.ConfigProfileAreaTerms {
+	width:200px;
+	height:70px;
+	border:2px groove;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	display: block;
+}
+.AddRadioPodcastDescriptionText {
+	border : none;	
+}
+.AddRadioPodcastTable {
+	width:320px;
+}
+.AddRadioPodcastTextBeforeBox {
+	width:120px;
+}
+.AuthentificationIdentifyButton {
+	margin-top:15px;
+}
+.ConfigHelpTable {
+	height:260px;
+}
+.HomeBoxDiscoverTableOfHomePage {
+	margin-bottom:5px;	
+}
+#player {
+	margin-top:43px;
+}
+.PlayerRootPanel {
+	height:190px;	
+}
+.PopBlindAddRadiosTitleText {
+	margin-left:10px;	
+}
+/* New Element */
+.LangageTable, .LangageTableHome, .LangageTableConfigPop  {
+	cursor:pointer;
+	font-weight:bold;
+	font-size:10px;
+}
+.LangageTable, .LangageTableHome  {
+	position:absolute;
+	right:3px;
+	top:660px;
+}
+.LangageTableHome {
+	top:610px;
+}
+.LangageTableConfigPop {
+	margin-left:auto;
+}
+.LangageParentConfigPop {
+	text-align:right;
+}
+.AuthentificationTextRegister {
+	color: blue;
+	cursor:pointer;
+	margin-left:0px;
+}
+.TableTextLog {
+	position:absolute;
+	right:3px;
+	bottom:1px;
+	z-index:20;
+}
+.menuTextLog {
+	font-weight:bold;
+	margin-left:5px;
+}
+.ConfirmMailTable {
+	margin:5px; 
+}
+.ConfirmMailLinkHome {
+	color:blue;
+}

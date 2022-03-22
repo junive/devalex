@@ -1,0 +1,144 @@
+/* AbsolutePanel */
+.listPanel {
+	height: 200px;
+	width: 100%;
+	text-align:left;
+	padding:0px;
+	margin:0px;
+
+}
+/* Vertical List */
+.list * * {
+	text-align:left;
+
+}
+.list {
+	padding:0px;
+	margin:0px;
+	float: left;
+	width: 100%;
+	border:1px solid #990000;	
+}
+/*** The principal Panel of a ListItem ***/
+.listItemPanel {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+.listItemPanelColumns, .listItemPanelColumns1, .listItemPanelColumns2 {
+	
+}
+/* The first Panel : The bar between each List */
+.betweenPanelShow {
+	margin:0px;
+	padding:0px;
+	line-height:1px;
+	font-size: 2px;
+	background: #990000;
+}
+.betweenPanelHide {
+	margin:0px;
+	padding:0px;
+	line-height:1px;
+	font-size: 2px;
+}
+/* The second Panel : Title */
+.item, .itemOnSelect, .itemOnDragOver {
+	width: 100%;
+	padding:0px;
+	margin:0px;
+	border:1px solid #330000;	
+
+}
+.item {
+	text-align: left;
+}
+.itemOnSelect {
+
+}
+.itemOnDragOver {	
+
+}
+.itemColumns, .itemColumns1, .itemColumns2, .itemColumns3, .itemColumns4 {
+	
+}
+/* The third Panel : the inside Container */
+.spacePanel {
+	width:15px;
+}
+.childList {	
+	width: 100%;
+	text-align: left;
+}
+/* The different image */
+.emptyOpenClose, .isClose, .isOpen {
+	width:10px;
+	height : 10px;
+	background-repeat: no-repeat;
+	position : relative;
+	float : left;
+}
+.emptyOpenClose {
+
+}
+.isClose {
+	background-image: url("../img/plus.jpg");
+}
+.isOpen {
+	background-image: url("../img/moins.jpg");	
+}
+.fileImage {
+	width:15px;
+	height : 10px;
+	background-repeat: no-repeat;
+	background-image: url("../img/file.jpg");
+	position : relative;
+	float : left;
+}
+/* The title text Label */
+.itemText, .itemTextOnSelect, .itemTextOnMouseOver, .itemTextOnDragOver, .copyItemText {
+	width:100%;
+	font-family:  Arial;
+	font-size: 14px;
+	border-bottom: 1px solid #669966;
+	border-top: 1px solid #669966;
+	border-left: 1px solid #669966;
+	color:#990000;
+}
+.itemText {
+
+}
+.itemTextOnSelect, .copyItemText {
+	background-color: #66FF33;
+}
+.itemTextOnMouseOver {
+	color:#99ffcc;
+}
+.itemTextOnDragOver {
+	background-color: #7794de;
+}
+/* The child Count Label */
+.childCount, .childCountOnSelect, .childCountOnMouseOver,.childCountOnDragOver {
+	text-align:right;
+	width: 100%;
+	font-family: Arial;
+	font-size: 14px;
+	border-bottom: 1px solid #669966;
+	border-top: 1px solid #669966;
+	border-right: 1px solid #669966;
+	position : relative;
+	float : left;
+	color:#990000;
+}
+.childCount {
+
+}
+.childCountOnSelect {
+	background-color: #66FF33;
+}
+.childCountOnMouseOver {
+	color:#99ffcc;
+}
+.childCountOnDragOver {
+	background-color: #7794de;
+}

@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Local Cast</title>
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+
+	</head>
+
+	<body>
+		<div class="control" id='options'>
+			<header id='myHeader' class="header">
+				<h3 onclick="" >Local Cast</h3>
+				<a style="color:yellow" href="../samples/cbw3.avi">Test File.avi</a>
+<br/>				
+				<div id='buttonShow' class="buttonShow" title='Show / Hide Menu' src="img/buttonShow.png">Hide/Show</div>
+			</header>
+			<section id="panelCont"></section>
+			<section id="menuCont"></section>
+		</div>
+		<!--<input id="input" value="-help" />-->
+		<div id="videoCont" class="media"></div>
+		
+		<script type="text/javascript">
+//document.write( '<script type="text/javascript" src="../build/ffmpeg-all-codecs.js" id="ffmpegIds"><\/script>');
+</script>
+	</body>
+
+</html>
+
+
+<!--<script src="../build/ffmpeg-all-codecs.js"></script> -->
+
+
+
+
+<script>
+
+var jsons = new getJsonSettings();
+var html = new Html();
+var control = new Control();
+var listenG = new Listen();
+var converter = null;
+
+if (jsons.lib.converter.enable == true) {
+
+	var initConverter = function(newConverter) {
+		converter = newConverter;
+		converter.postMessage({action:"load"});
+		converter.onmessage = function(event) {
+			//alert(event.data.msg);
+			alert("Ffmpeg loaded !");
+		};	
+	}
+
+	if (jsons.lib.converter.local == true) { // loaded twice (on src by document and then by worker)
+		control.node.includeScript("ffmpegWebEncode.js", function() { // Asynchrone (MultiThread) Insert of script
+			// Create a worker with toString on function
+			var scriptString = ffmpeg.toString(); // Get ffmpeg() function Text
+			scriptString = scriptString.substring(19, scriptString.length-1); // Remove function ffmpeg() {} on the toString
+			var scriptFile = new File([scriptString], "ffm.js", { type: "text/javascript"});
+			var scriptUrl = control.do.getFileUrl(scriptFile);
+			initConverter(new Worker(scriptUrl)); // get the Worker
+		});
+
+		
+	} else { // loaded once (only by worker)
+		// if (node.js) create a new Worker(libUrl)
+		// if (extension || access file) create a new Worker(libUrl)
+		// No interest on classic server that will download a 25MB file to user.
+	}
+	
+	
+
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	//var scriptFile = new File([document.getElementById('ffmpegIds').textContent], "ffm.js", { type: "text/javascript"});
+	//var scriptUrl = control.do.getFileUrl(scriptFile);
+	//console.log(scriptUrl);
+	//myWorker = new Worker(scriptUrl);
+	//myWorker.postMessage(["includeScript", document]);
+
+	
+
+
+	
+	var opt = document.querySelector("#options");
+	
+	var setAutoOptions = function() {
+		var coef = 1366 / screen.width;
+		coef = coef > 1 ? coef : 1;
+		opt.style.width= 20 * coef + "%";
+		opt.style.fontSize = 15 * coef + "px";
+		opt.style.fontSize = 15 * coef + "px";
+		//alert(opt.style.fontSize +"///"+screen.width);
+	}
+
+	var toogleOptions = function() {
+		if (opt.style.visibility == "" || opt.style.visibility == "visible") { 
+			opt.style.visibility = "hidden"; 
+			opt.style.width="0";
+			document.querySelector("#buttonShow").style.left="-20px";
+			document.querySelector("#buttonShow").style.right="auto";
+		} else { 
+			opt.style.visibility = "visible"; 
+			setAutoOptions();
+			document.querySelector("#buttonShow").style.left="auto";
+			document.querySelector("#buttonShow").style.right="0";
+		}
+		document.querySelector("#buttonShow").style.visibility = "visible";
+	}
+	
+	window.onresize = function() {
+		setAutoOptions();
+	}
+	
+	document.querySelector("#buttonShow").onclick = function() {
+		toogleOptions();
+	}
+
+	var playerContainer =  html.getPlayerContainer("#videoCont");
+	var panelContainer = html.getPanelContainer("#panelCont");
+	var menuContainer = html.getMenuContainer("#menuCont");
+	
+	listenG.addContainerEvent([panelContainer, playerContainer, menuContainer]);
+	setAutoOptions();
+
+
+});
+
+function getJsonSettings() {
+
+	this.type = {
+		"inner" : {  "link" : "a" , "div" : "div", "out" : "output", "nav" : "nav", "ul" : "ul", "li" : "li" },
+		"src" :   { "image" : "img",  "canvas" : "canvas", "track" : "track", "source" : "source" },
+		"input" : { "input" : "input",  "file" : "file", "button" : "button", "submit" : "submit" },
+		"media" : { "video" : "video", "track" : "track", "source" : "source" },
+		"track" : { "srt" : ".srt" , "vtt" : ".vtt" },
+		"play" :  { "video" : "video",  "audio" : "audio" }
+	};
+
+	this.css = {
+		"playerContainer" : "playerContainer",  
+		"panelContainer" : "panelContainer",
+		"menuContainer" : "menuContainter",
+		"player" : "player",  "pop" : "pop", 
+		"menu" : "menu", "file" : "file", "fold" : "fold",
+		"panel" : "panel", "button" : "button"
+	};
+	
+	this.style = { 
+		"none" : "display:none;visibility:hidden", 
+		"block" : "display:block;position:relative;",
+		"blankul" : "-webkit-padding-start: 0px;",
+		"blankli" : "cursor:pointer;list-style-type: none;"
+	};
+
+	this.lib = { 
+		"converter" : { "enable" : true, "local" : true } 
+	};
+	
+	this.init = { 
+		"event" : {
+			"drop" : { "enable" : true, "dropFullSreen" : true, "dropOnPlayer" : false, "dropPlayerAll" : false },
+			"keys" : { "enable" : true },
+			"click" : { "enable" : true },
+			"player" : { "enable" : true, "onended" : true, "onvolumechange" : true, 
+						 "onplay" : true, "onerror" : true, "onfullscreen" : true, "pop" : true }
+		},
+		"player" : { 
+			"media" : { "autoShowButtons" : false, "volume" : 0.50, "play" : false,  "full" : false, "load" : false },
+			"track" : { "autoShowButtons" : true, "delay" : 0 , "line" :  6.5, "size" : ".size-larger",  "convertToVtt" : true, "convertMethod" : 0 } 
+		},
+		"menu" : { 
+			"explo" : { "autoShowButtons" : false, "next" : 0, "random" : true, "loop": true },
+			"input" : { "playOnOpen" : true, "replaceSame" : true, "singleMediaTracks" : true, "separateAudio" : true } 
+		},
+		"pop" : { "action" : {"delay" : 3000} }
+	};
+	
+	this.change =  { 
+		"player" : { 
+			"media" : { "volume" :  0.1, "play" : "auto", "full" : "auto" },
+			"track" : { "delay" :  0.5, "line" : 1,  "sizePlus": ".size-larger", "sizeLess" :  ".size-smaller" } 
+		},
+		"menu" : { 
+			"explo" : { "next" : 1,  "random" : "auto", "loop" : "auto"},
+			"input" : { "file" : "file" , "folder" : "folder"} 
+		}
+	};
+
+	this.node = {
+		"playerContainer" : { 
+			"type" : this.type.inner.out,  "parent" : "",
+			"attributes" : { "class" : this.css.playerContainer, "name" : "playerContainer",  "style" : this.style.block } 
+		},
+		"panelContainer" : { 
+			"type" : this.type.inner.nav,  "parent" : "",
+			"attributes" : { "class" : this.css.panelContainer, "name" : "panelContainer" }
+		},
+		"menuContainer" : { 
+			"type" : this.type.inner.nav,   "parent" : "",
+			"attributes" : { "class" : this.css.menuContainer,  "name" : "menuContainer" } 
+		},
+		"player" : { 
+			"type" : this.type.media.video, 
+			"attributes" : { "class" : this.css.player, "name" :"player", "controls" : "", "volume" : "" } 
+		},
+		"pop": { 
+			"type" : this.type.inner.div, 
+			"attributes" : { "class" : this.css.pop } 
+		},
+		"source" : { 
+			"type" : this.type.media.source, 
+			"attributes" : { } 
+		},
+		"track" : { 
+			"type" : this.type.media.track,
+			"attributes" : { "kind" : "subtitles",  "srclang" : "en", "label" : "French",  "src" : "" }
+		},
+		"menu" : { 
+			"type" : this.type.inner.ul,
+			"attributes" : { "class" : this.css.menu, "name" : "menu" }
+		},
+		"file" : { 
+			"type" : this.type.inner.li,
+			"attributes" : { "class" : this.css.file },
+		},
+		"folder" : { 
+			"type" : this.type.inner.li,
+			"attributes" : { "class" : this.css.fold }
+		},	
+		"panelUl" : { 
+			"type" : this.type.inner.ul, 
+			"attributes" : { "class" : this.css.panel}
+		},
+		"panelDiv" : { 
+			"type" : this.type.inner.div, 
+			"attributes" : { "class" : this.css.panel }
+		},
+		"buttonLi" : { 
+			"type" : this.type.inner.li, 
+			"attributes" : { "class" : this.css.button}
+		},
+		"buttonImage" : { 
+			"type" : this.type.src.image, 
+			"attributes" : { "class" : this.css.button }
+		},
+		"buttonDiv" : { 
+			"type" : this.type.inner.div, 
+			"attributes" : { "class" : this.css.button }
+		}
+	}
+	
+	this.button = {
+		
+		/* linked to Player */
+		
+		"delayPlus" : {
+			"control" : "track", "content" : "Delay Up", "title" : "Sub Delay Up",
+			"action" : "delay", "value" : this.change.player.track.delay, 
+			"event" : { "mouse" : "click", "keyboard" : 71 /*G*/ } 
+		},
+		"delayLess" : {
+			"control" : "track", "content" : "Delay Down", "title" : "Sub Delay Down",
+			"action" : "delay", "value" : - this.change.player.track.delay,  
+			"event" : { "mouse" : "click", "keyboard" : 72 /*H*/ }
+		},
+		"linePlus" : {
+			"control" : "track", "content" : "Line Up", "title" : "Sub Line Up",
+			"action" : "line", "value" : - this.change.player.track.line, 
+			"event" : { "mouse" : "click", "keyboard" : 74 /*J*/ } 
+		},
+		"lineLess": {
+			"control" : "track", "content" : "Line down", "title" : "Sub Line Down",
+			"action" : "line", "value" : this.change.player.track.line, 
+			"event" : { "mouse" : "click", "keyboard" : 75 /*K*/ } 
+		},
+		"sizePlus" : {
+			"control" : "track", "content" : "Size Up", "title" : "Sub Size Up",
+			"action" : "size", "value" : this.change.player.track.sizePlus, 
+			"event" : { "mouse" : "click", "keyboard" : 76 /*L*/ } 
+		},
+		"sizeLess": {
+			"control" : "track", "content" : "Size down", "title" : "Sub Size Down",
+			"action" : "size", "value" : this.change.player.track.sizeLess, 
+			"event" : { "mouse" : "click", "keyboard" : 77 /*M*/ }
+		},
+
+		"play" : { 
+			"control" : "media", "content" : "", "contentBool" : { "true" : "Pause", "false" : "Play"}, "title" : "Play / Pause",
+			"action" : "play", "value" : this.change.player.media.play, /*"visible" : "hidden",*/
+			"event" : {  "mouse" : "click",  "keyboard" : 32 /*Space*/}  
+		},
+		"full" : 	{ 
+			"control" : "media", "content" : "Full",  /*"visible" : "disable",*/  "title" : "Full Screen",
+			"action" : "full", "value" : this.change.player.media.full, 
+			"event" : { "mouse" : "click",  "keyboard" : 70 /*F*/ }  
+		},
+		
+		/* linked to Menu */
+		
+		"random" :  { 
+			"control" : "explo", "content" : "", "contentBool" : { "true" : "Random On", "false" : "random Off"}, "title" : "Random",
+			"action" : "random", "value" : this.change.menu.explo.random, 
+			"event" : { "mouse" : "click", "keyboard" : 1000} // 82 : R  
+		},
+		"loop" :  { 
+			"control" : "explo", "content" : "", "contentBool" : { "true" : "Loop On", "false" : "Loop Off"}, "title" : "Loop",
+			"action" : "loop", "value" : this.change.menu.explo.loop, 
+			"event" : { "mouse" : "click", "keyboard" : 1000 }  
+		},
+		"nextPlus" : 	{ 
+			"control" : "explo", "content" : "Next", "title" : "Next",
+			"action" : "next", "value" : this.change.menu.explo.next,  
+			"event" : { "mouse" : "click", "keyboard" : 1000}  
+		},
+		"nextLess" : 	{ 
+			"control" : "explo", "content" : "Prev", "title" : "Previous",
+			"action" : "next", "value" : - this.change.menu.explo.next, 
+			"event" : { "mouse" : "click", "keyboard" : 1000} 
+		},
+		"fileOpen" :  { 
+			"control" : "input", "content" : "Open File", "title" : "Open Files",
+			"action" : "file", "value" : this.change.menu.input.file, 
+			"event" : { "mouse" : "click", "keyboard" : 1000 },
+			"input" : { "type" : 'file', "multiple" : '' } 
+		},
+		"folderOpen" :  { 
+			"control" : "input", "content" : "Open Folder", "title" : "Open Folder",
+			"action" : "folder", "value" :  this.change.menu.input.folder,  
+			"event" : { "mouse" : "click",  "keyboard" : 1000} ,
+			"input" : { "type" : 'file', "webkitdirectory" : '', "directory" : '' }
+		}
+	}
+	
+	this.menu = {
+		"file" :  { 
+			"control" : "menu", "content" : "",
+			"events" : { "event1" : {"action": "play", "event" : { "mouse" : "click",  "keyboard" : 1000 } },
+						"event2" : {"action": "drag", "event" : { "mouse" : "mousedown",  "keyboard" : 1000 } } }
+		},
+		"folder" :  { 
+			"control" : "menu", "content" : "",
+			"events" : { "event1" : {"action": "open", "event" : { "mouse" : "click",  "keyboard" : 1000} },
+						"event2" : {"action": "drag", "event" : { "mouse" : "mousedown",  "keyboard" : 1000} } }
+		}
+	}
+
+	this.text = {
+		"pop" : { 
+			"track" : { "delay" : "Track Delay", "line" : "Track Position", "size" : "Track Size" },
+			"media" : { "play" : "", "full" : "" },
+			"explo" : { "random" : "Random", "next" : "Play" },
+			"key" : { "full" : "Keys disable (Please use F)" }
+		}
+	}
+}
+
+
+function Html() {
+
+	this.getPlayerContainer = function(parent, settings) { 
+		var n = html.PlayerContainer(settings); n.init(parent); return n; }	
+	this.getPanelContainer = function(parent, settings) { 
+		var n = html.PanelContainer(settings); n.init(parent); return n; }
+	this.getMenuContainer = function(parent, settings) { 
+		var n = html.MenuContainer(settings); n.init(parent); return n; }
+	this.getPlayer = function(parent, settings) { 
+		var n = html.Player(settings); n.initPlayer(parent); return n; }
+	this.getTrack = function(content, parent, settings) { 
+		var n = html.Track(settings); n.initNode(content, parent); return n; }
+	this.getSource = function(content, parent, settings) { 
+		var n = html.Source(settings);  n.initNode(content, parent);  return n; }
+	this.getPop = function(content, parent, settings) { 
+		var n = html.Pop(settings);  n.initNode(content, parent);  return n; }
+	this.getMenu = function(parent, settings) {
+		var n = html.Menu(settings); n.init(parent); return n; }
+	this.getFolder = function(content, parent, settingsButton ,settings) { 
+		var n = html.Folder(settings); n.initFolder(content, parent, settingsButton); return n;}
+	this.getFile = function(content, parent, settingsButton, settings) { 
+		var n = html.File(settings); n.initFile(content, parent, settingsButton); return n;}
+	this.getPanel = function(parent, settings) {
+		var n = html.Panel(settings); n.initPanel(parent); return n;}
+	this.getButton = function(content, parent, settingsButton, settings) {
+		var n = html.Button(settings); n.initButton(content, parent, settingsButton); return n; }
+	this.getMediaPanel = function(parent, settings) {
+		var n = html.MediaPanel(settings); n.initPanel(parent); return n;}
+	this.getTrackPanel = function(parent, settings) {
+		var n = html.TrackPanel(settings); n.initPanel(parent); return n;}
+	this.getExploPanel = function(parent, settings) {
+		var n = html.ExploPanel(settings); n.initPanel(parent); return n;}		
+	this.getInputPanel = function(parent, settings) {
+		var n = html.InputPanel(settings); n.initPanel(parent); return n;}
+
+	
+	this.isHtmlType = function(nodeType, types) { for (o in types) { if (types[o] == nodeType) return true; } return false; }
+	this.clone = function(objCopy) { return JSON.parse(JSON.stringify(objCopy)); }
+	this.concat = function(obj1, obj2) { for (o in obj2) { obj1[o] = obj2[o];} return obj1;	}
+	this.isString = function(string) { return (typeof(string) == 'string' || string instanceof String);}
+	this.setDisplay = function(node, visible) { if (visible) node.style.display = ""; else node.style.display = "none"; }
+	
+	this.createTag = function(o) {
+		if (o && o.type) {
+			var node = document.createElement(o.type);
+			if (o.attributes) for (att in o.attributes) { node.setAttribute(att, o.attributes[att]);}
+			return node;
+		} else { console.log("No Attribute set to Create Element"); return document.createDocumentFragment(); }	
+	}
+
+	this.Node = function(settingsNeeds) {
+		var node = null;
+		if(settingsNeeds) {
+			var settings = html.clone( settingsNeeds );
+			node = html.createTag(settings);
+			node.settings = settings;
+		} else node = document.createDocumentFragment();
+		
+		node.initNode = function(newContent, newParent) { 
+			if (newParent) node.settings.parent = newParent;	
+			if (newContent && newContent != "")  node.settings.content = newContent;
+			if (node.settings.content && node.settings.content != "") node.setContent( node.settings.content);
+			if (node.settings.title && node.settings.title != "") node.setAttribute( "title", node.settings.title); 
+			node.appendNode();
+		}
+		
+		node.getNode = function(nodeParse) {
+			if (html.isString(nodeParse)) return document.querySelector(nodeParse);
+			 else return nodeParse;
+		}
+		
+		node.show = function() { node.style.visibility = "visible";}
+		node.hide = function() { node.style.visibility = "hidden";}
+		node.appendNode = function() {if (node.settings.parent) node.getNode(node.settings.parent).appendChild(node);}
+		node.createClone = function() { return html.createNode(node.settings); }
+		node.deleteNode = function() { if (node.parent) node.parent.removeChild(node); }
+		node.removeAllChild = function() { while (node.firstChild) node.removeChild(node.firstChild); }
+		node.setContent = function(content) {
+			node.removeAllChild();
+			if (html.isString(content)) {
+				if (html.isHtmlType(node.settings.type, jsons.type.inner)) node.innerHTML = content;
+				 else if (html.isHtmlType(node.settings.type, jsons.type.src)) node.src = content;
+			} else if (content instanceof HTMLElement) node.appendChild(content);
+		}
+		return node;
+	}
+	
+	this.PlayerContainer = function(settings) {
+		var cont = html.Node(settings ? settings : jsons.node.playerContainer);
+		cont.init = function(newParent) { 
+			cont.initNode("", newParent); 
+			if (!cont.player) cont.player =  html.getPlayer(cont);
+		} 
+		return cont;
+	}
+	
+	this.PanelContainer = function(settings) {
+		var cont = html.Node(settings ? settings : jsons.node.panelContainer);
+		cont.init = function(newParent) {
+			cont.initNode("", newParent); 
+			//if (cont.settings.parent) {
+				if (!cont.inputPanel) cont.inputPanel =  html.getInputPanel(cont);
+				if (!cont.mediaPanel) cont.mediaPanel =  html.getMediaPanel(cont);
+				if (!cont.exploPanel) cont.exploPanel =  html.getExploPanel(cont);
+				if (!cont.trackPanel) cont.trackPanel =  html.getTrackPanel(cont);
+			//}
+		} 
+		return cont;
+	}
+	
+	this.MenuContainer = function(settings) {
+		var cont = html.Node(settings ? settings : jsons.node.menuContainer);
+		cont.init = function(newParent) {
+			cont.initNode("", newParent); 
+			if (!cont.menu) cont.menu =  html.getMenu(cont);
+		} 
+		return cont;
+	}
+	
+	this.Player = function(settings) {
+		var player = html.Node(settings ? settings : jsons.node.player);	
+		
+		player.initPlayer = function(newParent) { player.initNode("", newParent);}
+		
+		player.getTrack = function(src, settings) { return html.getTrack(src, player, settings); }
+		player.getSource = function(src, settings) { return html.getSource(src, player, settings); }
+		
+		return player;
+	}
+	
+	this.Pop = function(settings) { 
+		var pop = html.Node(settings ? settings : jsons.node.pop); 
+		pop.message = function(msg) {
+			if (msg != "" && msg != "true" && msg != "false") {
+				clearTimeout(pop.isShow);
+				pop.setContent(msg);
+				pop.show();
+				pop.isShow = setTimeout( function() { pop.hide(); }, jsons.init.pop.action.delay );
+			}
+		}	
+		return pop;
+	}
+	this.Source = function(settings) { return html.Node(settings ? settings : jsons.node.source); }
+	
+	this.Track = function(settings) { 
+		var track = html.Node(settings ? settings : jsons.node.track); 
+		track.modeShowing = function() { track.track.mode = "showing" ;}
+		track.modeHidden = function() { track.track.mode = "hidden" ;}
+		return track;
+	}
+	
+	this.Panel = function(settings) {
+		var pan = html.Node(settings ? settings : jsons.node.panelUl);
+		
+		pan.initPanel = function(newParent) {
+			pan.initNode("", newParent);
+		}
+		
+		pan.addButtons = function(controlName) {
+			pan.buttons = {};
+			for (name in jsons.button) {
+				if (jsons.button[name].control && jsons.button[name].control == controlName) {
+					pan.buttons[name] = html.getButton("", pan, jsons.button[name]);
+				}
+			}
+		}
+		
+		return pan;
+	}
+
+	this.Button = function(settings) {
+		var button = html.Node(settings ? settings : jsons.node.buttonLi);
+		
+		button.initButton = function(newContent, newParent, newSettingsButton) {
+			if (newSettingsButton) button.settings = html.concat(button.settings, html.clone( newSettingsButton ) );
+			button.initNode(newContent, newParent);
+		}
+		return button;
+	}
+	
+	
+	this.MediaPanel = function(settings) {
+		var pan = html.Panel( settings ); pan.addButtons("media"); return pan;	
+	}
+
+	this.TrackPanel = function(settings) {
+		var pan = html.Panel( settings ); pan.addButtons("track"); return pan;	
+	}
+	
+	this.ExploPanel = function(settings) {
+		var pan = html.Panel( settings  ); pan.addButtons("explo"); return pan;	
+	}
+	
+	this.InputPanel = function(settings) {
+		var pan = html.Panel( settings ); pan.addButtons("input"); return pan;	
+	}
+
+	this.Menu = function(settings) {
+		var menu = html.Node(settings ? settings : jsons.node.menu);
+		menu.init = function(newParent) { menu.initNode("", newParent);  }	
+		return menu;
+	}
+
+	this.Folder = function(settings) {
+		var fold = html.Node(settings ? settings : jsons.node.folder);
+		fold.initFolder = function(newContent, newParent, newSettingsMenu) {
+			var settingsMenu = newSettingsMenu ? newSettingsMenu : jsons.menu.folderMenu;
+			fold.settings = html.concat(fold.settings, html.clone( settingsMenu ) );
+			fold.initNode(newContent, newParent);
+		}
+		return fold;	
+	}
+
+	this.File = function(settings) {
+		var file = html.Node(settings ? settings : jsons.node.file);
+		file.initFile = function(newContent, newParent, newSettingsMenu) {
+			var settingsMenu = newSettingsMenu ? newSettingsMenu : jsons.menu.file;
+			file.settings = html.concat(file.settings, html.clone(settingsMenu) );
+			var content = (file.settings.content && file.settings.content != "") ? file.settings.content : newContent;
+			file.initNode(content, newParent);
+		}
+		return file;	
+	}
+}
+
+function Listen(newSettings) {
+	this.stg = (newSettings) ? newSettings : jsons.init.event;
+	this.consoleLogBefore = new Array();
+	var listen = this;
+
+	
+	this.setMenuSettings = function(menu, newSettings) {
+		if(!menu.stg) menu.stg = newSettings && newSettings.menu ? newSettings.menu : control.do.clone(jsons.init.menu);
+		if (newSettings && listen.consoleLogBefore != "") console.log("Please use addMenu() before"+  listen.consoleLogBefore[0] +" to set yours settings");
+		if(!menu.playerList) menu.playerList = new Array();
+	}
+	
+	this.setPlayerSettings = function(player, newSettings) {
+		if (!player.stg) player.stg = newSettings && newSettings.player ? newSettings.player : control.do.clone(jsons.init.player);
+		if (newSettings && listen.consoleLogBefore != "") console.log("Please use setPlayerEvent() before"+  listen.consoleLogBefore[0]+" to set yours settings");
+	}
+	
+	this.addMenuEvent = function(menu, player, newSettings) {
+		if (menu) listen.setMenuSettings(menu, newSettings);
+		if (menu && player) menu.playerList.push(player);
+		listen.setDropEvent(menu, player);
+		listen.setNextEvent(menu, player);
+		listen.setPlayerEvent(player, newSettings);
+	}
+	
+	this.setPlayerEvent = function(player, newSettings) {
+		if (player) listen.setPlayerSettings(player, newSettings);
+		if (listen.stg.player.enable == true) {
+			listen.setErrorEvent(player);
+			listen.setFullEvent(player);
+			listen.setVolumeEvent(player);
+			listen.setPlayEvent(player);
+			listen.setPopEvent(player);
+		}
+	}
+	
+	this.setDropEvent = function(menu, player) {
+		if (listen.stg.drop.enable == true) { 
+			var setMenuDrop = function(event, menu) {
+				event.preventDefault();
+				listen.addFilesEventToMenu(menu, event);
+				if (listen.stg.drop.dropFullSreen) control.media.setOptions(player, {"full" : true} );
+				return false;
+			}
+			if (listen.stg.drop.dropOnPlayer == true) {
+				player.ondragover = function (event) { return false; };
+				player.ondrop = function(event)  { setMenuDrop(event, menu); }
+			} else {
+				document.ondragover = function (event) { return false; };
+				if (listen.stg.drop.dropPlayerAll == true)
+					document.addEventListener("drop", function(event) { setMenuDrop(event, menu); });
+				 else document.ondrop = function(event) { setMenuDrop(event, menu); }
+			}
+		}
+	}
+	
+	this.setNextEvent = function(menu, player) {
+		if (listen.stg.player.onended == true) {
+			player.onended = function(evt) {
+				if (menu.stg.explo.loop == true) control.explo.setOptions(menu, { "next" : 1 }); }
+		}
+	}
+
+	this.setPopEvent = function(player, newPopNode) {
+		if (listen.stg.player.pop == true) {
+			if (player.settings.parent != null && !newPopNode) var popNode = html.getPop("", player.settings.parent);
+			 else console.log("Parent's player have been initiated after the pop");
+			if(!player.pop) player.pop = newPopNode ? newPopNode : popNode;
+		}
+	}
+	
+	this.setErrorEvent = function(player) {
+		if (listen.stg.player.onerror == true) {
+			player.onerror = function(event) { console.log("Can't Play this Source"); }
+		}
+	}
+	
+	this.setFullEvent = function(player) {
+		if (listen.stg.player.onfullscreen == true) {
+			player.onwebkitfullscreenchange   = function(e) {
+				if (control.player.isFull()) {
+					if (player.pop  && !player.stg.media.full) // Prevent from default player controls
+						player.pop.message(jsons.text.pop.key.full);
+					player.stg.media.full = true;
+				} else player.stg.media.full = false;
+			}
+		}
+	}
+	
+	this.setVolumeEvent = function(player) {
+		if (listen.stg.player.onvolumechange == true) {
+			player.onvolumechange = function(event) { control.media.setOptions(player, { "volume" :  player.volume }); }
+		}
+	}
+
+	this.setPlayEvent = function(player) {
+		if (listen.stg.player.onplay == true) {
+			player.onplay = function(event) { control.media.setOptions(player, { "play" :  true }); }
+			player.onpause = function(event) { control.media.setOptions(player, { "play" :  false }); }
+		}
+	}
+	
+	this.addPanelEvent = function(panelNode, listenNode) {
+		for (var i=0; i < panelNode.children.length;i++ ) {
+			var button = panelNode.children[i];
+			if (button.settings.event) {
+				listen.addButtonEvent(button, listenNode);
+			}
+		}
+	}
+
+	this.setOptions = function(controlName, listenNode, todo) {
+		control[controlName].setOptions(listenNode, todo);
+	}
+	
+	this.setOptionsButton = function(button, listenNode) {
+		var todo = JSON.parse( '{ "' + button.settings.action +'":"'+ button.settings.value +'"}');
+		listen.setOptions(button.settings.control, listenNode, todo);
+	}
+	
+	this.addButtonEvent = function(button, listenNode) {
+		if (!this.keyObj) this.keyObj = {}
+		if (button.settings.event.keyboard) this.keyObj[button.settings.event.keyboard] = button;
+		if (!listenNode.buttons) listenNode.buttons = new Array();
+		if (listenNode.buttons.indexOf(button) == -1) listenNode.buttons.push(button);
+		
+		if (listen.stg.click.enable == true) {
+			if (button.settings.event.mouse) {
+				button.addEventListener(button.settings.event.mouse, function() {
+					if (button.settings.control == "input") {
+						var input = control.node.getInputButton(button);
+						if (input !=null) {
+						//document.querySelector("#panelCont").appendChild(input);
+							input.onchange = function(evt) { listen.addFilesEventToMenu(listenNode, evt) }
+							input.click();
+							
+						}
+					} else {
+						listenNode.isClick = true;
+						listen.setOptionsButton(button, listenNode);
+					}
+					listen.popMessage(button, listenNode);
+				});
+			}
+		}
+		
+		listen.setAutoShowButtons(button, listenNode);
+		listen.setContentBool(button, listenNode);
+		listen.setKeysEvent(this.keyObj);
+	}
+	
+	this.setAutoShowButtons = function(button, listenNode) {
+		if (listenNode.stg[button.settings.control].autoShowButtons != null) {
+			var stg = listenNode.stg ? listenNode.stg : jsons.init[listenNode.getAttribute("name")];
+			control.node.setDisplayParent(listenNode, button.settings.control, !listenNode.stg[button.settings.control].autoShowButtons);
+			if (!listenNode.stg) listen.consoleLogBefore[0] = " addButtonEvent/addPanelEvent()";
+		}
+	}
+	
+	this.setContentBool = function(button, listenNode) {
+		if ((!button.settings.content || button.settings.content == "") && button.settings.contentBool) {
+			var stg = listenNode.stg ? listenNode.stg : jsons.init[listenNode.getAttribute("name")];
+			control.node.setContentBool(listenNode, stg[button.settings.control]); 
+			if (!listenNode.stg) listen.consoleLogBefore[1] = " addButtonEvent/addPanelEvent()";
+		}
+	}
+	
+	
+	// keyObj  = { 71 : button1, 72 : button2, etc... } 
+	this.setKeysEvent = function(keyObj) {
+		if (listen.stg.keys.enable == true) {
+			document.body.onkeydown = function(e) {
+				var key = e.keyCode;
+				if (key == 32) e.preventDefault();
+				if (keyObj[key] != null ) keyObj[key].click();
+			}
+		}
+	}
+	
+	this.popMessage = function(button, listenNode) {
+		var buttonType = button.settings.control;
+		if (jsons.text.pop[buttonType] && jsons.text.pop[buttonType][button.settings.action]) {
+			var popText = jsons.text.pop[buttonType][button.settings.action] ;
+			if (popText != "") {
+				if (buttonType == "track" && control[buttonType].activeTextTrack(listenNode) == null) popText = "";
+				 else popText = popText + " " + listenNode.stg[buttonType][button.settings.action];
+				if (listenNode.pop) listenNode.pop.message(popText);
+				 else if (listenNode.playerList) {
+					listenNode.playerList.forEach(function(player) {
+						if (player.pop) player.pop.message(popText); 
+					});
+				 } 
+			}
+		}	
+	}
+	
+	
+	this.addFilesToMenu = function(menu, filesArray) {
+		menu.stg.input.filesArray = filesArray;
+		control.input.setOptions(menu, menu.stg.input);
+	}	
+	
+	this.addTracksToPlayer= function(player, tracksFileArray) {
+		control.track.addTracks(player, tracksFileArray);
+	}
+	var toto = 0
+	this.addFilesEventToMenu = function(menu, evt) {
+		var filesArray = new Array();
+		if (evt.target.files) filesArray = evt.target.files;
+		 else if (evt.dataTransfer.files) filesArray = evt.dataTransfer.files;
+		 else console.log("Can't Open File");
+		 	//var UInt8Array	= new Uint8Array(filesArray);
+
+	
+
+function parseArguments(text) {
+  text = text.replace(/\s+/g, ' ');
+  var args = [];
+  // Allow double quotes to not split args.
+  text.split('"').forEach(function(t, i) {
+    t = t.trim();
+    if ((i % 2) === 1) {
+      args.push(t);
+    } else {
+      args = args.concat(t.split(" "));
+    }
+  });
+  return args;
+}
+var ff = filesArray[0];
+fileType = ff.name.substring(ff.name.lastIndexOf( "." ), ff.length);
+//control.do.getFileUrl(f)
+
+	var r = new FileReader();
+
+	r.onload = function(e) { 
+
+		var ut = new Uint8Array(e.target.result);
+		var fileType = ff.name.substring(ff.name.lastIndexOf( "." ), ff.length);
+		
+		var args =  parseArguments("-i convertFileIn"+toto+fileType+" -t 1 -preset ultrafast -vf showinfo -strict -2 -y convertFileOut"+toto+".mp4");
+		//var args =  parseArguments("-i convertFileIn"+toto+fileType+" -t 2 -vf showinfo -f image2 image-%3d.jpeg");
+		var ptts = { arguments: args };
+		//if (toto == 0) {
+								ptts["files"] = [{
+										  data: ut,
+										  name: "convertFileIn"+toto+fileType
+										}
+									  ]
+		//alert("ok");
+		//}
+
+		toto = 1;
+			
+		converter.postMessage({action : "run", opts : ptts});
+		converter.onmessage = function(event) {
+			var data = event.data;
+			if (data.msg == "init") {
+				//alert(data.msg);
+				/*setTimeout(function() { 
+					var mp4 = new File( [data.files.buffer], ff.name, { "type" : "video/mp4" } );
+					var src = control.do.getFileUrl(mp4);
+					//console.log(src+"//"+file+"//"+file.data+"//"+mp4.name+"//"+ mp4.size +"//"+mp4.type);
+					listen.addFilesToMenu(menu, [mp4]);
+				}, 5500) ;*/
+				
+			}
+			if (data.msg == "finish") {
+				//alert(data.files);
+			
+				var filesConverted =data.files;
+				filesConverted.forEach(function(file) {
+				
+		
+				console.log("File recieved", file.name, file.data);
+
+				var mp4 = new File( [file.data], ff.name, { "type" : "video/mp4" } );
+				
+				//console.log(src+"//"+file+"//"+file.data+"//"+mp4.name+"//"+ mp4.size +"//"+mp4.type);
+				listen.addFilesToMenu(menu, [mp4]);
+				setTimeout(function() { 
+					//control.menu.playListByFile(menu, mp4, true);
+				}, 1000) ;
+				
+				
+					var a = document.createElement('a');
+					a.download = "cbw3.mp4";
+					var src = window.URL.createObjectURL(mp4);
+					a.href = src;
+					a.setAttribute("style", "color:yellow");
+					a.textContent = 'Click here to download cbw3.mp4!';
+					document.querySelector("#myHeader").appendChild(a);
+					
+
+			});
+		}
+        };
+
+
+	}
+	//r.readAsArrayBuffer(ff);
+	r.readAsArrayBuffer(ff.slice( 0, 500000));
+		 
+		//alert(ff.name+"//"+ ff.size +"//"+ff.type); 
+		//listen.addFilesToMenu(menu, filesArray);
+	}	
+	
+	this.addContainerEvent = function(conts) {
+		var containerEvent = this;
+		
+		conts.forEach(function(contain) {
+			var name = contain.getAttribute("name"); 
+			if (name == "panelContainer") containerEvent.panelContainer =  contain;
+			 else if (name == "playerContainer") containerEvent.playerContainer = contain;
+			 else if (name == "menuContainer") containerEvent.menuContainer = contain;
+		});
+		
+		if (this.menuContainer && this.playerContainer) {
+			listen.addMenuEvent(this.menuContainer.menu, this.playerContainer.player);
+		}
+		if (this.menuContainer && this.panelContainer) {
+			listen.addPanelEvent(this.panelContainer.inputPanel, this.menuContainer.menu);
+			listen.addPanelEvent(this.panelContainer.exploPanel, this.menuContainer.menu);
+		}
+		if (this.playerContainer && this.panelContainer) {
+			listen.addPanelEvent(this.panelContainer.mediaPanel, this.playerContainer.player);
+			listen.addPanelEvent(this.panelContainer.trackPanel, this.playerContainer.player);
+		}
+	}
+}
+
+
+
+function Control() {
+
+	var general = new ControlGeneral();
+	this.node = new general.Node();
+	this.do = new general.Do();
+	this.is = new general.Is();
+	this.player = new ControlPlayer();
+	this.media = new ControlMedia();
+	this.track = new ControlTrack();
+	this.menu = new ControlMenu();
+	this.explo = new ControlExplo();
+	this.input = new ControlInput();
+
+	function ControlPlayer() {
+	
+		this.isFull = function() {
+			var isFull = false;
+			if (document.fullscreen) isFull = true;
+			else if (document.mozFullScreen) isFull = true;
+			 else if (document.webkitIsFullScreen) isFull = true;
+			return isFull;
+		}
+		
+		this.isPlaying = function(player) { return !player.paused; }
+		
+		this.play = function(player, file, setSrc) {
+			if (setSrc) {
+				control.node.setSource(player, file);
+			} else {
+				player.removeAllChild();
+				control.node.getSource(player, file);
+			}
+			var trackList = file["track"] != null ? file["track"] : new Array();
+			control.track.addTracks(player, trackList);
+			player.stg.media.load = true;
+			player.stg.media.play = true;
+			control.media.setOptions(player, player.stg.media);
+		}
+	}
+	
+	function ControlMedia() {
+		
+		this.setOptions = function(player, valueOf) {
+			if (player) {
+				control.node.setContentBool(player, valueOf);
+			
+				if (control.do.bool(player.stg.media, valueOf, "load") == true) player.load();
+
+				var jsonResultPlay = control.do.bool(player.stg.media, valueOf, "play");
+				if (jsonResultPlay != null) {
+					if (jsonResultPlay == true) player.play();
+					 else if (jsonResultPlay == false) player.pause();
+					 else if (jsonResultPlay == "auto") {
+						control.media.setOptions(player, { "play" : !control.player.isPlaying(player)  } );
+					} else console.log("Please set true, false or 'auto' on Json's play value");
+				}
+				
+				var jsonResultFull = control.do.bool(player.stg.media, valueOf, "full");
+				if (jsonResultFull != null) {
+					if (jsonResultFull == true) {
+						if (player.requestFullscreen) player.requestFullscreen();
+						 else if(player.mozRequestFullScreen) player.mozRequestFullScreen();
+						 else if(player.webkitRequestFullScreen) player.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT); 
+					} else if (jsonResultFull == false) {
+						if (player.exitFullscreen) player.exitFullscreen();
+						 else if(document.mozCancelFullScreen) document.mozCancelFullScreen();
+						 else if(document.webkitExitFullscreen) document.webkitExitFullscreen(); 			
+					} else if (jsonResultFull = "auto") {
+						control.media.setOptions(player, { "full" : !control.player.isFull() }) ;
+					}
+				}
+				control.do.putFloat(player.stg.media,  player, valueOf,  "volume");
+			}
+		}
+	}
+	
+	function ControlTrack() {
+	
+		this.activeTextTrack = function(player) {
+			if (player && player.textTracks) {
+				for (var i = 0; i < player.textTracks.length; i++) {
+					var textTrack = player.textTracks[i];
+					if (textTrack.mode == "showing") {
+						return textTrack;	
+					}
+				}
+			}
+			return null;
+		}
+
+		this.addTracks = function(player, trackList) {
+			trackList.forEach(function(file, key) {
+				var addTrack = function(f) {
+					var trackNode = control.node.getTrack(player, f);
+					if (key == 0) {
+						trackNode.modeShowing();
+						control.track.setOptionsTimeout(player, player.stg.track);
+					} else trackNode.modeHidden();
+				}
+				if (player.stg.track.convertToVtt == true && !control.is.vtt(file))  {
+					var r = new FileReader();
+					r.onload = function(e) { 
+						var textOut = e.target.result;
+						if (control.is.srt(file)) textOut = control.track.getSrtToVtt(player, textOut); 
+						addTrack( new File([textOut], { "type" : "text/plain" }));
+					} 
+					r.readAsText(file, "ISO 8859-1");
+				} else addTrack(file);
+			});
+			control.node.setDisplayParent(player, "track", trackList.length>0);
+		}
+		
+		this.getSrtToVtt = function(player, srtText) {
+			if (player.stg.track.convertMethod == 0) {
+				var vttOut = "WEBVTT \n \n";
+				var trackTab = srtText.split('-->');
+				trackTab.forEach(function(line, key) {
+					var tempo =  line.substring( 0 , line.indexOf( "," )) 
+								  + ((key==0 || key==(trackTab.length-1)) ? "" : '.'
+										+ line.substring( line.indexOf( "," )+1 , line.lastIndexOf( "," )) )
+								  +  '.' + line.substring( line.lastIndexOf( "," )+1 , line.length);
+					vttOut = vttOut + ((key==0) ? "" :'-->') + tempo;
+				});
+				return vttOut;
+			}
+			return srtText;	
+		}
+		
+		this.changeCuesOpt = function(value, action, textTrack) {
+			var cues = textTrack.cues;
+			for (var i = 0; i < cues.length; i++) {
+				cues[i][action] = value; 
+			}
+		}
+		
+		this.changeCuesCss = function(value, textTrack) {
+			var cues = textTrack.cues;
+			for (var i = 0; i < cues.length; i++) {
+				cues[i].text =  '<c'+value+'>'+ cues[i].text +"</c>"; 
+			}
+		}
+		
+		this.changeCuesTime = function(value, textTrack) {
+			var cues = textTrack.cues;
+			for (var i = 0; i < cues.length; i++) {
+				var cue = cues[i];
+				cue.startTime = parseFloat(cue.startTime + value);
+				cue.endTime = parseFloat(cue.endTime + value);
+			}
+		}
+		
+		this.setOptionsTimeout = function(player, stg) {
+			setTimeout(function() { control.track.setOptions(player, stg) }, 500) ; 
+		}
+				
+		this.setOptions = function(player, valueOf) {
+			control.node.setContentBool(player, valueOf);
+			
+			var textTrack = this.activeTextTrack(player);
+			if (textTrack != null) {
+				if (valueOf.line) {
+					var newValue = parseFloat(valueOf.line);
+					newValue = player.stg.track.line + newValue;
+					if (newValue < 0) newValue = 0;
+					 else if (newValue > 15) newValue = 15;
+					player.stg.track.line = newValue;
+					this.changeCuesOpt(newValue, "line", textTrack);
+				}
+				if (valueOf.size && valueOf.size != "") {
+					player.stg.track.size = valueOf.size;
+					this.changeCuesCss(valueOf.size, textTrack);
+				}
+				if (valueOf.delay) {
+					player.stg.track.delay = player.stg.track.delay + parseFloat(valueOf.delay);
+					this.changeCuesTime(parseFloat(valueOf.delay), textTrack);
+				}
+			}
+		}
+	}
+	
+	function ControlMenu() {
+		
+		this.playListByFile = function(menu, f, setSrc) {
+			if (menu.playerList) {
+				menu.playerList.forEach(function(player) {
+					control.player.play(player, f, setSrc);
+				});
+			} else console.log("Menu as no Player to listen");
+		}
+		
+		this.playListByIndex = function(menu, index) {
+			if (menu.playerList && menu.mediaList) {
+				var file = menu.mediaList[index];
+				this.playListByFile(menu, file);
+			} else console.log("Menu as no Player or Files to listen");
+		}
+	}
+
+	function ControlExplo() {
+		
+		this.getCleanIndex = function(menu, index) {
+			if (index >= menu.mediaList.length) {
+				if (menu.stg.explo.loop == true ) menu.indexPlay = 0;
+				 else menu.indexPlay = menu.mediaList.length-1;
+			} else if (index < 0) {
+				if (menu.stg.explo.loop == true)  menu.indexPlay = menu.mediaList.length-1;
+				else menu.indexPlay = 0;
+			} else menu.indexPlay = index;
+			  
+			// If loop, take all his index setted
+			if (menu.stg.explo.loop == true) return true; 
+			 else if (menu.isClick) return true; // Force the next Index Not looped
+			 // Play the last index only once (index not setted to -1 compare to menu.indexPlay). 
+			 // Dont Replay the first one on previous (replace with menu.indexPlay >= 0 if want to);
+			 else if (index >= 0 && index < menu.mediaList.length) return true; // On end If not loop && not isClick
+			 // If no loop and index is out of the mediaList
+			 else return false;
+		}
+	
+		this.setOptions = function(menu, valueOf) {
+
+			control.node.setContentBool(menu, valueOf);
+
+			if (valueOf["random"] != null) {
+				var random = menu.stg.explo.random;
+				if (control.do.bool(menu.stg.explo, valueOf, "random") == "auto") {
+					control.explo.setOptions(menu, { "random" : !random } );
+				}
+			}
+
+			if (valueOf["loop"] != null) {
+				var loop = menu.stg.explo.loop;
+				if (control.do.bool(menu.stg.explo, valueOf, "loop") == "auto") {
+					control.explo.setOptions(menu, { "loop" : !loop } );
+				}
+			}				
+			
+			if (valueOf["next"] != null) {
+				if (menu.indexPlay != null && menu.mediaList) {
+					var newIndex = menu.indexPlay + parseFloat(valueOf["next"]);
+					if (this.getCleanIndex(menu, newIndex)) control.menu.playListByIndex(menu, menu.indexPlay);
+				}  else console.log("No file to play in the list");
+			}
+			menu.isClick = false;
+		}
+		
+	}
+
+	function ControlInput() {
+
+		this.insertFile = function(menu, file) {
+			var fileNode = control.node.getFile(menu, file)
+			var settings = fileNode.settings.events;
+			for(todo in settings) {
+				if(settings[todo].action == "play") {
+					fileNode.addEventListener(settings[todo].event.mouse, function() {
+						control.menu.playListByIndex(menu, menu.mediaList.indexOf(file));
+					});
+				}
+			}
+		}
+		
+		this.insertList = function(menu, f, valueOf) {
+			var isVideo = control.is.video(f);
+			var isAudio = control.is.audio(f);
+			if (control.is.source(f)) {
+				if (control.do.bool(menu.stg.input, valueOf, "separateAudio") == true) {
+					//if (isVideo) { menu.mediaList.push(f);}
+					 //else if (isAudio) { menu.mediaList.push(f); }
+					 menu.mediaList.push(f);
+				} else menu.mediaList.push(f);
+				menu.mediaList[menu.mediaList.indexOf(f)]["track"] = new Array();
+				this.insertFile(menu, f);
+			}
+		}
+		
+		this.setOptions = function(menu, valueOf) {
+			control.node.setContentBool(menu, valueOf);
+			
+			if (valueOf.filesArray != null && valueOf.filesArray.length > 0) {
+				var filesFromEvent = valueOf.filesArray; 
+			} else return;
+			
+			if (!menu.mediaList) menu.mediaList = new Array();
+			if (!menu.trackList) menu.trackList = new Array();
+			if (!menu.indexPlay) menu.indexPlay = 0;
+			
+			var mediaLenght = menu.mediaList.length;
+			for (var i = 0; i < filesFromEvent.length; i++) {
+				var fileEvent = filesFromEvent[i];
+				var trackToInsert = control.do.getSingle(menu.trackList, fileEvent); 
+				if (trackToInsert == fileEvent) { // If new file
+					if (control.is.track(trackToInsert)) menu.trackList.push(trackToInsert);
+				}
+				var fileToInsert = control.do.getSingle(menu.mediaList, fileEvent);
+				if (fileToInsert == fileEvent) { // If new file
+					if (control.is.source(fileToInsert)) this.insertList(menu, fileToInsert, valueOf);
+				} else if (control.do.bool(menu.stg.input, valueOf, "replaceSame") == false) this.insertList(menu, fileEvent, valueOf);
+			}
+
+			if (control.do.bool(menu.stg.input, valueOf, "singleMediaTracks") == true) {
+				if (mediaLenght == menu.mediaList.length - 1) {
+					for (var i = 0; i < filesFromEvent.length; i++) {
+						if (control.is.track(filesFromEvent[i])) {
+							menu.mediaList[mediaLenght]["track"].push(filesFromEvent[i]);
+						}
+					}
+				}
+			}
+			
+			menu.mediaList.forEach(function(media, key) {
+				menu.trackList.forEach(function(track) {
+					if (control.is.sameName(media, track)) {
+						if (media["track"].indexOf(track) == -1) media["track"].push(track);
+					}
+				});
+			});
+			
+			if (control.do.bool(menu.stg.input, valueOf, "playOnOpen") == true) {
+				for (var i = 0; i < filesFromEvent.length; i++) {
+					if (control.is.source(filesFromEvent[i]) ) {
+						var fileToPlay = control.do.getSingle(menu.mediaList, filesFromEvent[i]);
+						control.menu.playListByIndex(menu, menu.mediaList.indexOf(fileToPlay)); break;
+					}
+				}
+			}
+		}
+	}
+
+	function ControlGeneral() {
+		
+		this.Node = function () {
+			this.getTrack = function(player, f) { return player.getTrack(control.do.getFileUrl(f)); }
+			this.getSource = function(player, f) { return player.getSource(control.do.getFileUrl(f)); }
+			this.setSource = function(player, f) { return player.src = control.do.getFileUrl(f); }
+			this.getFile = function(menu, file) { return html.getFile(file.name, menu); }
+			this.setContentBool = function(listenNode, valueOf) {
+				if (valueOf && valueOf != null) {
+					for (action in valueOf) {
+						if (listenNode.buttons && valueOf[action] != null && typeof(control.do.clone(valueOf[action])) == "boolean" ) {
+							listenNode.buttons.forEach(function(button) {
+								if (button.settings.contentBool && button.settings.action == action) 
+									button.setContent(button.settings.contentBool[valueOf[action]]);
+							});
+						}
+					}
+				}
+			}
+			this.getInputButton = function(button) {
+				if (button.settings &&  button.settings.input) {
+					return input = html.Node({ "type" : jsons.type.input.input, "attributes" :  button.settings.input });
+				} else console.log("no button.settings.input set to create the input");
+				return null;
+			}
+			this.setDisplayParent = function(listenNode, control, visible) {
+				if (listenNode.buttons) {
+					for (var i = 0; i < listenNode.buttons.length; i++) {
+						if (listenNode.buttons[i].settings.control == control && listenNode.stg[control].autoShowButtons == true) {
+							html.setDisplay(listenNode.buttons[i].parentNode, visible);
+							break;
+						}
+					}
+				}
+			}
+			this.includeScript = function(url, callback){
+				var nodeScript = document.createElement('script');
+				nodeScript.type = 'text/javascript';
+				nodeScript.src = url + '?' + (new Date().getTime());
+				if (callback) {
+					nodeScript.onreadystatechange = callback;
+					nodeScript.onload = nodeScript.onreadystatechange;
+				}
+				document.getElementsByTagName('head')[0].appendChild(nodeScript);
+			}
+		}	
+		
+		this.Do = function() {
+			this.bool = function(stg, valueOf, action) {
+				if (valueOf[action] != null) {
+					/* Add a third value to bool method (true, false, "auto" instead of "on", "off", "auto");
+					   Works only if recursive method (that remove the "auto"). */
+					var JsonTokenALine1Bug = control.do.clone(valueOf[action]);
+					stg[action] = JsonTokenALine1Bug;
+					if(stg[action] == true) return true;
+					 else if(stg[action] == false) return false;
+					 else return stg[action];
+				} else return null;
+			}
+			
+			this.put = function(stg, elem, valueOf, action, isFloat) {
+				if (valueOf[action] != null) {
+					stg[action] = isFloat ? parseFloat(valueOf[action]) : valueOf[action];
+					elem[action] = stg[action];
+				}
+			}
+			
+			this.putFloat = function(stg, elem, valueOf, action) { this.put(stg, elem, valueOf, action, true); }
+			
+			this.getSingle = function(fList, f2) {
+				var single = null;
+				fList.forEach(function(f1) { 
+					if (f1.name == f2.name && f1.size == f2.size && f1.type == f2.type) { single = f1; return; };});
+				if (single != null) return single; 
+				 else return f2
+			}
+			
+			this.clone = function(objCopy) { return JSON.parse(JSON.stringify(objCopy)); }
+			
+			this.getFileUrl = function(f) {
+				if ( window.webkitURL ) return window.webkitURL.createObjectURL(f);
+				 else if ( window.URL && window.URL.createObjectURL ) return window.URL.createObjectURL(f);
+			}
+		}
+		
+		this.Is = function() {
+			this.typeIndex = function (file, typeIndex) {
+				if (file) {
+					if (file.name.lastIndexOf(typeIndex) > -1) return true;
+					 else if (file.type.indexOf(typeIndex) > -1) return true;
+				} else console.log("No typeIndex File Set");
+				return false;
+			}
+
+			this.type = function(file, typeJson) {
+				if(file) {
+					if (this.typeIndex(file, typeJson)) return true;
+					if (typeof(typeJson) != "string") {
+						for (childs in typeJson) {
+							if (this.typeIndex(file, typeJson[childs])) return true;
+						}
+					}
+				} else console.log("No type File Set");
+				return false; 	
+			}
+			
+			this.sameName = function(f1, f2) {
+				return f1.name.substring( 0 , f1.name.lastIndexOf( "." )) == f2.name.substring( 0 , f2.name.lastIndexOf( "." ));
+			}
+			
+			this.track = function(f) { return this.type(f, jsons.type.track);	}
+			this.srt = function(f) { return this.type(f, jsons.type.track.srt); }
+			this.vtt = function(f) { return this.type(f, jsons.type.track.vtt); }
+			this.source = function(f) { return this.type(f, jsons.type.play); }
+			this.video = function(f) { return this.type(f, jsons.type.play.video); }
+			this.audio = function(f) { return this.type(f, jsons.type.play.audio); }	
+			this.textTrack = function(textTrack) { return textTrack !=null && textTrack.cues != null }
+			this.file = function(f) { return (f && f instanceof File); }
+		}
+	}
+
+}
+
+
+
+</script>
+
+	
+	
+	
+	
+	
+
+	
+<style type="text/css">
+
+/** Mandatory **/
+
+::cue  {
+	background:none;
+	color: #fff;
+	font-family: "Trebuchet MS",Helvetica,sans-serif;
+	text-shadow: -1px 0 black,0 1px black,1px 0 black,0 -1px #000;
+}
+
+::cue(.size-smaller) { font-size:smaller; }
+::cue(.size-larger) { font-size:larger; }
+
+
+/** Demo **/
+
+
+body,html {
+	font-size: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	
+}
+
+.control, .media {
+	float:left;
+	position:relative;
+}
+
+.buttonShow {
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:999999999999;
+}
+
+.player {
+	width:auto;
+	height:auto;
+}
+
+.pop {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 30px;
+	margin-right:40px;
+	color:#fff;
+	z-index:999999999999;
+	font-size:25px;
+	font-family: "Trebuchet MS",Helvetica,sans-serif;
+}
+
+.menu, .panel, .header {
+	padding:0;
+	margin:0;
+	background-image: -webkit-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:    -moz-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:     -ms-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:      -o-linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+	background-image:         linear-gradient(right top, #91B1C4 0%, #22427C 100%);
+}
+
+.menu {
+	overflow: auto;
+	height: 200px;
+}
+
+.menu .file, .panel .button, .header h3 {
+	color: #ffffff;
+	padding: 5px;
+	/*font-size: 46px;*/
+	border-bottom: 1px solid #A5A7D9;
+}
+
+.menu .file, .panel .button, .header h3, .buttonShow {
+	cursor:pointer;
+	text-decoration: none;
+	list-style-type: none;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header h3 {
+	padding:0;
+	margin:0;
+	padding-left:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.menu .file:hover, .panel .button:hover{
+	/*color:#000000;*/
+	font-weight:bold;
+	background: #258ecd;
+}
+
+
+
+
+</style>
+
+
+
+<script type='text/javascript' name="externalDevFiles" >
+
+</script>
+
+
+
+

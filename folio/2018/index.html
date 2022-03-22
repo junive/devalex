@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+	<meta name="robot" content="noindex, nofollow" />
+	<meta name="googlebot" content="noindex">
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Site d'Alexandre GORISSE</title>
+	<link rel="apple-touch-icon" href="img/logo/apple.png">
+	<link rel="shortcut icon" href="img/logo/short.ico">
+	<link rel="license" href="">
+	
+	
+</head>
+
+<body ng-app="cvApp" ng-controller="cvControl as cv" >
+	
+	
+	<img id="loading-img" src="img/loading.gif" style="display: block; margin-left: auto; margin-right: auto;" />
+	<!-- UI router
+	<div id="WhateEverMotherView">
+		<a ui-sref="home">titi</a> 
+		<a ui-sref="about">titi</a> 
+		<div id="WhatEvercontent" ui-view></div>
+	</div>-->
+	<div id="loading-body" style="visibility:hidden;">
+	<header class="container" role="banner">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button>
+					<img class="navbar-brand my-logo" src="img/logo/my-brand.gif" />
+					<!--<a class="navbar-brand" href="#">Alex</a>-->
+					
+				</div>
+				<div class="collapse navbar-collapse"  id="myNav">
+					<ul class="nav navbar-nav">  
+					<!-- data-toggle="collapse" data-target="#myNav" --> 
+						<li ng-repeat="nav in cv.nav" ng-class = "{ active : nav == cv.currentNav  }" >
+							<a href="#/{{nav.id}}">{{nav.text}}</a> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<main class="my-main row-fluid" role="main">
+		<div class="my-projects collapse in clearfix">
+			<div ng-repeat="content in cv.allProject | filter : {parentId : cv.currentNav.id } | orderBy : 'id'"  emit-last-main>
+				<a href="#/{{cv.currentNav.id}}/{{content.id}}" class="clearfix">
+					<h5 class="my-title" ><img src="img/open.png" />&nbsp;&nbsp;{{content.title}}</h5> 
+					<div class="my-img-bloc col-sm-2">
+						<img ng-src="img/project/{{content.img}}" class="img-thumbnail center-block" alt="Projet">
+					</div>	
+
+					<span class="my-text col-sm-8 col-md-8 col-lg-9" ng-bind-html="content.text | unsafe"  >	</span>
+				</a>
+			</div>
+			<!--<div class="clearfix visible-xs">test vue smartphone</div>-->
+		</div>
+		<div class="my-iframes">
+			<div ng-repeat="content in cv.allProject" class="my-project collapse clearfix" id="my-project-{{content.id}}">
+				<a href="#/{{cv.currentNav.id}}" class="my-link-resume">
+					<h5 class="my-title">
+						<img src="img/close.png" />&nbsp;&nbsp;{{content.title}} 
+					</h5> 
+				</a>
+				<img style="display:none" src="img/loading.gif" class="my-loading center-block" />
+				<div class="my-iframe-container embed-responsive">
+					<!--<iframe style="display:none" class="embed-responsive-item" src=""></iframe>-->
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<footer class="container-fluid clearfix">
+		<div id="my-footer" class="my-footer collapse in">
+			footer
+		</div>
+	</footer>
+
+	</div>
+	
+	<!-- CSS loading normal -->
+	<link rel="stylesheet" type="text/css" href="custom/my-style-min.css" /> 
+		
+	<!-- Loading CSS without compiling 
+		<link rel="stylesheet/less" type="text/css" href="custom/my-style.less" /> 
+		<script src="lib/less.min.js"></script>
+	-->
+
+	<!-- Loading CSS asynchronously : // show loading image before all
+	// Problem with loading frome URL :  if ($(projectDomId).is(":hidden")) 
+	<script src="lib/loadCSS.js"></script>
+	<script> 
+		showBody = function() {
+			var myLoadCSS = loadCSS( "custom/my-style-min.css" ); 
+			onloadCSS( myLoadCSS, function() { 		
+				$("#loading-img").hide();
+				$("#loading-body").css('visibility', 'visible');} );
+		}
+	</script>
+	 -->
+	 
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<!--<script src="lib/angular-ui-router.min.js"></script> -->
+	
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+	-->
+
+	<script src="../../setting.js"></script>
+	<script src="app.js"></script>
+
+</body>
+</html>

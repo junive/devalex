@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache-entry>
+	<generated-type-hash class="com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException_FieldSerializer" hash="FF198044879E67E1ACF2E0C29CC58CB5"/>
+	<generated-type-hash class="net.blyck.www.sharedType.client.Music_FieldSerializer" hash="7A430414B41DD27B11A0ABE3EBE6922E"/>
+	<generated-type-hash class="net.blyck.www.sharedType.client.PlayList_FieldSerializer" hash="3F6D2BDDBD29C81B70E79427CA4629CF"/>
+	<generated-type-hash class="net.blyck.www.playListAdministration.client.RpcCallServerAccess_TypeSerializer" hash="CAD23AAFA9B50BF59381F0B3915E2AEF"/>
+	<generated-type-hash class="net.blyck.www.playListAdministration.client.RpcCallServerAccess_Proxy" hash="0E17375674CF1980948B2547A093F2E2"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.TextBoxImpl" out="com.google.gwt.user.client.ui.impl.TextBoxImplIE6"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.HTTPRequestImpl" out="com.google.gwt.user.client.impl.HTTPRequestImplIE6"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.DOMImpl" out="com.google.gwt.user.client.impl.DOMImplIE6"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.HistoryImpl" out="com.google.gwt.user.client.impl.HistoryImplIE6"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.FormPanelImpl" out="com.google.gwt.user.client.ui.impl.FormPanelImplIE6"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.ClippedImageImpl" out="com.google.gwt.user.client.ui.impl.ClippedImageImplIE6"/>
+	<rebind-decision in="net.blyck.www.playListAdministration.client.PlayListAdministration" out="net.blyck.www.playListAdministration.client.PlayListAdministration"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.FocusImpl" out="com.google.gwt.user.client.ui.impl.FocusImplIE6"/>
+	<rebind-decision in="net.blyck.www.sharedType.client.SharedType" out="net.blyck.www.sharedType.client.SharedType"/>
+	<rebind-decision in="net.blyck.www.playListAdministration.client.RpcCallServerAccess" out="net.blyck.www.playListAdministration.client.RpcCallServerAccess_Proxy"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.PopupImpl" out="com.google.gwt.user.client.ui.impl.PopupImplIE6"/>
+</cache-entry>

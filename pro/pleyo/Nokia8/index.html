@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>GRAINIPIOT</title>
+<meta name="Author" content="PLEYO">
+<link rel="stylesheet" type="text/css" href="menu.css" />
+
+<script type="text/javascript"><!--
+
+var object = new Array();
+
+function Slide(N,oCont){
+	this.N  = N;
+	this.S  = 1.1;
+	this.object = new Array();
+
+	this.CObj = function (parent,N){
+
+		this.parent = parent;
+		this.N = N;
+		this.obj = parent.frm[N];
+		this.tit = this.obj.firstChild;
+		this.div = this.obj.getElementsByTagName("div")[1];
+		this.div.style.visibility = "hidden";
+		this.y0 = N * 53;
+		this.Y1 = this.y0;
+		this.obj.style.top = this.y0;
+		this.obj.style.height = parent.H - (parent.NF-1) * 53 - 3;
+		this.obj.style.visibility = "visible";
+		this.obj.parent = this;
+		this.run = false;
+
+		this.move = function(){
+			with(this){
+				dy = (y1-y0)/parent.S;
+				if(Math.abs(dy)>.1){
+					y0+=dy;
+					obj.style.top = Math.round(y0);
+					setTimeout("object["+parent.N+"].object["+N+"].move();", 16);
+				} else {
+					run = false;
+					if(dy>0)div.style.visibility="hidden";
+					else if(N>0)parent.object[N-1].div.style.visibility="hidden";
+				}
+			}
+		}
+
+		this.obj.onclick = function(){
+			with(this.parent){
+				if(!run){
+					run = true;
+					div.style.visibility="visible";
+					for(i=0;i<parent.NF;i++)parent.object[i].tit.className = "title";
+					tit.className = "title_o";
+					for(i=0;i<=N;i++){
+						parent.object[i].y1 = i*53;
+						parent.object[i].move();
+					}
+					for(i=N+1;i<parent.NF;i++){
+						parent.object[i].y1 = parent.H-(parent.NF-i)*53;
+						parent.object[i].move();
+					}
+				}
+			}
+		}
+	}
+
+	this.frm = document.getElementById(oCont);
+	this.H = parseInt(this.frm.style.height);
+	this.frm = this.frm.getElementsByTagName("span");
+	this.NF = this.frm.length;
+	for(i=0;i<this.NF;i++) this.object[i] = new this.CObj(this, i);
+	this.object[0].obj.onclick();
+	this.S = 10;
+}
+
+onload = function() {
+	object[0] = new Slide(0, "frames");
+}
+
+//-->
+</script>
+</head>
+
+<body>
+<div style="position:absolute;left:0%;top:0%"> 
+  <div id="frames" style="position:absolute;width:640;height:480;overflow:hidden"> <span class="link"> 
+  <div class="title">
+  </div>
+    <div class="text"> 
+      <table width="100%" border="0" cellpadding="0">
+        <tr> 
+          <td width="11%"><img src="images/bandeau.gif" width="610" height="152" border="0"></a></td>
+        </tr>
+      </table>
+    </div>
+    </span> <span class="link"> 
+    <div class="title" align="center" valign="bottom"> 
+      <table width="100%" height="5%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="12%"></td>
+          <td width="25%" valign="bottom"><img src="images/titr_pims.gif" width="226" height="45"></td>
+          <td width="60%"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif" valign="top">&nbsp;</font></td>
+        </tr>
+      </table>
+    </div>
+    <div class="text"> 
+      <table width="44%" border="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="11%"><a href="#"><img src="images/icon_mail.gif" width="91" height="90" border="0"></a></td>
+		  <td width="66%"><img src="images/icon_msn.gif" width="91" height="90"></td>
+          <td width="11%"><img src="images/icon_calendar.gif" width="91" height="90"></td>
+          <td width="11%"><img src="images/icon_address.gif" width="91" height="90"></td>
+          <td width="1%"><img src="images/icon_rss.gif" width="91" height="90"></td>
+          <td width="66%"><img src="images/icon_maps.gif" width="91" height="90"></td>
+          <td width="66%"><img src="images/icon_phoneip.gif" width="91" height="90"></td>
+        </tr>
+        <tr> 
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Mail</font></div></td>
+		  <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Instant Messenger</font></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Calendar</font></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Address</font></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">RSS</font></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Maps</font></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Phone over IP</font></div></td>
+        </tr>
+      </table>
+    </div>
+    </span> <span class="link"> 
+    <div class="title"> 
+      <table width="100%" height="5%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="12%"></td>
+          <td width="25%" valign="middle"><img src="images/titr_medias.gif" width="226" height="45"></td>
+          <td width="60%"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif" valign="top">&nbsp;</font></td>
+        </tr>
+      </table>
+    </div>
+    <div class="text">
+	      <table width="44%" border="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="11%"><a href="#"><img src="images/icon_photos.gif" width="125" height="112" border="0"></a></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_musiques.gif" width="125" height="112"></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_videos.gif" width="125" height="112"></td>
+        </tr>
+        <tr> 
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Pictures</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Music</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Videos</font></div></td>
+        </tr>
+      </table> 
+    </div>
+    </span> <span class="link"> 
+    <div class="title"> 
+      <table width="100%" height="5%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="12%"></td>
+          <td width="25%" valign="middle"><img src="images/titr_libraries.gif" width="226" height="45"></td>
+          <td width="60%"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif" valign="top">&nbsp;</font></td>
+        </tr>
+      </table>
+    </div>
+    <div class="text">
+		      <table width="44%" border="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="11%"><a href="#"><img src="images/icon_tv.gif" width="125" height="112" border="0"></a></td>
+          <td width="11%">&nbsp;</td>
+          <td width="60%" align="center"><img src="images/icon_radio.gif" width="125" height="112"></td>
+        </tr>
+        <tr> 
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">TV Library</font></div></td>
+          <td><div align="center"></div></td>
+          <td width="60%"><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Radio Library</font></div></td>
+        </tr>
+      </table>  
+    </div>
+    </span> <span class="link"> 
+    <div class="title"> 
+      <table width="100%" height="5%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="12%"></td>
+          <td width="25%" valign="middle"><img src="images/titr_games.gif" width="226" height="45"></td>
+          <td width="60%"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif" valign="top">&nbsp;</font></td>
+        </tr>
+      </table>
+    </div>
+    <div class="text">
+		      <table width="44%" border="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="11%"><a href="#"><img src="images/icon_bejeweled.gif" width="196" height="47" border="0"></a></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_simon.gif" width="161" height="73"></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_sudoku.gif" width="187" height="79"></td>
+        </tr>
+        <tr> 
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Bejeweled</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Simon</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Sudoku</font></div></td>
+        </tr>
+      </table>  
+    </div>
+    </span> <span class="link"> 
+    <div class="title"> 
+      <table width="100%" height="5%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="12%"></td>
+          <td width="25%" valign="middle"><img src="images/titr_links.gif" width="302" height="45"></td>
+          <td width="47%"><font color="#FFFFFF" size="2" face="Arial, Helvetica, sans-serif" valign="top">&nbsp;</font></td>
+        </tr>
+      </table>
+    </div>
+    <div class="text">
+	      <table width="44%" border="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="11%"><a href="#"><img src="images/icon_digg.gif" width="118" height="73" border="0"></a></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_amazon.gif" width="118" height="73"></td>
+          <td width="11%">&nbsp;</td>
+          <td width="11%"><img src="images/icon_facebook.gif" width="118" height="73"></td>
+          <td width="1%">&nbsp;</td>
+          <td width="1%"><img src="images/icon_flickr.gif" width="118" height="73"></td>
+          <td width="1%">&nbsp;</td>
+          <td width="1%"><img src="images/icon_weather.gif" width="118" height="73"></td>
+		</tr>
+        <tr> 
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Digg</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Amazon</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Face Book</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Flickr</font></div></td>
+          <td><div align="center"></div></td>
+          <td><div class="text" align="center"><font color="#FFFFFF" face="Arial, Helvetica, sans-serif">Weather</font></div></td>
+        </tr>
+      </table> 
+    </div>
+    </span>
+</div>
+</body>
+</html>

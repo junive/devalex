@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+
+ <meta name="ROBOTS" content="NOARCHIVE">
+ <title> dragmovedrop </title>
+
+<style>
+
+body {
+    background: #fff none repeat scroll 0 0;
+    font: 82% arial,sans-serif;
+    margin: 3px 0;
+    min-width: 768px;
+}
+
+.gtb {
+    background: #ebeff9 none repeat scroll 0 0;
+    border-bottom: 1px solid #6b90da;
+    padding: 5px 10px 0 5px;
+    white-space: nowrap;
+	height:30px;
+}
+.gtb .tab {
+    color: #00c;
+    cursor: pointer;
+    float: left;
+    margin: 5px 15px 6px 10px;
+}
+
+</style>
+
+</head>
+<body >
+ 
+<div class="gtb"> 
+ <a class="tab" href="index.html" >Project&nbsp;Home</a>
+
+ <a class="tab" href="downloads" >Downloads</a>
+ 
+ <a class="tab" href="wiki" >Wiki</a>
+ 
+ <a class="tab" href="code" >Source</a>
+
+</div>
+
+
+<div style="padding:0 3px 3px 0; margin:0; clear:left">
+
+
+
+
+
+
+<table width="100%">
+ <tr >
+
+ <td >
+ 
+ <h2> Doesn't work with Firefox v3.6 and higher !</h2>
+ 
+ <h3>Summary</h3>
+ <p>I&#x27;m proud to present you the first release of DragMoveDrop
+project in collaboration with Pleyo </p>
+ <p>This is the first included drag and drop for GWT. It is also the first simple and optimized Drag and Drop. 
+ Tested on every Operating system, on every browsers, and build with a small computer (1Ghz and 512Mo Ram). 
+ His unique system of detecting allows you to increase performance when you are moving a widget.  
+ </p><p>That is not all, i&#x27;m preparing many examples of use ; as 2000 Widgets in a page, and keep a 
+ very fluid move on yours Widget, create and drag you own list, and many others behaviors (block Widget 
+ into a panel, copy a Widget on Drag, etc...) </p><p>To install DragMoveDrop, 
+ please look at gwt : <a href="wiki" rel="nofollow">wiki</a> 
+ </p><h3>Demo 1</h3><p>
+ The demo is visible here : <a target="blank" href="demo1/DragMove14.html" rel="nofollow">demo1/DragMove14.html</a> 
+ </p><p><a target="blank" href="demo1/DragMove14.html" rel="nofollow"><img src="demo1.jpg" /></a>
+ 
+ </p><h3>Demo 2</h3>
+ <p>The demo is visible here : <a target="_blank" href="demo2/DragMove14.html" rel="nofollow">demo2/DragMove14.html</a> 
+ </p><p><a target="_blank" href="demo2/DragMove14.html" rel="nofollow"><img src="demo2.jpg" /></a> </p>
+ 
+ <h3>Demo 3 (from sansrob)</h3><p>The demo is visible here : 
+ <a target="_blank" href="demo3/DemoApplication.html" rel="nofollow">demo3/DemoApplication.html</a> </p><p>Thanks to sansrob for this demo, to contact him :
+ sansrob@gmail.com </p><p><a target="_blank" href="demo3/DemoApplication.html" rel="nofollow"><img src="demo3.jpg" /></a> </p>
+ 
+ <h3>Demo 4</h3>
+ <p>The demo is visible here : <a target="_blank" href="demo4/DragMove.html" rel="nofollow">demo4/DragMove.html</a> 
+ </p><p><a target="_blank" href="demo4/DragMove.html" rel="nofollow"><img src="demo4.jpg" /></a> </p>
+ 
+ <h3>
+ Supported Drag &amp;&amp; Drop Widgets (directly) :
+</h3><ul><li>Label. </li>
+ <li>Image. </li><li>Focus Panel. </li></ul><p>(Every others Widget are indirectly droppable or draggable. Everything
+ is explain on the Getting started guide). </p><h3>4 new methods per Widget :
+</h3><p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ addDragListener(DragListener); </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;">
+ addDropListener(DropListener); </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;">
+ removeDragListener(DragListener); </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ removeDropListener(DropListener); </td></tr> </table></p><p><strong> </strong></p><h3>
+The methods handle 11 listeners :
+</h3>
+ <p><table ><tr><td style="border: 1px solid #ccc; padding: 5px;"> <strong>DragListener
+</strong> </td><td style="border: 1px solid #ccc; padding: 5px;"> 
+ <strong>DropListener</a></strong> </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ onDragStart(Widget sender, int x, in y) </td><td style="border: 1px solid #ccc; padding: 5px;"> onDropEnter(Widget sender, Widget source) </td></tr> 
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> onDragMouseMoved(Widget sender, int x, in y) </td><td style="border: 1px solid #ccc; padding: 5px;"> 
+ onDropOver(Widget sender, Widget source) </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> onDragEnd(Widget sender, int x, int y) </td>
+ <td style="border: 1px solid #ccc; padding: 5px;"> onDropExit(Widget sender, Widget source) </td></tr> 
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ onDragEnter(Widget sender, Widget target) </td><td style="border: 1px solid #ccc; padding: 5px;"> onDrop(Widget sender, Widget source) </td></tr> 
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> onDragOver(Widget sender, Widget target) </td></tr>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> onDragExit(Widget sender, Widget target) </td></tr>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> onDragDropEnd(Widget sender, Widget target) </td></tr>
+ </table></p><p><strong> </strong></p><h3>Control your Drag
+ </h3><p>The Drag Move Drop Project include the possibility to entirely control your drag : <ul><li>Stop a move, </li>
+ <li>Sets a Draggable Widget, which move on the click of an other, </li><li>Sets Your detection padding, </li>
+ <li>Control the fire of the listeners, </li><li>Control the Drop Map, and disable some target, </li>
+ <li>Update the position of the drop target when you want to. </li><li>... </li></ul></p><h3>
+ Tests and doc around the project :</h3><p>
+ <table ><tr><td style="border: 1px solid #ccc; padding: 5px;">  - Report Tests : 
+ <a href="test/Doc-Test.doc" rel="nofollow">test/Doc-Test.doc</a> </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ - JUnit Test : <a href="test/JUnit.java" rel="nofollow">test/JUnit.java</a> </td></tr> <tr><td style="border: 1px solid #ccc; padding: 5px;"> 
+ - Limits Test demo : <a href="test/Test-Charge/testDragDrop.html" rel="nofollow">test/Test-Charge/testDragDrop.html</a> </td></tr>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> - The javadoc : <a href="test/doc/" rel="nofollow">test/doc/</a> </td></tr>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> - The demo 1 source code : 
+ <a href="code/GWT-DmD-demo1-source-code.zip" rel="nofollow">code/GWT-DmD-demo1-source-code.zip</a>  </td></tr> 
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> - The demo 2 source code :
+ <a href="code/GWT-DmD-demo2-source-code.zip" rel="nofollow">code/GWT-DmD-demo2-source-code.zip</a>  </td></tr>
+ <tr><td style="border: 1px solid #ccc; padding: 5px;"> - The demo 3 source code : 
+ <a href="code/GWT-DmD-demo3-source-code-(sansrob).zip" rel="nofollow">code/GWT-DmD-demo3-source-code-(sansrob).zip</a></td></tr>
+ </table></p><p>If you have any demo to show me, don&#x27;t hesitate, I&#x27;ll put on my presentation page </p><p>
+ Pleyo team = <a href="http://www.pleyo.com" rel="nofollow">http://www.pleyo.com</a> </p>
+ </td>
+ </tr>
+</table>
+
+ 
+</div> 
+ 
+ </body>
+</html>

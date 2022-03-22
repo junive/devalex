@@ -1,0 +1,104 @@
+@import "../lib/bootstrap/less/bootstrap.less";
+@import "my-variables.less";
+
+body { padding-top: @my-body-padding-top ; }
+
+//== Navbar
+.navbar-toggle {
+	padding: @my-navbar-toggle-padding-vertical;
+	.navbar-vertical-align(@my-navbar-toggle-vertical-align);
+	background-color: @my-navbar-toogle-bg;
+}
+/*
+.navbar-collapse  { // remove cause it's bug on dropdown
+	&.in {
+		background : @navbar-default-bg;
+	}
+}
+*/
+.navbar {
+	font-weight: @navbar-font-weight;
+	background: @my-navbar-bg;
+	a {
+		outline: 0 !important;
+	}
+}
+
+ .navbar-nav {
+ 
+ 	> li > a { // Background dropdown
+		padding-top:  @my-navbar-link-padding-vertical;
+		padding-bottom: @my-navbar-link-padding-vertical;
+	  /*&:focus { // Resolve the back button, remove cause it's change the current active
+        //color: @my-light-color-text !important;
+      }*/
+	}	
+	
+    > .active > a { // background active link
+      &,
+      &:hover,
+      &:focus {
+		background: @my-navbar-link-active-bg;
+	  }
+	}
+
+
+}
+
+//== Main
+
+
+.my-main {
+
+    a { // background active link
+		color : @my-main-text-color;
+		display: block;
+	 
+		&:hover,
+		&:focus {
+			color :  @my-main-text-color-hover;
+			opacity: @my-main-opacity-hover;
+		}
+	  
+		span {
+			display : inherit;
+		}
+	}
+
+	.my-title  {
+		.my-main-title-bg();
+		.my-main-title-mobile();
+		padding : @my-main-title-padding;
+		line-height: @my-main-title-line-height;
+		color : @my-main-title-color;
+		font-weight:bold;
+	}
+	
+	.my-projects {
+		.my-img-bloc { 
+			// Correct all bug concerning resizing with col-sm2
+			min-width : @my-main-image-min-width;
+		}
+	}
+	
+	.my-project {
+		.my-link-resume {
+			position: relative;
+			z-index: @zindex-navbar;
+			
+			.my-title {
+				img  {
+					.my-project-close-img();
+				}
+			}
+		}
+		.embed-responsive {
+			position:static !important;
+			
+			.embed-responsive-item {
+				padding-top:@my-project-iframe-padding-top;
+				//.my-project-iframe-mobile() 
+			}	
+		}
+	}
+}

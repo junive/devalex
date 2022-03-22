@@ -1,0 +1,14 @@
+[bgcolor]
+color_bgn=#861316
+color_opp=#efefef
+color_bgh=#999999
+color_bgc=#640000
+[link]
+color_anor=#FFFFFF
+color_ahov=#CCCCCC
+color_acur=#999999
+[line]
+color_line1=#FFFFFF
+color_line2=#CCCCCC
+[bullet]
+bullettone=black

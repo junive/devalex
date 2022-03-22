@@ -1,0 +1,513 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	text-align:center;
+}
+.containerPanel {
+	text-align:left;
+}
+.globalColumn {
+	border:2px solid #6666FF;
+}
+.columnContainer{
+	margin-left:5px;
+	margin-right:5px;
+	text-align:center;
+}
+.modulePanel, .moduleCollection {
+	width: 310px;
+	vertical-align: top;
+}
+.modulePanel {
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:2px;
+	margin-bottom:2px;
+	border: 1px solid #99CCCC;
+	text-align:center;
+	background-color:#f2fcf4;
+}
+.dragModulePanel {
+	margin-top:2px;
+	margin-bottom:2px;
+	border: 1px solid #9900FF;
+	text-align:center;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	background-color:#f2fcf4;
+}
+.moduleBackground {
+	width:100%;
+	height:100%;
+}
+.blankModule {
+	margin-top:2px;
+	margin-bottom:2px;
+	border:1px dashed;
+}
+.titlePanel {
+	width:100%;
+	height:20px;
+	background-repeat: repeat-x;
+	background-image: url("../img/title.jpg"); 
+	border-bottom:1px solid #99CCCC;
+	vertical-align:top;
+	text-align:left;
+}
+.titleLabel {
+	width:100%;
+	float:left; 
+	position:absolute;
+	font-weight: bold; 
+	text-align:center;
+}
+.openCloseModuleButton {
+	width:15px;
+	height : 15px;
+	float:right;
+	position: relative; 
+	background-repeat: no-repeat;
+	background-image: url("../img/resize.jpg"); 
+}
+.removeModuleButton {
+	width:15px;
+	height : 15px;
+	float:right;
+	position: relative;
+	background-repeat: no-repeat;
+	background-image: url("../img/close.gif");
+}
+.moduleCollection {
+}
+.lastBlankColumn {
+	height:150px;
+}
+/** user **/
+.myButtonRemove {
+	margin:4px;
+	font-size:12px;
+	background-color: #a8bef4;
+	width : 100px;
+	font-size:12px;
+	font-family: Arial;
+}
+
+
+/** status style **/
+.statusButton, .okStatus, .finishStatus, .waiStatus {
+	width:15px;
+	height:10px;
+	float:right;
+	position: relative;
+	background-repeat: no-repeat;
+	background-color:#9900CC;
+}
+
+
+.okStatus {
+	background-color:#eee;
+
+}
+.finishStatus {
+		background-color:#aaa;
+}
+.waitStatus {
+		background-color:#ccc;
+}
+
+
+
+
+/**------------------- ListStyle -----------------**/
+.listPanel {
+	height: 200px;
+	width: 100%;
+	text-align:left;
+	padding:0px;
+	margin:0px;
+}
+/* Vertical List */
+.list * * {
+	text-align:left;
+
+}
+.list {
+	padding:0px;
+	margin:0px;
+	float: left;
+	width: 100%;
+	border:1px solid #990000;	
+}
+/*** The principal Panel of a ListItem ***/
+.listItemPanel {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+.listItemPanelColumns, .listItemPanelColumns1, .listItemPanelColumns2 {
+	
+}
+/* The first Panel : The bar between each List */
+.betweenPanelShow {
+	margin:0px;
+	padding:0px;
+	line-height:1px;
+	font-size: 2px;
+	background: #990000;
+}
+.betweenPanelHide {
+	margin:0px;
+	padding:0px;
+	line-height:1px;
+	font-size: 2px;
+}
+/* The second Panel : Title */
+.item, .itemOnSelect, .itemOnDragOver {
+	width: 100%;
+	padding:0px;
+	margin:0px;
+	border:1px solid #330000;	
+
+}
+.item {
+	text-align: left;
+}
+.itemOnSelect {
+
+}
+.itemOnDragOver {	
+
+}
+.itemColumns, .itemColumns1, .itemColumns2, .itemColumns3, .itemColumns4 {
+	
+}
+/* The third Panel : the inside Container */
+.spacePanel {
+	width:15px;
+}
+.childList {	
+	width: 100%;
+	text-align: left;
+}
+/* The different image */
+.emptyOpenClose, .isClose, .isOpen {
+	width:10px;
+	height : 10px;
+	background-repeat: no-repeat;
+	position : relative;
+	float : left;
+}
+.emptyOpenClose {
+
+}
+.isClose {
+	background-image: url("../img/plus.jpg");
+}
+.isOpen {
+	background-image: url("../img/moins.jpg");	
+}
+.fileImage {
+	width:15px;
+	height : 10px;
+	background-repeat: no-repeat;
+	background-image: url("../img/file.jpg");
+	position : relative;
+	float : left;
+}
+/* The title text Label */
+.itemText, .itemTextOnSelect, .itemTextOnMouseOver, .itemTextOnDragOver, .copyItemText {
+	width:100%;
+	font-family:  Arial;
+	font-size: 14px;
+	border-bottom: 1px solid #669966;
+	border-top: 1px solid #669966;
+	border-left: 1px solid #669966;
+	color:#990000;
+}
+.itemText {
+
+}
+.itemTextOnSelect, .copyItemText {
+	background-color: #66FF33;
+}
+.itemTextOnMouseOver {
+	color:#99ffcc;
+}
+.itemTextOnDragOver {
+	background-color: #7794de;
+}
+/* The child Count Label */
+.childCount, .childCountOnSelect, .childCountOnMouseOver,.childCountOnDragOver {
+	text-align:right;
+	width: 100%;
+	font-family: Arial;
+	font-size: 14px;
+	border-bottom: 1px solid #669966;
+	border-top: 1px solid #669966;
+	border-right: 1px solid #669966;
+	position : relative;
+	float : left;
+	color:#990000;
+}
+.childCount {
+
+}
+.childCountOnSelect {
+	background-color: #66FF33;
+}
+.childCountOnMouseOver {
+	color:#99ffcc;
+}
+.childCountOnDragOver {
+	background-color: #7794de;
+}
+
+/*--------------- End of listStyle----------------*/
+
+
+/**** Banner of the page *******/
+.banner {
+
+	background-image: url("../img/banner.gif");
+	width:730px;
+	height: 100px;	
+}
+/******** The top Menu  ******/
+.principalMenu {
+	border : 1px solid #990000;
+	height : 60px;
+	padding :6px;
+	font-family : Arial;
+	font-size : 16px;
+	color: #990000;
+}
+.menuText, .menuTextOver, .menuTextSelected {
+	margin: 10px;
+	cursor:pointer;
+}
+.menuText {
+	color: #ff9900
+}
+.menuTextOver {
+		color: #339900
+}
+.menuTextSelected {
+		color: #cc9900
+}
+
+/***** The Sub Menu ******/
+.subPanel {
+	width: 300px;
+}
+.subMenu {
+	height: 200px;
+	width: 200px;
+	text-align:left;
+}
+.subMenuText, .subMenuTextOver, .subMenuTextSelected {
+		cursor:pointer;
+}
+.subMenuText {
+		color: #ff9900
+}
+.subMenuTextOver {
+		color: #339900
+}
+.subMenuTextSelected {
+		color: #cc9900
+}
+
+
+
+
+
+
+
+
+
+
+/**------------ Specifics Modules  --------**/
+
+
+/****** Create Product Type Module ******/
+.createProductTypeModule {
+
+}
+.createProductTypeModuleTitlePanel {
+	color: #ffee66;
+
+}
+.createProductTypeModuleTableBackground {
+	width:100%;
+
+}
+.createProductPlayModuleLineBoxBackground {
+	
+}
+.createProductTypeModuleTableColumns {
+
+}
+.createProductTypeModuleTableColumns1 {
+
+}
+.createProductTypeModuleTableColumns2 {
+
+}
+.createProductPlayModuleTitleNewItem {
+	
+}
+.createProductPlayModuleTextBoxNewItem {
+	
+}
+.createProductPlayModuleButtonConfirm {
+	
+}
+/***** View Play Mode Module *****/
+.createPlayModule {
+
+}
+.createPlayModuleTableBackground {
+	width:100%;
+	text-align:left; 
+}
+.createPlayModuleTableColumns {
+	
+}
+.createPlayModuleTableColumns1 {
+	
+}
+.createPlayModuleTableColumns2 {
+	
+}
+.createPlayModuleLineBoxBackground {
+	
+}
+.createPlayModuleTitleNewItem {
+
+}
+.createPlayModuleTextBoxNewItem {
+	text-align:left;
+}
+.createPlayModuleButtonConfirm {
+	
+}
+.createPlayModuleRemoveButton {
+
+}
+.viewePlayModuleList {
+	
+}
+/****** Create Stream Type Module ******/
+.createStreamTypeModule {
+	height:300px;
+}
+
+/******* Mandatory Rights To Acess Products Module ****/
+.mandatoryRightsModule {
+	
+}
+.mandatoryRightsModuleTableBackground {
+
+}
+.mandatoryRightsModuleTableColumns1 {
+
+}
+.mandatoryRightsModuleTableColumns2 {
+
+}
+/******** Catalogs Of Operation Tag Module ****/
+.catalogOfOperationTagsModule {
+
+}
+/********** Create User Rights Catalog Module *****/
+.createUserRightsCatalogModule {
+
+}
+/**** View Content Owner Module ****/
+.createContentOwnerModule {
+
+}
+/****** View Device Module *****/
+.viewDevicesModule {
+
+}
+/***** Create Set Preset Menu ****/
+.createSetPresetMenuModule {
+	
+}
+.createSetPresetMenuModuleTableBackground {
+	
+}
+.createSetPresetMenuModuleTableColumns {
+	color : #990000;
+	font-size : 12px;
+	margin:0px;
+	padding:0px;
+}
+.createSetPresetMenuModuleTableColumns1 {
+	
+}
+.createSetPresetMenuModuleTableColumns2 {
+	
+}
+.crmMenuStyle{
+	background-color: #ffffcc;
+	border: 1px solid #cccccc;
+	padding:10px;
+	cursor:pointer;
+}
+.crmMenuOverStyle{
+	background-color: #ccffff;
+	border: 1px solid #cccccc;
+	padding:10px;
+	cursor:pointer;
+}
+.crmMenuModule{
+	
+}
+.crmMenuModuleTable{
+	
+}
+.crmAnnouncementTable{
+	border: 1px solid #333333;
+	padding:0px;
+	background-color: #7e90de;
+}
+.crmAnnouncementTableColumns{
+	padding:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	color:#000000;
+	font-size:11px;
+}
+.crmAnnouncementLine{
+	border: 1px solid #333333;
+	margin:0px;
+	
+	background-color: #ffffff;
+	vertical-align:top;
+}
+.crmAnnouncementLine:hover{
+	background-color: #7e90de;
+}
+.crmAnnouncementHeader{
+	background-color: #ffffff;
+	color:#666666;
+	border:1px solid #333333;
+}
+.crmAnnouncementButton{
+	background-color: #7e90de;
+	color:#ffffff;
+	border:1px solid #333333;
+	cursor:pointer;
+	
+}
+.crmAnnouncementButton:hover{
+	background-color: #ffffff;
+	color:#7e90de;
+	border:1px solid #333333;
+}
+
+
